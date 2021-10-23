@@ -6,7 +6,7 @@
 
 `docker pull artalk/artalk-go`
 
-前往：[“Docker 部署细节”](./backend/docker.md)
+前往：[“Docker 部署细节”](/guide/backend/docker.md)
 
 ### 普通方式
 
