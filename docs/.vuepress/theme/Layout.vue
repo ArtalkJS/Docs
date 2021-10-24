@@ -23,11 +23,14 @@ const COMMENT_CONTAINER = '#Comments'
 let artalkInstance = null
 
 let timer = null
-const _initArtalk = () => {
+const initArtalk = () => {
+  clearTimeout(timer)
+  
   const parentDOM = document.querySelector(COMMENT_CONTAINER)
-  if (!parentDOM) return
-
-  clearInterval(timer)
+  if (!parentDOM) {
+    timer = setTimeout(() => { initArtalk() }, 1000)
+    return
+  }
 
   const conf = {
     el:        COMMENT_CONTAINER,
@@ -43,18 +46,6 @@ const _initArtalk = () => {
   // dark_mode
   const darkMode = document.querySelector('html').classList.contains('dark')
   artalkInstance.setDarkMode(darkMode)
-}
-
-const initArtalk = () => {
-  clearInterval(timer)
-  
-  const parentDOM = document.querySelector(COMMENT_CONTAINER)
-  if (!parentDOM) {
-    timer = setInterval(() => { _initArtalk() }, 1000)
-    return 
-  }
-  
-  _initArtalk()
 }
 
 export default defineComponent({
