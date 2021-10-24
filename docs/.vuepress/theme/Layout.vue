@@ -20,6 +20,8 @@ const page = usePageData()
 const ARTALK_SRC = 'https://cdn.jsdelivr.net/npm/artalk@2/dist/Artalk.js'
 const COMMENT_CONTAINER = '#Comments'
 
+let artalkInstance = null
+
 let timer = null
 const _initArtalk = () => {
   const parentDOM = document.querySelector(COMMENT_CONTAINER)
@@ -36,7 +38,11 @@ const _initArtalk = () => {
   }
 
   console.log(conf)
-  new window.Artalk(conf);
+  artalkInstance = new window.Artalk(conf);
+
+  // dark_mode
+  const darkMode = document.querySelector('html').classList.contains('dark')
+  artalkInstance.setDarkMode(darkMode)
 }
 
 const initArtalk = () => {
@@ -80,6 +86,16 @@ export default defineComponent({
       
       nextTick(() => { initArtalk() })
     })
-  }
+
+    // dark_mode
+    new MutationObserver((mList) => {
+      mList.forEach((m) => {
+        if (m.attributeName !== 'class') return
+
+        const darkMode = m.target.classList.contains('dark')
+        artalkInstance.setDarkMode(darkMode)
+      })
+    }).observe(document.querySelector('html'), { attributes: true })
+  },
 })
 </script>
