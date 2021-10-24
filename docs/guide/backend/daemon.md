@@ -4,7 +4,7 @@
 
 tmux 将创建一个持续的命令行会话，在 SSH 或 tty 断开后保持在后台。
 
-Note: 服务器关闭或重启后，tmux 会话将被清除，需要手动重新运行程度。
+Note: 服务器关闭或重启后，tmux 会话将被清除，需要手动重新运行程序。
 
 1. 创建会话 `tmux new -s artalk-go`
 2. 运行程序 `./artalk-go serve`
