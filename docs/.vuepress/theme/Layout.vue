@@ -50,7 +50,7 @@ const initArtalk = () => {
   
   const parentDOM = document.querySelector(COMMENT_CONTAINER)
   if (!parentDOM) {
-    timer = setInterval(() => { _initArtalk() }, 500)
+    timer = setInterval(() => { _initArtalk() }, 1000)
     return 
   }
   
