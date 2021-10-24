@@ -27,8 +27,6 @@ features:
 footer: "Code: GPL-3.0 Licensed | Docs: CC BY-NC-SA 4.0 | Copyright © 2018-2021 Artalk"
 ---
 
-### 快速上手
-
 <CodeGroup>
   <CodeGroupItem title="CDN" active>
 
@@ -54,3 +52,8 @@ footer: "Code: GPL-3.0 Licensed | Docs: CC BY-NC-SA 4.0 | Copyright © 2018-2021
 
   </CodeGroupItem>
 </CodeGroup>
+
+<!-- Artalk -->
+<div style="margin: 0 auto;padding: 1rem 0;">
+  <div id="Comments"></div>
+</div>

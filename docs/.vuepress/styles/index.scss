@@ -1,3 +1,7 @@
+ol, p, ul {
+  line-height: 1.9;
+}
+
 :root {
   // brand colors
   --c-brand: #558fb5;
@@ -24,7 +28,7 @@
   --c-border-dark: #dfe2e5;
 
   // custom container colors
-  --c-tip: #42b983;
+  --c-tip: #53e2ab;
   --c-tip-bg: var(--c-bg-light);
   --c-tip-title: var(--c-text);
   --c-tip-text: var(--c-text);
@@ -50,12 +54,6 @@
   --t-color: 0.3s ease;
   --t-transform: 0.3s ease;
 
-  // code blocks vars
-  --code-bg-color: #282c34;
-  --code-hl-bg-color: rgba(0, 0, 0, 0.66);
-  --code-ln-color: #9e9e9e;
-  --code-ln-wrapper-width: 3.5rem;
-
   // font vars
   --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -71,8 +69,9 @@
   --homepage-width: 960px;
 }
 
-p {
-  text-indent: 2;
+html.dark {
+  --c-brand: #558fb5;
+  --c-brand-light: #498cb8;
 }
 
 // plugin-back-to-top
@@ -131,6 +130,20 @@ p {
   --search-item-focus-bg-color: var(--c-bg-light);
 }
 
+// 移动设备
+@media (max-width: 719px) {
+  .home {
+    .features {
+      flex-direction: column;
+    }
+
+    .feature {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+  }
+}
+
 // 由于 vuepress v2 并未实现原本在 v1 上有的功能 sidebar collapsable
 // 所以只能靠 css patch
 // @link https://github.com/vuepress/vuepress-next/issues/397
@@ -150,10 +163,105 @@ p {
     & > li > ul {
       overflow: hidden;
       height: 0;
+      padding-left: 2rem;
     }
 
     & > li > .active+.sidebar-sub-items {
       height: auto;
     }
   }
+}
+
+/** Code **/
+pre[class*="language-" ],
+code[class*="language-"] {
+  white-space: pre-wrap; // 代码自动换行
+}
+
+// div[class*=language-].line-numbers-mode .line-numbers {
+//   display: none;
+// }
+
+:root {
+  // code blocks vars
+  --code-bg-color: #f8f8f8;
+  --code-hl-bg-color: #e7e6e6;
+  --code-ln-color: #c4c4c6;
+  --code-ln-wrapper-width: 2.3rem;
+}
+
+html.dark {
+  --code-bg-color: #2b313a;
+  --code-hl-bg-color: #424549;
+  --code-ln-color: #768491;
+
+  .code-group__nav-tab {
+    color: var(--c-text-lighter);
+  }
+
+  .token.punctuation {
+    color: #8b9eb0;
+  }
+
+  .theme-default-content pre code, .theme-default-content pre[class*=language-] code {
+    color: #b9b9b9;
+  }
+}
+
+div[class*=language-].ext-html:before {
+  color: #999;
+}
+
+.theme-default-content {
+  pre,
+  pre[class*='language-'] {
+    code {
+      color: #525252;
+    }
+  }
+}
+
+.code-group__nav {
+  padding-top: 5px;
+}
+
+.code-group__nav-tab {
+  color: #525252;
+  padding: 5px 10px;
+}
+
+.code-group__nav-tab-active {
+  border-bottom-width: 2px;
+}
+
+.code-group__ul {
+  margin-bottom: 5px;
+}
+
+.token.punctuation {
+  color: #24292f;
+}
+
+.token.class-name, .token.constant, .token.property, .token.symbol {
+  color: #2196f3;
+}
+
+.token.attr-value, .token.char, .token.regex, .token.string, .token.variable {
+  color: #42b983;
+}
+
+.token.atrule, .token.important, .token.keyword, .token.selector {
+  color: #0367b7;
+}
+
+.token.attr-name, .token.deleted, .token.namespace, .token.tag {
+  color: #2973b7;
+}
+
+.token.boolean, .token.function, .token.number {
+  color: #2196f3;
+}
+
+.token.entity, .token.operator, .token.url {
+  color: #00d187;
 }

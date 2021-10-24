@@ -1,10 +1,17 @@
+const { path } = require('@vuepress/utils')
+
 module.exports = {
   lang: "zh-CN",
   title: "Artalk",
-  description: "一款简洁的自托管评论系统",
+  description: "Artalk 一款简洁的自托管评论系统",
+  head: [
+    // ['link', { rel: 'icon', href: '/images/artalk-logo.png' }],
+    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi' }],
+    ['link', { href: 'https://cdn.jsdelivr.net/npm/artalk@2/dist/Artalk.css', rel: 'stylesheet' }],
+  ],
+  theme: path.resolve(__dirname, './theme'),
 
   themeConfig: {
-    editLink: true,
     sidebar: {
       "/guide/": [
         "/guide/intro.md",
@@ -21,7 +28,8 @@ module.exports = {
               children: [
                 "/guide/frontend/install.md",
                 "/guide/frontend/config.md",
-                "/guide/frontend/blog-install.md",
+                "/guide/frontend/import-blog.md",
+                "/guide/frontend/import-framework.md",
                 "/guide/frontend/build.md",
               ],
             },
@@ -104,5 +112,11 @@ module.exports = {
         link: 'https://github.com/ArtalkJS',
       },
     ],
+    editLink: true,
+    editLinkText: '在 GitHub 上编辑此页',
+    docsRepo: 'https://github.com/ArtalkJS/Docs',
+    docsBranch: 'master',
+    docsDir: 'docs',
+    editLinkPattern: ':repo/edit/:branch/:path',
   },
 };

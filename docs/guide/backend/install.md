@@ -17,13 +17,13 @@
 3. 进入程序目录 `cd artalk-go`
 4. 编辑配置文件 `vim artalk-go.yml`
    > 前往：[“配置文件 说明”](/guide/backend/config.html)
-5. 运行程序 ./artalk-go serve
+5. 运行程序 `./artalk-go serve`
    > 附加操作
    >
    > 前往：[“反代设定的端口到 80 并套上 CDN (Nginx, Apache)”](/guide/backend/reverse-proxy.md)
-6. 持久化运作 artalk-go 程序 (tmux, sysctl)
-   > 前往：["持久化运作"](/guide/backend/daemon.md)
-7. 前端配置
+   >
+   > 前往：["持久化运作 artalk-go 程序 (tmux, sysctl)"](/guide/backend/daemon.md)
+6. 前端配置
 
     ```js
     new Artalk({ server: "http://your_domain:端口号/api" })
@@ -44,5 +44,5 @@ $ git clone https://github.com/ArtalkJS/ArtalkGo.git
 $ make all
 
 # 运行程序
-cd bin && ./artalk-serve serve
+$ cd bin && ./artalk-serve serve
 ```
