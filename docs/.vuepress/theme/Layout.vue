@@ -22,16 +22,7 @@ const COMMENT_CONTAINER = '#Comments'
 
 let artalkInstance = null
 
-let timer = null
 const initArtalk = () => {
-  clearTimeout(timer)
-  
-  const parentDOM = document.querySelector(COMMENT_CONTAINER)
-  if (!parentDOM) {
-    timer = setTimeout(() => { initArtalk() }, 1000)
-    return
-  }
-
   const conf = {
     el:        COMMENT_CONTAINER,
     pageKey:   `https://artalk.js.org${page.value.path}`,
@@ -65,17 +56,15 @@ export default defineComponent({
 
     // listen router changes
     const router = useRouter()
-    router.beforeEach((to, from) => {
-      if (to && from && to.path === from.path) return
-
-      const dom = document.querySelector(COMMENT_CONTAINER)
-      if (dom) dom.remove()
-    })
-
+    
+    let timer = null
     router.afterEach((to, from) => {
       if (to && from && to.path === from.path) return
       
-      nextTick(() => { initArtalk() })
+      clearTimeout(timer)
+      nextTick(() => {
+        timer = setTimeout(() => { initArtalk() }, 1000)
+      })
     })
 
     // dark_mode
