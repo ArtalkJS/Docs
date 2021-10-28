@@ -60,7 +60,7 @@
 
 ### 高级玩法
 
-可执行 `$ artalk-go export"` 直接 “标准输出 (stdout)”，并进行 “管道 (pipe)” 或 “输出重定向 (Output Redirection)” 操作。
+执行 `$ artalk-go export"` 直接 “标准输出 (stdout)”，并进行 “管道 (pipe)” 或 “输出重定向 (Output Redirection)” 操作。
 
 例如：
 
@@ -139,7 +139,7 @@ $ artalk-go import typecho \
 ]
 ```
 
-注：通过附加参数自定义 “重写路径” `rewrite_post` 和 `rewrite_page`，对应 Typecho 的 “永久链接设置”，例如：按日期归档 `/{year}/{month}/{day}/{slug}.html`
+注：通过附加参数自定义 “重写规则” `rewrite_post` 和 `rewrite_page`，对应 Typecho 的 “永久链接设置”，例如：按日期归档 `/{year}/{month}/{day}/{slug}.html`
 
 > “可用参数: {cid} 日志 ID, {slug} 日志缩略名, {category} 分类, {directory} 多级分类, {year} 年, {month} 月, {day} 日”
 
