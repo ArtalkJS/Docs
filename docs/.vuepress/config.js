@@ -73,6 +73,10 @@ module.exports = {
         link: '/guide/backend/config',
       },
       {
+        text: '迁移',
+        link: '/guide/transfer',
+      },
+      {
         text: '下载',
         children: [
           {

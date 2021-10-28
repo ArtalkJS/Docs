@@ -15,3 +15,7 @@ P.S. 因为侧边栏太空了，也许。所以，不知道放点什么好。被
 <sub style="text-align: center">blank s<span data-msg="好希望有人能够加入这个莫须有的团队啊。😭" data-please-email="qwqcode@gmail.com" style="color:#55555;background:linear-gradient(45deg,#ff0000 0%,#ffb600 11%,#fff600 22%,#a5ff00 33%,#00a9ff 44%,#0400ff 55%,#8a00fc 66%,#ff00e9 77%,#ff0059 88%,#ff0000 100%);font-weight: bold;border-radius: 555px;">till.</span></sub>
 
 The Artalk. Made with <span style="color: red;">♥️</span>.
+
+## 关于本站
+
+该站点通过 [Netlify](https://www.netlify.com/) 对 [master](https://github.com/ArtalkJS/Docs) 分支进行自动部署。
