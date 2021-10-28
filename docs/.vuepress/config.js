@@ -16,7 +16,6 @@ module.exports = {
       "/guide/": [
         "/guide/intro.md",
         "/guide/deploy.md",
-        "/guide/describe.md",
         {
           text: "🌅 风，甚是喧嚣",
           collapsable: true,
@@ -50,6 +49,7 @@ module.exports = {
             },
           ],
         },
+        "/guide/describe.md",
         "/guide/transfer.md",
         "/guide/about.md",
       ],
