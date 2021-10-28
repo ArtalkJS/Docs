@@ -39,7 +39,7 @@
 
 我们称：一个 JSON 数组为 Artrans
 
-数组里面的每个元素叫 Artran (没有 s)
+数组里面的每个 Item 叫 Artran (没有 s)
 
 :::
 
@@ -187,8 +187,9 @@ $ artalk-go import typecho \
 
 :::
 
+## 其他评论系统
 
-::: details 其他评论系统
+::: details 点击显示
 
 **Twikoo**
 
