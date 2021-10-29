@@ -7,7 +7,7 @@ module.exports = {
   head: [
     // ['link', { rel: 'icon', href: '/images/artalk-logo.png' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi' }],
-    ['link', { href: 'https://cdn.jsdelivr.net/npm/artalk@2/dist/Artalk.css', rel: 'stylesheet' }],
+    ['link', { href: require('../code/ArtalkCDN.json').CSS, rel: 'stylesheet' }],
   ],
   theme: path.resolve(__dirname, './theme'),
 

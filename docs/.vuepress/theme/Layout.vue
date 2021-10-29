@@ -17,7 +17,7 @@ import Layout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
 
 const page = usePageData()
 
-const ARTALK_SRC = 'https://cdn.jsdelivr.net/npm/artalk@2/dist/Artalk.js'
+const ARTALK_SRC = require('../../code/ArtalkCDN.json').JS
 const COMMENT_CONTAINER = '#Comments'
 
 let artalkInstance = null
