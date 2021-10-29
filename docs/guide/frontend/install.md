@@ -25,3 +25,7 @@
 </CodeGroup>
 
 > 前往：[“前端配置 说明”](/guide/frontend/config.html)
+
+::: tip
+前往：[“后端 · 安装”](/guide/backend/install.md)
+:::

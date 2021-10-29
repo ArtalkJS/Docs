@@ -46,3 +46,7 @@ $ make all
 # 运行程序
 $ cd bin && ./artalk-serve serve
 ```
+
+::: tip
+前往：[“前端 · 安装”](/guide/frontend/install.md)
+:::
