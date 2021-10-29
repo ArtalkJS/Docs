@@ -5,6 +5,7 @@ Artalk 拥有一个 Golang 语言编写的后端程序。
 [GitHub 代码仓库](https://github.com/ArtalkJS/ArtalkGo)
 
 - 高效灵快
+- 异步执行
 - 跨平台兼容
 - 轻量级部署
 
