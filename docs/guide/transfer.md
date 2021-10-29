@@ -88,10 +88,10 @@ $ artalk-go import artalk_v1 \
 启动参数 JSON 格式：
 
 ```json
-[
-    "t_name:目标站点名",
-    "t_url:目标站点根目录 URL"
-]
+{
+    "t_name": "目标站点名",
+    "t_url": "目标站点根目录 URL"
+}
 ```
 
 ## WordPress
@@ -125,18 +125,18 @@ $ artalk-go import typecho \
 启动参数 JSON 格式：
 
 ```json
-[
-    "db_host:localhost",
-    "db_port:3306",
-    "db_name:数据库名称",
-    "db_user:数据库账户",
-    "db_password:数据库密码",
-    "db_prefix:typecho_",
-    "t_name:目标站点名",
-    "t_url:目标站点根目录 URL",
-    "rewrite_post:",
-    "rewrite_page:"
-]
+{
+    "db_host": "localhost",
+    "db_port": 3306,
+    "db_name": "数据库名称",
+    "db_user": "数据库账户",
+    "db_password": "数据库密码",
+    "db_prefix": "typecho_",
+    "t_name": "目标站点名",
+    "t_url": "目标站点根目录 URL",
+    "rewrite_post": "",
+    "rewrite_page": ""
+}
 ```
 
 注：通过附加参数自定义 “重写规则” `rewrite_post` 和 `rewrite_page`，对应 Typecho 的 “永久链接设置”，例如：按日期归档 `/{year}/{month}/{day}/{slug}.html`
@@ -161,10 +161,10 @@ $ artalk-go import typecho \
 启动参数 JSON 格式：
 
 ```json
-[
-    "t_name:目标站点名",
-    "t_url:目标站点根目录 URL"
-]
+{
+    "t_name": "目标站点名",
+    "t_url": "目标站点根目录 URL"
+}
 ```
 
 注：[Waline](https://waline.js.org/) 与 Valine 都是使用 LeanCloud 进行数据存储，格式相通，所以这里也可以用来导入 Waline 的数据。
@@ -175,7 +175,7 @@ $ artalk-go import typecho \
 
 咕咕咕~~
 
-~~~（它的数据文件是 XML 格式，邮箱还不能直接获取，好麻烦，懒得搞~~~
+（~~~它的数据文件是 XML 格式，邮箱还不能直接获取，好麻烦，懒得搞~~~
 
 :::
 
