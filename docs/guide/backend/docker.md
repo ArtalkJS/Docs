@@ -59,4 +59,4 @@ $ docker stop artalk-go
 
 ## 多平台兼容性
 
-Docker 镜像暂仅提供 amd_64 构建，若需要兼容 ARM，请下载 [二进制编译构建](/guide/backend/install.html)
+Docker 镜像暂仅提供 amd_64 构建，若需要在 ARM 环境下运行，请下载 [二进制编译构建](/guide/backend/install.html)
