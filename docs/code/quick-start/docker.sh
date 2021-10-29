@@ -3,7 +3,7 @@ $ mkdir ArtalkGo
 $ cd ArtalkGo
 
 # 下载配置文件模版
-$ curl -L https://raw.githubusercontent.com/ArtalkJS/ArtalkGo/main/artalk-go.example.yml > conf.yml
+$ curl -L https://raw.githubusercontent.com/ArtalkJS/ArtalkGo/master/artalk-go.example.yml > conf.yml
 
 # 编译配置文件
 $ vim conf.yml

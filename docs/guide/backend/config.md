@@ -13,7 +13,7 @@
 下载配置文件模版：
 
 ```sh
-$ curl -L https://raw.githubusercontent.com/ArtalkJS/ArtalkGo/main/artalk-go.example.yml > conf.yml
+$ curl -L https://raw.githubusercontent.com/ArtalkJS/ArtalkGo/master/artalk-go.example.yml > conf.yml
 ```
 
 ::: tip
