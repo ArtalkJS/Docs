@@ -62,5 +62,13 @@ server
 宝塔面板拥有傻瓜式反向代理设置功能，可以如下图这样操作：
 
 ::: details 点击展开
-暂时没有宝塔面板可以截图（
+![](/images/baota-proxy/1.png)
+
+打开 “反向代理” 选项卡，点击 “添加反向代理”，端口号与 ArtalkGo 端口对应（`http://localhost:端口号`），配置如图：
+
+![](/images/baota-proxy/2.png)
+
+若需指定仅 `/api/` 路径转发到后端程序端口，点击 “配置文件” 按钮，添加如图位置红色标记的 `/api/`
+
+![](/images/baota-proxy/3.png)
 :::
