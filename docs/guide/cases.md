@@ -9,6 +9,8 @@
 
 ### 主题
 
+- [hexo-theme-volantis](https://github.com/volantis-x/hexo-theme-volantis): A Wonderful Theme for Hexo
+
 ::: tip
 
 案例仍在持续更新中...
