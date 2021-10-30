@@ -1,8 +1,4 @@
-# 前端构建
-
-::: warning
-目前文档仍在陆续完善中
-:::
+# 🧪 构建 · 前端
 
 ```sh
 $ git clone https://github.com/ArtalkJS/Artalk.git

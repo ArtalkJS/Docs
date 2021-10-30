@@ -1,8 +1,4 @@
-# 前端安装
-
-::: warning
-目前文档仍在陆续完善中
-:::
+# 👓 安装 · 前端
 
 <CodeGroup>
   <CodeGroupItem title="CDN" active>

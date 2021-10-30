@@ -8,7 +8,7 @@ actions:
   - text: 轻装上阵
     link: /guide/deploy.md
     type: primary
-  - text: 食用方针
+  - text: 项目介绍
     link: /guide/intro.md
     type: secondary
 features:

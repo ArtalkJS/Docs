@@ -1,6 +1,6 @@
 # 🛫️ 轻装上阵 · 部署
 
-## 1. 后端部署
+## 🤣 后端部署
 
 ### Docker（建议）
 
@@ -19,7 +19,7 @@
 前往：[“后端 · 配置文件”](./backend/config.md)
 :::
 
-## 2. 前端使用
+## 🎯 前端使用
 
 <CodeGroup>
   <CodeGroupItem title="CDN" active>

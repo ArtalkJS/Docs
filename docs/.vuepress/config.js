@@ -27,9 +27,9 @@ module.exports = {
               children: [
                 "/guide/frontend/install.md",
                 "/guide/frontend/config.md",
+                "/guide/frontend/build.md",
                 "/guide/frontend/import-blog.md",
                 "/guide/frontend/import-framework.md",
-                "/guide/frontend/build.md",
               ],
             },
             {
@@ -37,8 +37,8 @@ module.exports = {
               link: '/guide/backend/',
               collapsable: true,
               children: [
-                "/guide/backend/config.md",
                 "/guide/backend/install.md",
+                "/guide/backend/config.md",
                 "/guide/backend/build.md",
                 "/guide/backend/update.md",
                 "/guide/backend/data.md",
@@ -72,7 +72,7 @@ module.exports = {
       },
       {
         text: '配置',
-        link: '/guide/backend/config',
+        link: '/guide/frontend/config',
       },
       {
         text: '迁移',

@@ -43,16 +43,9 @@
 
 :::
 
+## 📦 备份
 
-## 🏘 迁入
-
-迁入操作可在 前端 (图形界面) 或 后端 (命令行) 进行。
-
-命令行：执行 `$ artalk-go import -h` 查阅帮助文档。
-
-以下提供 “命令行命令” 和 “启动参数”，分别用于 “后端” 和 “前端” 的导入操作。
-
-## 从 Artalk (Artrans) 到 Artalk
+### 从 Artalk (Artrans) 到 Artalk
 
 导出：`$ artalk-go export ./artrans`
 
@@ -68,7 +61,15 @@
 $ artalk-go export | gzip -9 | ssh username@remote_ip "cat > ~/backup/artrans.gz"
 ```
 
-## Artalk v1 (PHP 旧版后端)
+## 📥 迁入
+
+迁入操作可在 前端 (图形界面) 或 后端 (命令行) 进行。
+
+命令行：执行 `$ artalk-go import -h` 查阅帮助文档。
+
+以下提供 “命令行命令” 和 “启动参数”，分别用于 “后端” 和 “前端” 的导入操作。
+
+### Artalk v1 (PHP 旧版后端)
 
 [Artalk v1](https://github.com/ArtalkJS/ArtalkPHP) 是 Artalk 的旧版后端，它使用 PHP 编写。
 
@@ -94,13 +95,13 @@ $ artalk-go import artalk_v1 \
 }
 ```
 
-## WordPress
+### WordPress
 
 通过安装 WordPress 插件，导出 Artrans 格式的数据文件。
 
 然后，执行 `$ artalk-go import ./artrans` 导入到 Artalk。
 
-## Typecho
+### Typecho
 
 [Typecho](http://typecho.org/) 是一款 PHP 博客系统，你可以执行以下命令，改动几个参数，快速导入其评论数据。
 
@@ -143,7 +144,7 @@ $ artalk-go import typecho \
 
 > “可用参数: {cid} 日志 ID, {slug} 日志缩略名, {category} 分类, {directory} 多级分类, {year} 年, {month} 月, {day} 日”
 
-## Valine
+### Valine
 
 [Valine](https://github.com/xCss/Valine) 是一款无后端的评论系统。
 
@@ -169,7 +170,7 @@ $ artalk-go import typecho \
 
 注：[Waline](https://waline.js.org/) 与 Valine 都是使用 LeanCloud 进行数据存储，格式相通，所以这里也可以用来导入 Waline 的数据。
 
-## Disqus
+### Disqus
 
 ::: details 这个不想给你康
 
@@ -179,7 +180,7 @@ $ artalk-go import typecho \
 
 :::
 
-## Commento
+### Commento
 
 ::: details 这个不想给你康
 
@@ -187,7 +188,7 @@ $ artalk-go import typecho \
 
 :::
 
-## 其他评论系统
+### 其他评论系统
 
 ::: details 点击阅览
 

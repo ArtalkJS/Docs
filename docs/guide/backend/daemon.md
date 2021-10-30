@@ -1,5 +1,13 @@
 # 持久化运作
 
+## Docker
+
+更新 Docker 容器的 [Restart 策略](https://docs.docker.com/config/containers/start-containers-automatically/#use-a-restart-policy) 以达到进程守护效果。
+
+```sh
+$ docker update --restart=always artalk-go
+```
+
 ## tmux (半持久化属于是)
 
 tmux 将创建一个持续的命令行会话，在 SSH 或 tty 断开后保持在后台。
