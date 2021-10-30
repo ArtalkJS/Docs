@@ -51,6 +51,8 @@ module.exports = {
         },
         "/guide/describe.md",
         "/guide/transfer.md",
+        "/guide/extras.md",
+        "/guide/cases.md",
         "/guide/about.md",
       ],
     },
@@ -77,12 +79,13 @@ module.exports = {
         link: '/guide/transfer',
       },
       {
-        text: '下载',
+        text: '案例',
+        link: '/guide/cases',
+      },
+      // NavbarGroup
+      {
+        text: '快速传送',
         children: [
-          {
-            text: '前端资源',
-            link: '/guide/frontend/install',
-          },
           {
             text: '后端 Releases',
             link: 'https://github.com/ArtalkJS/ArtalkGo/releases',
@@ -91,23 +94,13 @@ module.exports = {
             text: 'Docker Hub',
             link: 'https://hub.docker.com/r/artalk/artalk-go',
           },
-        ]
-      },
-      // NavbarGroup
-      {
-        text: '快速传送',
-        children: [
           {
-            text: 'Artalk',
+            text: 'Artalk 代码仓库',
             link: 'https://github.com/ArtalkJS/Artalk',
           },
           {
-            text: 'ArtalkGo',
+            text: 'ArtalkGo 代码仓库',
             link: 'https://github.com/ArtalkJS/ArtalkGo',
-          },
-          {
-            text: '作者博客',
-            link: 'https://qwqaq.com',
           }
         ],
       },
