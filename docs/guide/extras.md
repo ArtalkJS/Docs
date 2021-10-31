@@ -6,7 +6,9 @@ Artalk 离不开社区的支持与帮助，**是你们让 Artalk 走得更远！
 
 ## Artalk v2
 
-新版读物正在撰写当中（
+- [宝塔安装过程大概记录 (By @xiamuguizhi)](https://github.com/ArtalkJS/ArtalkGo/issues/6)
+
+更多新版读物正在撰写当中（
 
 ## Artalk v1 (PHP 旧版)
 
