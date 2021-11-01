@@ -44,7 +44,7 @@ $ git clone https://github.com/ArtalkJS/ArtalkGo.git
 $ make all
 
 # 运行程序
-$ cd bin && ./artalk-serve serve
+$ cd bin && ./artalk-go serve
 ```
 
 ::: tip
