@@ -55,6 +55,11 @@ module.exports = {
         "/guide/cases.md",
         "/guide/about.md",
       ],
+      "/develop/": [
+        "/develop/README.md",
+        "/develop/api.md",
+        "/develop/event.md",
+      ],
     },
     navbar: [
       // NavbarItem
@@ -77,6 +82,10 @@ module.exports = {
       {
         text: '案例',
         link: '/guide/cases',
+      },
+      {
+        text: '开发',
+        link: '/develop/',
       },
       // NavbarGroup
       {
