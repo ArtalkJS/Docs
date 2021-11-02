@@ -17,7 +17,7 @@ module.exports = {
         "/guide/intro.md",
         "/guide/deploy.md",
         {
-          text: "🌅 风，甚是喧嚣",
+          text: "🌅 系统架构",
           collapsable: true,
           children: [
             {
@@ -67,10 +67,6 @@ module.exports = {
         link: '/guide/deploy',
       },
       {
-        text: 'Docker',
-        link: '/guide/backend/docker',
-      },
-      {
         text: '配置',
         link: '/guide/frontend/config',
       },
@@ -84,33 +80,34 @@ module.exports = {
       },
       // NavbarGroup
       {
-        text: '快速传送',
+        text: '链接',
         children: [
           {
-            text: '后端 Releases',
-            link: 'https://github.com/ArtalkJS/ArtalkGo/releases',
+            text: 'Docs Repo',
+            link: 'https://github.com/ArtalkJS/Docs',
           },
           {
-            text: 'Docker Hub',
-            link: 'https://hub.docker.com/r/artalk/artalk-go',
-          },
-          {
-            text: 'Artalk 代码仓库',
+            text: 'Artalk Repo',
             link: 'https://github.com/ArtalkJS/Artalk',
           },
           {
-            text: 'ArtalkGo 代码仓库',
+            text: 'ArtalkGo Repo',
             link: 'https://github.com/ArtalkJS/ArtalkGo',
+          },
+          {
+            text: 'ArtalkGo Docker',
+            link: 'https://hub.docker.com/r/artalk/artalk-go',
           }
         ],
-      },
-      {
-        text: 'GitHub',
-        link: 'https://github.com/ArtalkJS',
-      },
+      }
     ],
+    smoothScroll: true,
+    lastUpdated: true,
+    lastUpdatedText: '上一次编辑',
     editLink: true,
     editLinkText: '在 GitHub 上编辑此页',
+    contributors: true,
+    contributorsText: '贡献者',
     docsRepo: 'https://github.com/ArtalkJS/Docs',
     docsBranch: 'master',
     docsDir: 'docs',
