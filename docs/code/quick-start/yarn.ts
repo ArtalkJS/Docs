@@ -1,6 +1,8 @@
 // 安装依赖
 yarn add artalk
 
+
+// 引入 Artalk
 import Artalk from 'artalk'
 
 new Artalk({
