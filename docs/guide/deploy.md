@@ -15,7 +15,7 @@
 3. 配置 `vim artalk-go.yml`
 4. 运行 `./artalk-go serve`
 
-::: tip 后端 配置文件
+::: tip
 
 前往：[“数据迁入”](./transfer.md)
 
@@ -45,7 +45,7 @@
   </CodeGroupItem>
 </CodeGroup>
 
-::: tip 前端 配置文件
+::: tip
 
 前往：[“前端配置”](./frontend/config.md)
 
