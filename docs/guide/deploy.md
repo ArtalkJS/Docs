@@ -17,7 +17,9 @@
 
 ::: tip 后端 配置文件
 
-前往：[“后端 · 配置文件”](./backend/config.md)
+前往：[“数据迁入”](./transfer.md)
+
+前往：[“后端配置”](./backend/config.md)
 
 :::
 
@@ -45,7 +47,7 @@
 
 ::: tip 前端 配置文件
 
-前往：[“前端 · 配置文件”](./frontend/config.md)
+前往：[“前端配置”](./frontend/config.md)
 
 :::
 
