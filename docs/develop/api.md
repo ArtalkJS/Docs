@@ -70,7 +70,7 @@
 | `name` | string | 否 | 获取指定昵称的评论 |
 | `email` | string | 否 | 获取指定邮箱的评论 |
 | `site_name` | string | 否 | 获取指定站点名称的评论 |
-| `with_sites` | bool | 否 | 历史遗留参数 |
+| `flat_mode` | bool | 否 | 评论获取是否平铺模式 |
 
 **响应**
 
@@ -91,7 +91,7 @@
 | `data.page.vote_down` | int | - | 页面反对数 |
 | `data.unread` | array | - | 未读的评论提醒数据 |
 | `data.unread_count` | int | - | 未读的评论提醒数据总数 |
-| `data.sites` | array | - | 页面所在站点数据 |
+| `data.api_version` | object | - | 目标 Artalk 后端版本数据 |
 
 ::: tip
 
@@ -105,7 +105,7 @@
     | `is_read` | bool | - | 评论提醒是否已读 |
     | `is_emailed` | bool | - | 评论提醒是否已发送邮件 |
     | `read_link` | string | - | 评论提醒已读地址 |
- - `data.sites` 数组中元素结构参考 [站点编辑接口](#站点编辑) `/api/admin/site-edit` 响应的 `data.site`
+ - `data.api_version` 对象结构参考 [Artalk 版本接口](#artalk-版本) `/api/version` 响应
 
 :::
 
@@ -222,6 +222,7 @@
 | `app` | string | `artalk-go` | Artalk 后端程序名 |
 | `version` | string | - | Artalk 后端程序版本号 |
 | `commit_hash` | string | - | Artalk 后端程序 Git 提交哈希值 |
+| `fe_min_version` | string | - | Artalk 后端程序所需前端最低版本 |
 
 ## Captcha API
 

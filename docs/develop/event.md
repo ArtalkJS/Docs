@@ -20,7 +20,7 @@
  - `list-import` 列表导入事件
  - `list-insert` 评论新增事件
  - `list-delete` 评论删除事件
- - `list-update` 评论更新时间
+ - `list-update` 评论更新事件
  - `list-refresh-ui` 列表 UI 刷新事件
 
 ## 侧边栏操作事件
@@ -34,8 +34,8 @@
  - `editor-close` 编辑器关闭事件
  - `editor-show-loading` 编辑器加载显示事件
  - `editor-hide-loading` 编辑器加载隐藏事件
- - `editor-notify` 显示提醒事件
- - `editor-reply` 设置回复事件
+ - `editor-notify` 提醒显示事件
+ - `editor-reply` 回复设置事件
 
 ## 其他事件
 
