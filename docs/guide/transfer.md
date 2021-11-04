@@ -8,7 +8,7 @@
 
 通过对不同评论数据文件格式的来回转换，你可以在不同评论系统之间自由切换。
 
-::: details Artrans 格式样例
+::: details Artran 格式样例
 
 ```json
 {
@@ -37,9 +37,9 @@
 }
 ```
 
-我们称：一个 JSON 数组为 Artrans
+我们称：一个 JSON 数组为 Artrans，
 
-数组里面的每个 item 叫 Artran (没有 s)
+数组里的每一个 Object 项目为 Artran (没有 s)
 
 :::
 
@@ -53,7 +53,7 @@
 
 ### 高级玩法
 
-执行 `$ artalk-go export"` 直接 “标准输出 (stdout)”，并进行 “管道 (Pipe)” 或 “输出重定向 (Output Redirection)” 操作。
+执行 `$ artalk-go export"` 直接 “标准输出 (Stdout)”，并进行 “管道 (Pipe)” 或 “输出重定向 (Output Redirection)” 操作。
 
 例如：
 
