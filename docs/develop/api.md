@@ -6,7 +6,7 @@
 | ----- | ------- | --- |
 | `success` | Boolean | 接口调用结果 |
 | `msg` | String | 返回消息，出错时此字段包含错误消息 |
-| `data` | Any | 返回数据，可能为 `Object`、`String`、`Array` 类型 |
+| `data` | Any | 返回数据，可能为 Object / String / Array 类型 |
 
 :::
 
@@ -20,15 +20,15 @@
 
 | 字段名 | 数据类型 | 必需 | 说明 |
 | ----- | ------- | :---: | --- |
-| `name` | String | 是 | 评论者昵称 |
-| `email` | String | 是 | 评论者邮箱（须加密处理） |
-| `link` | String | 否 | 评论链接 |
-| `content` | String | 是 | 评论内容 |
-| `rid` | Number | 否 | 若回复一条评论，此参数传入父评论 `ID`，否则为 `0` |
-| `page_key` | String | 是 | 评论目标页面唯一标识符 |
-| `page_title` | String | 否 | 评论目标页面标题 |
+| `name` | String | 是 | 待新增评论者昵称 |
+| `email` | String | 是 | 待新增评论者邮箱 |
+| `link` | String | 否 | 待新增评论者链接 |
+| `content` | String | 是 | 待新增评论内容 |
+| `rid` | Number | 否 | 待新增评论为回复评论时传入父评论 `ID`，否则为 `0` |
+| `page_key` | String | 是 | 待新增评论目标页面唯一标识符 |
+| `page_title` | String | 否 | 待新增评论目标页面标题 |
 | `token` | String | 否 | 评论请求 Token |
-| `site_name` | String | 否 | 评论目标站点标题 |
+| `site_name` | String | 否 | 待新增评论目标站点名称 |
 
 **响应**
 
@@ -39,21 +39,21 @@
 | `data.comment.id` | Number | - | 评论 ID |
 | `data.comment.content` | String | - | 评论正文 |
 | `data.comment.nick` | String | - | 评论者昵称 |
-| `data.comment.email_encrypted` | String | - | 评论者邮箱 md5 值 |
+| `data.comment.email_encrypted` | String | - | 评论者邮箱 MD5 加密值 |
 | `data.comment.link` | String | - | 评论者链接 |
 | `data.comment.ua` | String | - | 评论者 User-Agent |
 | `data.comment.date` | String | - | 评论时间，格式为 `1970-01-01 00:00:00` |
 | `data.comment.is_collapsed` | Boolean | - | 评论是否折叠 |
 | `data.comment.is_pending` | Boolean | - | 评论是否待审 |
 | `data.comment.is_allow_reply` | Boolean | - | 评论是否允许回复 |
-| `data.comment.rid` | Number | `0` | 回复一条评论时此参数为父评论 `ID` |
+| `data.comment.rid` | Number | `0` | 待新增评论为回复评论时返回父评论 `ID` |
 | `data.comment.badge_name` | String | - | 评论者徽章文字 |
 | `data.comment.badge_color` | String | - | 评论者徽章颜色 |
 | `data.comment.visible` | Boolean | `true` | 评论是否可见 |
 | `data.comment.vote_up` | Number | `0` | 评论赞同数 |
 | `data.comment.vote_down` | Number | `0` | 评论反对数 |
 | `data.comment.page_key` | String | - | 评论所在页面唯一标识符 |
-| `data.comment.site_name` | String | - | 评论所在站点标题 |
+| `data.comment.site_name` | String | - | 评论所在站点名称 |
 
 ### 评论获取
 
@@ -64,13 +64,13 @@
 | 字段名 | 数据类型 | 必需 | 说明 |
 | ----- | ------- | :---: | --- |
 | `page_key` | String | 是 | 待获取评论页面的唯一标识符 |
-| `limit` | Number | 否 | 评论获取的数量限制 |
-| `offset` | Number | 否 | 评论获取的起始位置偏移 |
+| `limit` | Number | 否 | 待获取评论的数量限制 |
+| `offset` | Number | 否 | 待获取评论的起始位置偏移 |
 | `type` | String | 否 | 获取指定类型的评论 |
 | `name` | String | 否 | 获取指定昵称的评论 |
 | `email` | String | 否 | 获取指定邮箱的评论 |
 | `site_name` | String | 否 | 获取指定站点名称的评论 |
-| `flat_mode` | Boolean | 否 | 评论获取是否平铺模式 |
+| `flat_mode` | Boolean | 否 | 待获取评论是否平铺模式 |
 
 **响应**
 
@@ -125,7 +125,7 @@
 | 字段名 | 数据类型 | 默认 | 说明 |
 | ----- | ------- | :-: | --- |
 | `success` | Boolean | `true` | 用户获取成功 |
-| `data.user` | Object | - | 获取的用户数据 |
+| `data.user` | Object | `null` | 获取的用户数据，若用户不存在返回空 |
 | `data.user.id` | Number | - | 用户 ID |
 | `data.user.name` | String | - | 用户昵称 |
 | `data.user.email` | String | - | 用户邮箱 |
@@ -134,8 +134,8 @@
 | `data.user.badge_color` | String | - | 用户徽章颜色 |
 | `data.user.is_admin` | Boolean | - | 用户是否管理员 |
 | `data.is_login` | Boolean | - | 用户是否登录 |
-| `data.unread` | Array | - | 用户未读的评论提醒数据 |
-| `data.unread_count` | Number | - | 用户未读的评论提醒数据总数 |
+| `data.unread` | Array | `[]` | 用户未读的评论提醒数据 |
+| `data.unread_count` | Number | `0` | 用户未读的评论提醒数据总数 |
 
 ::: tip
 
@@ -200,7 +200,7 @@
 
 | 字段名 | 数据类型 | 默认 | 说明 |
 | ----- | ------- | :-: | --- |
-| `success` | Boolean | `String` | 评论投票成功 |
+| `success` | Boolean | `true` | 评论投票成功 |
 | `data.vote_num` | Number | - | 目标评论或页面指定类型投票数据 |
 
 ### Artalk 版本
@@ -273,7 +273,7 @@
 | `nick` | String | 否 | 待编辑评论所属用户昵称 |
 | `email` | String | 否 | 待编辑评论所属用户邮箱 |
 | `link` | String | 否 | 待编辑评论所属用户链接 |
-| `rid` | String | 否 | 待编辑评论所属父评论 ID，此评论不是回复评论时为 `0` |
+| `rid` | String | 否 | 待编辑评论为回复评论时传入父评论 `ID`，否则为 `0` |
 | `ua` | String | 否 | 待编辑评论所属用户 User-Agent |
 | `ip` | String | 否 | 待编辑评论所属用户 IP |
 | `is_collapsed` | Boolean | 否 | 待编辑评论是否折叠 |
@@ -548,7 +548,7 @@
 
 ::: warning
 
-页面收到评论 / 评论收到回复等满足需要发送邮件提醒条件时，后端将自动向目标地址发送邮件提醒，不需手动处理邮件发送。请勿滥用此接口。
+页面收到评论、评论收到回复等满足需要发送邮件提醒条件时，后端将自动向目标地址发送邮件提醒，不需手动处理邮件发送。请勿滥用此接口。
 
 :::
 
