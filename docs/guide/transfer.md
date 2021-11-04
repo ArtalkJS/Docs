@@ -53,7 +53,7 @@
 
 ### 高级玩法
 
-执行 `$ artalk-go export"` 直接 “标准输出 (stdout)”，并进行 “管道 (pipe)” 或 “输出重定向 (Output Redirection)” 操作。
+执行 `$ artalk-go export"` 直接 “标准输出 (stdout)”，并进行 “管道 (Pipe)” 或 “输出重定向 (Output Redirection)” 操作。
 
 例如：
 
