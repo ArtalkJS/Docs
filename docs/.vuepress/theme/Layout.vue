@@ -29,6 +29,9 @@ const initArtalk = () => {
     pageTitle: page.value.title,
     server:    'https://artalk.qwqaq.com/api',
     site:      'ArtalkDocs',
+    pagination: {
+       readMore: false,
+    }
   }
 
   console.log(conf)
