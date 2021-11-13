@@ -89,26 +89,30 @@ module.exports = {
       },
       // NavbarGroup
       {
-        text: '链接',
+        text: '传送',
         children: [
           {
-            text: 'Docs Repo',
-            link: 'https://github.com/ArtalkJS/Docs',
-          },
-          {
-            text: 'Artalk Repo',
+            text: '前端仓库',
             link: 'https://github.com/ArtalkJS/Artalk',
           },
           {
-            text: 'ArtalkGo Repo',
+            text: '后端仓库',
             link: 'https://github.com/ArtalkJS/ArtalkGo',
           },
           {
-            text: 'ArtalkGo Docker',
+            text: '文档仓库',
+            link: 'https://github.com/ArtalkJS/Docs',
+          },
+          {
+            text: 'DockerHub',
             link: 'https://hub.docker.com/r/artalk/artalk-go',
           }
         ],
-      }
+      },
+      {
+        text: 'GitHub',
+        link: 'https://github.com/ArtalkJS/Artalk',
+      },
     ],
     smoothScroll: true,
     editLinkText: '在 GitHub 上编辑此页',
@@ -117,12 +121,12 @@ module.exports = {
     tip: '提示',
     warning: '注意',
     danger: '警告',
-    notFound: [
-      '这里什么都没有',
-      '我们怎么到这来了？',
-      '这是一个 404 页面',
-      '看起来我们进入了错误的链接',
-    ],
+    // notFound: [
+    //   '这里什么都没有',
+    //   '我们怎么到这来了？',
+    //   '这是一个 404 页面',
+    //   '看起来我们进入了错误的链接',
+    // ],
     backToHome: '返回首页',
     docsRepo: 'https://github.com/ArtalkJS/Docs',
     docsBranch: 'master',
