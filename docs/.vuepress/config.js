@@ -17,7 +17,7 @@ module.exports = {
         "/guide/intro.md",
         "/guide/deploy.md",
         {
-          text: "🌅 系统架构",
+          text: "🌅 详细内容",
           collapsable: true,
           children: [
             {

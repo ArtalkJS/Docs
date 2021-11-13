@@ -2,20 +2,20 @@
 home: true
 description: 一款简洁的自托管评论系统
 heroImage: /images/artalk-logo.png
-heroText: 化繁为简，简而不凡
+heroText: 繁星似锦，终有归途
 tagline: Artalk 一款简洁的自托管评论系统
 actions:
-  - text: 轻装上阵
-    link: /guide/deploy.md
-    type: primary
-  - text: 项目介绍
+  - text: 即刻起航 →
     link: /guide/intro.md
-    type: secondary
+    type: primary
+  # - text: 项目介绍
+  #   link: /guide/intro.md
+  #   type: secondary
 features:
-  - title: 🍃 便捷
-    details: 简便的安装步骤，带来简洁的评论界面
-  - title: 🐳 轻量
+  - title: 🍃 轻量
     details: 小巧的文件体积，迅速响应每一次交互
+  - title: 🐳 便捷
+    details: 简便的安装步骤，带来简洁的评论界面
   - title: 👨‍👧‍👦 安全
     details: 评论数据自托管，无惧隐私泄露
   - title: 🌇 现代

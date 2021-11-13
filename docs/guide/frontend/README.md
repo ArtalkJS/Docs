@@ -4,7 +4,7 @@
 
 概括前往：[“README.md · 特性”](https://github.com/ArtalkJS/Artalk#%E7%89%B9%E6%80%A7)
 
-详细前往：[“文档 · 深度了解”](../describe.md)
+详细前往：[“文档 · 深入了解”](../describe.md)
 
 ## 句话概括
 
