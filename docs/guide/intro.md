@@ -53,7 +53,7 @@
 
 Artalk 的目标是在尽量 **简洁** 的前提下，实现 **丰富** 的功能。
 
-2018 年 10 月 2 日，Artalk 的 [第一行代码](https://github.com/ArtalkJS/Artalk/commit/66128e2c8d9a8ac00a8d1498ff0ec035a7727daf) 被 Push 送至 GitHub，直至 2021 年 10 月 20 日，v2 版本才被 Released。由于团队成员较少且开发者时间并不充裕，项目整体发展较慢。我们非常需要社区的力量，无论是为项目反馈 Bug，还是提供新功能的创意，我们都十分期待。
+2018 年 10 月 2 日，Artalk 的 [第一行代码](https://github.com/ArtalkJS/Artalk/commit/66128e2c8d9a8ac00a8d1498ff0ec035a7727daf) 被推送至 GitHub，直至 2021 年 10 月 20 日，才发布了 v2 版本。由于团队成员较少且开发者时间并不充裕，项目整体发展较慢。我们非常需要社区的力量，无论是为项目反馈 Bug，还是提供新功能的创意，我们都十分期待。
 
 Artalk 社区是包容开放的社区，我们欢迎不同水平的人员帮助 / 参与项目开发。如果你是入门新手，除了积极学习项目相关知识外，你也可以尝试体验已有 Artalk 部署，在使用中寻找、确认 Artalk 的不足之处，复现、总结后在相关项目的 [Issues](https://github.com/ArtalkJS/Artalk/issues)、[Discussions](https://github.com/ArtalkJS/Artalk/discussions) 中发表相关讨论，帮助开发者更好地定位问题、更快地做出优化。如果你是颇有技术的开发人员，你可以在 [@ArtalkJS](https://github.com/ArtalkJS) 找到项目的所有源码，结合此文档，我们相信这也许不难理解。无论是优化前后端结构、实现全新功能还是编写社区项目，我们都期待 Artalk 汇入新鲜血液。
 
