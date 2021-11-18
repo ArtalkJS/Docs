@@ -16,6 +16,7 @@
 - [Monstx's Blog](https://blog.monsterx.cn/)
 - [青空之蓝](https://blog.ixk.me/)
 - [Thun888](https://blog.thun888.xyz/)
+- [叶开](https://xn--qpru0x.cn/)
 
 ### 主题
 
