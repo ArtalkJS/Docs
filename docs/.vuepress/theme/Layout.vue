@@ -40,6 +40,23 @@ const initArtalk = () => {
   // dark_mode
   const darkMode = document.querySelector('html').classList.contains('dark')
   artalkInstance.setDarkMode(darkMode)
+
+  // lightGallery
+  artalkInstance.on('comments-loaded', () => {
+    document.querySelectorAll('.atk-comment .atk-content').forEach(($content) => {
+      const $imgs = $content.querySelectorAll('img:not([atk-emoticon]):not([atk-lightbox])');
+      $imgs.forEach(($img) => {
+        $img.setAttribute('atk-lightbox', '')
+        const $link = document.createElement('a')
+        $link.setAttribute('class', 'atk-img-link')
+        $link.setAttribute('href', $img.src)
+        $link.setAttribute('data-src', $img.src)
+        $link.append($img.cloneNode())
+        $img.replaceWith($link)
+      })
+      if ($imgs.length) lightGallery($content, { selector: '.atk-img-link' })
+    })
+  })
 }
 
 export default defineComponent({

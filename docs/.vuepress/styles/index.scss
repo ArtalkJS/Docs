@@ -173,10 +173,10 @@ html.dark {
 }
 
 /** Code **/
-pre[class*="language-" ],
-code[class*="language-"] {
-  white-space: pre-wrap; // 代码自动换行
-}
+// pre[class*="language-" ],
+// code[class*="language-"] {
+//   white-space: pre-wrap; // 代码自动换行
+// }
 
 // div[class*=language-].line-numbers-mode .line-numbers {
 //   display: none;

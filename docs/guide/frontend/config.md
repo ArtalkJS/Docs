@@ -4,6 +4,9 @@
 new Artalk({ 你的配置... })
 ```
 
+- 默认配置：[/src/defaults.ts](https://github.com/ArtalkJS/Artalk/blob/master/src/defaults.ts)
+- 声明文件：[/types/artalk-config.d.ts](https://github.com/ArtalkJS/Artalk/blob/master/types/artalk-config.d.ts)
+
 ## 基本配置（必填项）
 
 ### el
@@ -295,8 +298,6 @@ heightLimit: {
 当前端版本小于后端要求的最小版本时，显示升级提示框。
 
 ::: tip
-
-代码细节：[/types/artalk-config.d.ts](https://github.com/ArtalkJS/Artalk/blob/master/types/artalk-config.d.ts)
 
 前往：[“后端 · 配置文件”](/guide/backend/config.md)
 
