@@ -133,6 +133,15 @@ new Artalk({ emotions, ... })
 - 类型：`string`
 - 默认值：`"发送评论"`
 
+### editorTravel
+
+**评论框旅行**
+
+- 类型：`Boolean`
+- 默认值：`true`
+
+设置为 `true` 让评论框可以移动。当回复一个评论时，评论框显示在待回复评论后面，而不是固定评论框位置。
+
 ### darkMode
 
 **暗黑模式**
@@ -248,7 +257,7 @@ pagination: {
 **滚动到底部自动加载**
 
 - 类型：`Boolean`
-- 默认值：`false`
+- 默认值：`true`
 
 （需同时开启“加载更多”模式，将 `readMore` 设置为 `true`）
 
