@@ -5,7 +5,7 @@ heroImage: /images/artalk-logo.png
 heroText: 化繁为简，简而不凡
 tagline: Artalk 一款简洁的自托管评论系统
 actions:
-  - text: 即刻起航 →
+  - text: 快速开始 →
     link: /guide/intro.md
     type: primary
   # - text: 项目介绍
