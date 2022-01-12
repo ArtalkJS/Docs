@@ -2,7 +2,7 @@
 home: true
 description: 一款简洁的自托管评论系统
 heroImage: /images/artalk-logo.png
-heroText: 繁星似锦，终有归途
+heroText: 化繁为简，简而不凡
 tagline: Artalk 一款简洁的自托管评论系统
 actions:
   - text: 即刻起航 →
