@@ -30,7 +30,9 @@ const initArtalk = () => {
     server:    'https://artalk.qwqaq.com/api',
     site:      'ArtalkDocs',
     pagination: {
-       readMore: false,
+       readMore: true,
+       autoLoad: true,
+       pageSize: 15,
     }
   }
 
