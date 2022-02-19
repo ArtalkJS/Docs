@@ -8,6 +8,7 @@ Artalk 离不开社区的支持与帮助，**是你们让 Artalk 走得更远！
 
 ## Artalk v2
 
+- [Nuxt.js如何部署Artalk和遇到的问题 (By @子舒)](https://imhan.cn/posts/20220218/)
 - [宝塔安装过程大概记录 (By @xiamuguizhi)](https://github.com/ArtalkJS/Artalk/discussions/46)
 
 更多新版读物正在撰写当中（
