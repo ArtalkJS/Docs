@@ -12,11 +12,12 @@
 
 ### 博客
 
-- [QWQAQ 的博客](https://qwqaq.com/)
-- [Monstx's Blog](https://blog.monsterx.cn/)
+- [QWQAQ](https://qwqaq.com/)
+- [Monstx](https://blog.monsterx.cn/)
 - [青空之蓝](https://blog.ixk.me/)
 - [Thun888](https://blog.thun888.xyz/)
 - [叶开](https://xn--qpru0x.cn/)
+- [子舒](https://imhan.cn/)
 
 ### 主题
 
