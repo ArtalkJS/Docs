@@ -23,3 +23,4 @@
 
 - [hexo-theme-cards](https://github.com/ChrAlpha/hexo-theme-cards): Another Simple & Swift theme for Hexo
 - [hexo-theme-volantis](https://github.com/volantis-x/hexo-theme-volantis): A Wonderful Theme for Hexo
+- [FixIt](https://github.com/Lruihao/FixIt): A clean, elegant but advanced blog theme for Hugo
