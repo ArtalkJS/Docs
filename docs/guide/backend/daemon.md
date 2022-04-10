@@ -4,8 +4,8 @@
 
 更新 Docker 容器的 [Restart 策略](https://docs.docker.com/config/containers/start-containers-automatically/#use-a-restart-policy) 以达到进程守护效果。
 
-```sh
-$ docker update --restart=always artalk-go
+```bash
+docker update --restart=always artalk-go
 ```
 
 ## tmux (半持久化属于是)
@@ -23,7 +23,7 @@ Note: 服务器关闭或重启后，tmux 会话将被清除，需要手动重新
 
 ## systemd
 
-`$ sudo vim /etc/systemd/system/artalk-go.service`
+`sudo vim /etc/systemd/system/artalk-go.service`
 
 ```ini
 [Unit]

@@ -4,9 +4,9 @@
 
 ## Build
 
-```sh
-$ yarn docs:dev
-$ yarn docs:build
+```bash
+yarn docs:dev
+yarn docs:build
 ```
 
 ## Deploy

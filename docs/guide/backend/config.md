@@ -10,8 +10,8 @@
 
 下载配置文件模版：
 
-```sh
-$ curl -L https://raw.githubusercontent.com/ArtalkJS/ArtalkGo/master/artalk-go.example.yml > conf.yml
+```bash
+curl -L https://raw.githubusercontent.com/ArtalkJS/ArtalkGo/master/artalk-go.example.yml > conf.yml
 ```
 
 参考代码：[/config/config.go](https://github.com/ArtalkJS/ArtalkGo/blob/master/config/config.go)

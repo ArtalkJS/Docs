@@ -30,14 +30,14 @@ Docker 镜像版本随 [代码仓库](https://github.com/ArtalkJS/ArtalkGo/relea
 
 修改配置文件后，需要重启才能生效。
 
-```sh
-$ docker restart artalk-go
+```bash
+docker restart artalk-go
 ```
 
 ## 停止
 
-```sh
-$ docker stop artalk-go
+```bash
+docker stop artalk-go
 ```
 
 ## 升级

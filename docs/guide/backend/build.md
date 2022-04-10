@@ -2,24 +2,24 @@
 
 ## 构建二进制文件
 
-```sh
+```bash
 # 拉取代码
-$ git clone https://github.com/ArtalkJS/ArtalkGo.git
+git clone https://github.com/ArtalkJS/ArtalkGo.git
 
 # 执行编译
-$ make all
+make all
 ```
 
 编译二进制文件将会输出到 `bin` 目录中
 
 ## Docker 镜像制作
 
-```sh
+```bash
 # 制作镜像
-$ make docker-docker
+make docker-docker
 
 # 发布镜像
-$ make docker-push
+make docker-push
 ```
 
 ## DevOps

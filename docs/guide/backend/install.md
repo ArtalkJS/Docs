@@ -36,15 +36,15 @@
 
 ## 编译运行
 
-```sh
+```bash
 # 拉取代码
-$ git clone https://github.com/ArtalkJS/ArtalkGo.git
+git clone https://github.com/ArtalkJS/ArtalkGo.git
 
 # 编译程序
-$ make all
+make all
 
 # 运行程序
-$ cd bin && ./artalk-go serve
+cd bin && ./artalk-go serve
 ```
 
 ::: tip

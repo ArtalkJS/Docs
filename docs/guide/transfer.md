@@ -1,13 +1,5 @@
 # 🛬 数据迁移
 
-::: tip
-
-Artalk 前端提供可视化数据迁移工具，
-
-你可以在「控制中心」找到「迁移」选项卡，然后根据提示进行操作。
-
-:::
-
 ## 数据行囊
 
 数据行囊（Artrans）是 Artalk 持久化数据保存规范格式。
@@ -25,12 +17,12 @@ Artran = Art + Ran (艺术 + 奔跑) ~~即“奔跑的艺术”（艺术性地�
     "content": "Hello Artalk", 
     "ua": "ArtalkGo/6.6", 
     "ip": "233.233.233.233",
+    "created_at": "2021-10-28 20:50:15 +0800 +0800", 
+    "updated_at": "2021-10-28 20:50:15 +0800 +0800", 
     "is_collapsed": "false", 
     "is_pending": "false", 
     "vote_up": "666", 
     "vote_down": "0", 
-    "created_at": "2021-10-28 20:50:15 +0800 +0800", 
-    "updated_at": "2021-10-28 20:50:15 +0800 +0800", 
     "nick": "qwqcode", 
     "email": "qwqcode@github.com", 
     "link": "https://qwqaq.com", 
@@ -38,156 +30,93 @@ Artran = Art + Ran (艺术 + 奔跑) ~~即“奔跑的艺术”（艺术性地�
     "badge_name": "管理员", 
     "badge_color": "#FF716D", 
     "page_key": "https://artalk.js.org/guide/transfer.html", 
-    "page_title": "数据搬家", 
+    "page_title": "数据迁移", 
     "page_admin_only": "false", 
     "site_name": "Artalk",
     "site_urls": "http://localhost:3000/demo/,https://artalk.js.org"
 }
 ```
 
-我们称：一个 JSON 数组为 Artrans，
+我们称：一个 JSON 数组为 Artran **s**，
 
 数组里的每一个 Object 项目为 Artran (没有 s)
 
 :::
 
-## 📦 备份
-
-### 从 Artalk (Artrans) 到 Artalk
-
-导出：`$ artalk-go export ./artrans`
-
-导入：`$ artalk-go import ./artrans`
-
-### 高级玩法
-
-执行 `$ artalk-go export` 可直接 “标准输出”，并进行 “管道” 或 “输出重定向” 等操作，例如：
-
-```sh
-$ artalk-go export | gzip -9 | ssh username@remote_ip "cat > ~/backup/artrans.gz"
-```
-
 ## 📥 迁入
 
-迁入操作可在 前端 (可视化界面) 或 后端 (命令行) 进行。
+### 转换工具
 
-命令行：执行 `$ artalk-go import -h` 查阅帮助文档。
+通过下方的工具，将其他格式的评论数据转换为 Artrans，然后导入 Artalk。[在新窗口中打开](https://artransfer.netlify.app)
 
-### Artalk v1 (PHP 旧版后端)
+<iframe src="https://artransfer.netlify.app/?iframe=1" style="width: 100%;height: 520px;border: 0;"></iframe>
 
-[Artalk v1](https://github.com/ArtalkJS/ArtalkPHP) 是 Artalk 的旧版后端，它使用 PHP 编写。
+转换后，将 Artrans 格式文件导入 Artalk：
 
-新版后端我们全面转向 Golang，并重新设计了数据表结构。若您是 Artalk 的老用户，可以通过以下，从旧版后端数据文件迁移到新版。
+- **前端导入**：你可在「控制中心」找到「迁移」选项卡，然后根据提示进行导入 Artrans。
+- **命令行导入**：执行 `artalk-go import -h` 查阅帮助文档。
 
-旧版数据路径：`/data/comments.data.json`
-
-```sh
-$ artalk-go import artalk_v1 \
-    json_file:"JSON 文件路径"
-    t_name:"目标站点名" \
-    t_url:"目标站点根目录 URL"
-```
-
-### WordPress
-
-通过安装 WordPress 插件，导出 Artrans 格式的数据文件。
-
-然后，执行 `$ artalk-go import ./artrans` 导入到 Artalk。
+### 获取评论数据
 
 ### Typecho
 
-[Typecho](http://typecho.org/) 是一款 PHP 博客系统，你可以执行以下命令，改动几个参数，快速导入其评论数据。
+提供 Artrans 导出插件：
 
-比较智能，它会读取数据库中保存的 Typecho 配置，自动生成和设定 “重写规则” 对应的 URL，让导入后评论的 `pageKey` 于您的原本博客页面的 URL 路径保持一致。
+1. 点击「[这里](https://github.com/ArtalkJS/Artrans-Typecho/releases/download/v1.0.0/ArtransExporter.zip)」下载插件并「解压」到 Typecho 目录 `/usr/plugins/`。
+2. 前往 Typecho 后台「控制台 - 插件」启用插件「ArtransExporter」。
+3. 前往「控制台 - 导出评论 (Artrans)」即可导出 Typecho 所有评论为 Artrans 格式。
 
-命令行执行：
+### WordPress
 
-```sh
-$ artalk-go import typecho \
-    db_host:"localhost" \
-    db_port:3306 \
-    db_name:"数据库名称" \
-    db_user:"数据库账户" \
-    db_password:"数据库密码" \
-    db_prefix:"typecho_" \
-    t_name:"目标站点名" \
-    t_url:"目标站点根目录 URL" \
-    rewrite_post:"" \
-    rewrite_page:""
-```
+![](/images/transfer/wordpress.png)
 
-前端启动参数 JSON 格式：
-
-```json
-{
-    "db_host": "localhost",
-    "db_port": 3306,
-    "db_name": "数据库名称",
-    "db_user": "数据库账户",
-    "db_password": "数据库密码",
-    "db_prefix": "typecho_",
-    "t_name": "目标站点名",
-    "t_url": "目标站点根目录 URL",
-    "rewrite_post": "",
-    "rewrite_page": ""
-}
-```
-
-注：通过附加参数自定义 “重写规则” `rewrite_post` 和 `rewrite_page`，对应 Typecho 的 “永久链接设置”，例如：按日期归档 `/{year}/{month}/{day}/{slug}.html`
-
-> “可用参数: {cid} 日志 ID, {slug} 日志缩略名, {category} 分类, {directory} 多级分类, {year} 年, {month} 月, {day} 日”
+前往 WordPress 后台「工具 - 导出」勾选「所有内容」，导出文件即可使用[转换工具](#转换工具)进行转换。
 
 ### Valine / Waline
 
-[Valine](https://github.com/xCss/Valine) 是一款无后端的评论系统。
+前往 [LeanCloud 后台](https://console.leancloud.cn/) 导出 JSON 格式的评论数据文件。
 
-导入前，您需要前往 LeanCloud 后台下载 JSON 格式的数据文件。
+![](/images/transfer/leancloud.png)
 
-```sh
-$ artalk-go import typecho \
-    json_file:"JSON 文件路径"
-    t_name:"目标站点名" \
-    t_url:"目标站点根目录 URL"
-```
-
-注：[Waline](https://waline.js.org/) 与 Valine 都是使用 LeanCloud 进行数据存储，格式相通。
-
-### Twikoo
-
-[Twikoo](https://twikoo.js.org/) 是一款基于腾讯云开发的评论系统。导入前需要自行获取 Twikoo JSON 格式的评论数据文件。你可以通过以下命令导入数据：
-
-```sh
-$ artalk-go import twikoo \
-    json_file:"JSON 文件路径"
-    t_name:"目标站点名" \
-    t_url:"目标站点根目录 URL"
-```
+注：[Waline](https://waline.js.org/) 和 [Valine](https://valine.js.org/) 两者都是使用 LeanCloud 储存数据，格式相通。
 
 ### Disqus
 
-::: details 这个不想给你康
+前往 [Disqus 后台](https://disqus.com/admin)，找到「Moderation - Export」点击导出，Disqus 会将 `.gz` 格式的压缩包发送到你的邮箱，解压之后可以得到 `.xml` 格式的数据文件，然后使用[转换工具](#转换工具)转为 Artrans。
 
-咕咕咕~~
-
-（~~~它的数据文件是 XML 格式，邮箱还不能直接获取，好麻烦，懒得搞~~~
-
-:::
+![](/images/transfer/disqus.png)
 
 ### Commento
 
-::: details 这个不想给你康
+你可在 Commento 后台导出 JSON 格式的数据文件，然后使用[转换工具](#转换工具)进行转换。
 
-咕咕咕~~
+### Twikoo
 
-:::
+[Twikoo](https://twikoo.js.org/) 是一款基于腾讯云开发的评论系统，可以前往 [腾讯云后台](https://console.cloud.tencent.com/tcb) 导出 JSON 格式的评论数据。
 
-## 启动参数
+<img src="/images/transfer/tencent-tcb.png" style="max-width: 480px;">
+
+### Artalk v1 (PHP 旧版后端)
+
+[Artalk v1](https://github.com/ArtalkJS/ArtalkPHP) 是 Artalk 的旧版后端，它使用 PHP 编写。新版后端我们全面转向 Golang，并重新设计了数据表结构，升级到新版需要通过[转换工具](#转换工具)进行转换。
+
+旧版数据路径：`/data/comments.data.json`
+
+### 命令行导入
 
 ```bash
-./artalk-go import 数据类型 [启动参数...]
+./artalk-go import 数据类型 [参数...]
 ```
 
-在前端导入时，你可以手动输入可选启动参数，例如：
+参数格式遵循 `<key>:<value>`
+
+例如：
+
+```bash
+./artalk-go import 类型 t_name:"Site" t_url:"https://xx.com" json_file:"文件路径"
+```
+
+在前端导入时，同样可以手动输入可选参数，例如：
 
 ```json
 {
@@ -196,14 +125,6 @@ $ artalk-go import twikoo \
   "json_file": "服务器上的文件路径"
 }
 ```
-
-对应后端命令：
-
-```bash
-./artalk-go import 类型 t_name:"Site" t_url:"https://xx.com" json_file:"文件路径"
-```
-
-注：后端命令启动参数格式遵循 `<key>:<value>`
 
 ArtalkGo 通用的启动参数：
 
@@ -214,10 +135,24 @@ ArtalkGo 通用的启动参数：
 | `json_file`  | String | JSON 数据文件路径 |
 | `json_data`  | String | JSON 数据字符串内容 |
 
-## 🚑 迁出
+## 📦 备份
 
-`$ artalk-go export ./artrans`
+你可在前端界面的「控制中心」找到「迁移」选项卡，然后导出 Artrans 格式的评论数据。
+
+### 命令行备份
+
+导出：`artalk-go export ./artrans`
+
+导入：`artalk-go import ./artrans`
+
+### 高级玩法
+
+执行 `artalk-go export` 可直接 “标准输出”，并进行 “管道” 或 “输出重定向” 等操作，例如：
+
+```bash
+artalk-go export | gzip -9 | ssh username@remote_ip "cat > ~/backup/artrans.gz"
+```
 
 ## 写在结尾
 
-目前已支持将 Twikoo、Typecho、Valine、Waline 等类型的数据转为 Artrans，但鉴于评论系统的多样性，虽然我们已经对上述类型数据做了适配，但仍然还有许多并未兼容。如果你恰巧正在使用未被适配的评论系统，你除了等待 Artalk 官方支持之外，还可以尝试了解 Artrans 数据格式后自主编写评论数据导入导出工具。如果你觉得自己的工具写得不错，我们十分乐意将其收录在内，让我们共同创造一个能够在不同评论系统之间自由切换的工具。
+目前已支持将 Typecho、WordPress、Valine、Waline、Disqus、Commento、Twikoo 等类型的数据转为 Artrans，但鉴于评论系统的多样性，虽然我们已经对上述类型数据做了适配，但仍然还有许多并未兼容。如果你恰巧正在使用未被适配的评论系统，你除了等待 Artalk 官方支持之外，还可以尝试了解 Artrans 数据格式后自主编写评论数据导入导出工具。如果你觉得自己的工具写得不错，我们十分乐意将其收录在内，让我们共同创造一个能够在不同评论系统之间自由切换的工具。
