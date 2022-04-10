@@ -42,6 +42,7 @@ const initArtalk = () => {
   // dark_mode
   const darkMode = document.querySelector('html').classList.contains('dark')
   artalkInstance.setDarkMode(darkMode)
+  setArtransferIframeDarkMode(darkMode)
 
   // lightGallery
   artalkInstance.on('comments-loaded', () => {
@@ -96,8 +97,19 @@ export default defineComponent({
 
         const darkMode = m.target.classList.contains('dark')
         artalkInstance.setDarkMode(darkMode)
+        setArtransferIframeDarkMode(darkMode)
       })
     }).observe(document.querySelector('html'), { attributes: true })
   },
 })
+
+function setArtransferIframeDarkMode(value: boolean) {
+  const iframe = document.querySelector<HTMLIFrameElement>('#artransferIframe')
+  if (!iframe) return
+  if (value) {
+    iframe.src = iframe.src + '&dark=1'
+  } else {
+    iframe.src = iframe.src.replace(/&dark=1$/, '')
+  }
+}
 </script>

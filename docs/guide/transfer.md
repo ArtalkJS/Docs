@@ -49,7 +49,7 @@ Artran = Art + Ran (艺术 + 奔跑) ~~即“奔跑的艺术”（艺术性地�
 
 通过下方的工具，将其他格式的评论数据转换为 Artrans，然后导入 Artalk。[在新窗口中打开](https://artransfer.netlify.app)
 
-<iframe src="https://artransfer.netlify.app/?iframe=1" style="width: 100%;height: 520px;border: 0;"></iframe>
+<iframe src="https://artransfer.netlify.app/?iframe=1" style="width: 100%;height: 520px;border: 0;" id="artransferIframe"></iframe>
 
 转换后，将 Artrans 格式文件导入 Artalk：
 
