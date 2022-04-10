@@ -13,7 +13,7 @@ new Artalk({ 你的配置... })
 
 **装载元素**（填写元素 Selector）
 
-- 类型：`string`
+- 类型：`String`
 - 默认值：`undefined`
 
 > 例如：`#Comments` 对应元素 `<div id="Comments"></div>`
@@ -22,7 +22,7 @@ new Artalk({ 你的配置... })
 
 **页面 URL**（完整 URL）
 
-- 类型：`string`
+- 类型：`String`
 - 默认值：`location.protocol+"//"+location.host+location.pathname`
 
 pageKey 一般填写由博客系统生成的 `固定链接`，请**确保 URL 完整**有协议和域名。
@@ -35,7 +35,7 @@ pageKey 一般填写由博客系统生成的 `固定链接`，请**确保 URL �
 
 **页面标题**（用于后台管理显示，邮件通知等）
 
-- 类型：`string`
+- 类型：`String`
 - 默认值：`undefined`
 
 留空后端程序会自动请求页面，获取 head `<title>` 标签的值。
@@ -46,7 +46,7 @@ pageKey 一般填写由博客系统生成的 `固定链接`，请**确保 URL �
 
 **后端程序 API 地址**
 
-- 类型：`string`
+- 类型：`String`
 - 默认值：`undefined`
 
 部署后端，确保后端地址前端可访问，注意**加上路径 `/api/`**
@@ -57,7 +57,7 @@ pageKey 一般填写由博客系统生成的 `固定链接`，请**确保 URL �
 
 **站点名称**
 
-- 类型：`string`
+- 类型：`String`
 - 默认值：`undefined`
 
 留空为 “默认站点”，Artalk 支持多站点统一管理，此项用于站点隔离。
@@ -79,36 +79,12 @@ pageKey 一般填写由博客系统生成的 `固定链接`，请**确保 URL �
 
 **表情包**
 
-- 类型：`Object`
-- 默认值：[emoticons.json](https://github.com/ArtalkJS/Artalk/blob/master/src/assets/emoticons.json)
+- 类型：`Object|Array|String`
+- 默认值："[https://cdn.jsdelivr.net/gh/ArtalkJS/Emoticons/grps/default.json](https://cdn.jsdelivr.net/gh/ArtalkJS/Emoticons/grps/default.json)"
 
-::: details 格式样例
+详细内容：[“前端 · 表情包”](/guide/frontend/emoticons.md)
 
-```js
-const emotions = {
-  "表情包名 1": {
-    "inputType": "emoticon", // 表情类型 (emoticon, image)
-    "container": {
-        "[表情名]": "颜文字 |´・ω・)ノ",
-        // ...
-    },
-  },
-  "表情包名 2 (图片类型)": {
-    "inputType": "image",
-    "container": {
-        "[表情名]": "https://xxxx.xxx/xxxx.gif",
-        // ...
-    }
-  }
-  // ...
-}
-
-new Artalk({ emotions, ... })
-```
-
-参考：“[emoticons.json](https://github.com/ArtalkJS/Artalk/blob/master/src/assets/emoticons.json)”
-
-:::
+更新兼容 [OwO 格式](https://github.com/DIYgod/OwO)，支持 URL 动态加载 <Badge type="tip" text="v2.1.3+" />
 
 ## 界面
 
@@ -116,21 +92,21 @@ new Artalk({ emotions, ... })
 
 **评论框占位字符**
 
-- 类型：`string`
+- 类型：`String`
 - 默认值：`"键入内容..."`
 
 ### noComment
 
 **评论为空时显示字符**
 
-- 类型：`string`
+- 类型：`String`
 - 默认值：`"「此时无声胜有声」"`
 
 ### sendBtn
 
 **发送按钮文字**
 
-- 类型：`string`
+- 类型：`String`
 - 默认值：`"发送评论"`
 
 ### editorTravel
@@ -221,14 +197,14 @@ gravatar: {
 
 **Gravatar 镜像地址**
 
-- 类型：`string`
+- 类型：`String`
 - 默认值：`"https://sdn.geekzu.org/avatar/"`
 
 ### gravatar.default
 
 **默认头像**（URL or [Gravatar Type](http://cn.gravatar.org/site/implement/images/#default-image)）
 
-- 类型：`string`
+- 类型：`String`
 - 默认值：`"mp"`
 
 ## 评论分页

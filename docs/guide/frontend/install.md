@@ -20,7 +20,7 @@
   </CodeGroupItem>
 </CodeGroup>
 
-> 前往：[“前端配置 说明”](/guide/frontend/config.html)
+> 前往：[“前端配置 说明”](/guide/frontend/config.md)
 
 ::: tip
 前往：[“后端 · 安装”](/guide/backend/install.md)

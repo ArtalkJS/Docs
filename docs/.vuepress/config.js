@@ -32,6 +32,7 @@ module.exports = {
                 "/guide/frontend/build.md",
                 "/guide/frontend/import-blog.md",
                 "/guide/frontend/import-framework.md",
+                "/guide/frontend/emoticons.md",
                 "/guide/frontend/lightbox.md",
               ],
             },
