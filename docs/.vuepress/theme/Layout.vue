@@ -10,11 +10,12 @@
 </template>
 
 <script lang="ts">
-// @ts-ignore Ignore because using VuePress internal deps
 import { defineComponent, nextTick } from 'vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { useRouter } from 'vue-router'
+// @ts-ignore
 import Layout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
+// @ts-ignore
 import * as ArtalkCDN from '../../code/ArtalkCDN.json'
 
 const page = usePageData()
