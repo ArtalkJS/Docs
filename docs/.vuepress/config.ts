@@ -1,6 +1,8 @@
-const { path } = require('@vuepress/utils')
+import { defineUserConfig } from 'vuepress'
+import type { DefaultThemeOptions } from 'vuepress'
+import { path } from '@vuepress/utils'
 
-module.exports = {
+export default defineUserConfig<DefaultThemeOptions>({
   lang: "zh-CN",
   title: "Artalk",
   description: "Artalk 一款简洁的自托管评论系统",
@@ -137,4 +139,4 @@ module.exports = {
     docsDir: 'docs',
     editLinkPattern: ':repo/edit/:branch/:path',
   },
-};
+})
