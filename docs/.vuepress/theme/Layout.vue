@@ -14,10 +14,11 @@ import { defineComponent, nextTick } from 'vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { useRouter } from 'vue-router'
 import Layout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
+import * as ArtalkCDN from '../../code/ArtalkCDN.json'
 
 const page = usePageData()
 
-const ARTALK_SRC = require('../../code/ArtalkCDN.json').JS
+const ARTALK_SRC = ArtalkCDN.JS
 const COMMENT_CONTAINER = '#Comments'
 
 let artalkInstance = null
