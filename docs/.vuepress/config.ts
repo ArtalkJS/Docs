@@ -1,6 +1,8 @@
-const { path } = require('@vuepress/utils')
+import { defineUserConfig } from 'vuepress'
+import type { DefaultThemeOptions } from 'vuepress'
+import { path } from '@vuepress/utils'
 
-module.exports = {
+export default defineUserConfig<DefaultThemeOptions>({
   lang: "zh-CN",
   title: "Artalk",
   description: "Artalk 一款简洁的自托管评论系统",
@@ -20,12 +22,10 @@ module.exports = {
         "/guide/deploy.md",
         {
           text: "🌅 详细内容",
-          collapsable: true,
           children: [
             {
               text: "「前端」ArtalkJS",
               link: '/guide/frontend/',
-              collapsable: true,
               children: [
                 "/guide/frontend/install.md",
                 "/guide/frontend/config.md",
@@ -39,7 +39,6 @@ module.exports = {
             {
               text: "「后端」ArtalkGo",
               link: '/guide/backend/',
-              collapsable: true,
               children: [
                 "/guide/backend/install.md",
                 "/guide/backend/config.md",
@@ -137,4 +136,4 @@ module.exports = {
     docsDir: 'docs',
     editLinkPattern: ':repo/edit/:branch/:path',
   },
-};
+})

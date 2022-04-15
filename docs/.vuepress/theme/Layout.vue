@@ -10,14 +10,16 @@
 </template>
 
 <script lang="ts">
+// @ts-ignore Ignore because using VuePress internal deps
 import { defineComponent, nextTick } from 'vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { useRouter } from 'vue-router'
 import Layout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
+import * as ArtalkCDN from '../../code/ArtalkCDN.json'
 
 const page = usePageData()
 
-const ARTALK_SRC = require('../../code/ArtalkCDN.json').JS
+const ARTALK_SRC = ArtalkCDN.JS
 const COMMENT_CONTAINER = '#Comments'
 
 let artalkInstance = null
@@ -37,7 +39,7 @@ const initArtalk = () => {
   }
 
   console.log(conf)
-  artalkInstance = new window.Artalk(conf);
+  artalkInstance = new (window as any).Artalk(conf);
 
   // dark_mode
   const darkMode = document.querySelector('html').classList.contains('dark')
@@ -47,7 +49,7 @@ const initArtalk = () => {
   // lightGallery
   artalkInstance.on('comments-loaded', () => {
     document.querySelectorAll('.atk-comment .atk-content').forEach(($content) => {
-      const $imgs = $content.querySelectorAll('img:not([atk-emoticon]):not([atk-lightbox])');
+      const $imgs = $content.querySelectorAll<HTMLImageElement>('img:not([atk-emoticon]):not([atk-lightbox])');
       $imgs.forEach(($img) => {
         $img.setAttribute('atk-lightbox', '')
         const $link = document.createElement('a')
@@ -57,6 +59,7 @@ const initArtalk = () => {
         $link.append($img.cloneNode())
         $img.replaceWith($link)
       })
+      // @ts-ignore
       if ($imgs.length) lightGallery($content, { selector: '.atk-img-link' })
     })
   })
@@ -79,11 +82,11 @@ export default defineComponent({
 
     // listen router changes
     const router = useRouter()
-    
+
     let timer = null
     router.afterEach((to, from) => {
       if (to && from && to.path === from.path) return
-      
+
       clearTimeout(timer)
       nextTick(() => {
         timer = setTimeout(() => { initArtalk() }, 1000)
@@ -95,6 +98,7 @@ export default defineComponent({
       mList.forEach((m) => {
         if (m.attributeName !== 'class') return
 
+        // @ts-ignore
         const darkMode = m.target.classList.contains('dark')
         artalkInstance.setDarkMode(darkMode)
         setArtransferIframeDarkMode(darkMode)

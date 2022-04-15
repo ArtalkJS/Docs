@@ -144,31 +144,16 @@ html.dark {
   }
 }
 
-// 由于 vuepress v2 并未实现原本在 v1 上有的功能 sidebar collapsable
-// 所以只能靠 css patch
+// 用 css patch 实现 collapsible 功能 (自带的不太好用)
 // @link https://github.com/vuepress/vuepress-next/issues/397
-.sidebar-links {
-  & > ul {
-    overflow: hidden;
-    height: 0;
-  }
-  & > .active+ul {
-    height: auto;
+ul.sidebar-items {
+  & > li:nth-of-type(3) > ul.sidebar-item-children > li > ul.sidebar-item-children {
+    display: none;
+    margin-left: 1em;
   }
 
-  // 风，甚是喧嚣
-  & > p.sidebar-item:nth-of-type(1)+ul  {
-    height: auto; // 单独显示
-
-    & > li > ul {
-      overflow: hidden;
-      height: 0;
-      padding-left: 2rem;
-    }
-
-    & > li > .active+.sidebar-sub-items {
-      height: auto;
-    }
+  & > li:nth-of-type(3) > ul.sidebar-item-children > li > a.active+ul.sidebar-item-children {
+    display: block;
   }
 }
 

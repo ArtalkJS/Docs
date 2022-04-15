@@ -5,8 +5,8 @@
 ## Build
 
 ```bash
-yarn docs:dev
-yarn docs:build
+pnpm docs:dev
+pnpm docs:build
 ```
 
 ## Deploy
