@@ -22,12 +22,10 @@ export default defineUserConfig<DefaultThemeOptions>({
         "/guide/deploy.md",
         {
           text: "🌅 详细内容",
-          collapsable: true,
           children: [
             {
               text: "「前端」ArtalkJS",
               link: '/guide/frontend/',
-              collapsable: true,
               children: [
                 "/guide/frontend/install.md",
                 "/guide/frontend/config.md",
@@ -41,7 +39,6 @@ export default defineUserConfig<DefaultThemeOptions>({
             {
               text: "「后端」ArtalkGo",
               link: '/guide/backend/',
-              collapsable: true,
               children: [
                 "/guide/backend/install.md",
                 "/guide/backend/config.md",
