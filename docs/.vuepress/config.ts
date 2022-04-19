@@ -77,7 +77,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       },
       {
         text: '部署',
-        link: '/guide/deploy',
+        link: '/guide/frontend/install',
       },
       {
         text: '配置',
