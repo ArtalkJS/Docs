@@ -1,4 +1,6 @@
-# 👓 安装 · 前端
+# 前端部署
+
+## 举个栗子
 
 <CodeGroup>
   <CodeGroupItem title="CDN" active>
@@ -7,21 +9,61 @@
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="YARN">
-
-@[code](../../code/quick-start/yarn.ts)
-
-  </CodeGroupItem>
-
-  <CodeGroupItem title="NPM">
+  <CodeGroupItem title="Node">
   
-@[code](../../code/quick-start/npm.ts)
+@[code](../../code/quick-start/node.ts)
 
   </CodeGroupItem>
 </CodeGroup>
 
-> 前往：[“前端配置 说明”](/guide/frontend/config.md)
+## CDN 资源
 
-::: tip
-前往：[“后端 · 安装”](/guide/backend/install.md)
-:::
+- [**JS DELIVR**](https://www.jsdelivr.com/)
+  - `https://cdn.jsdelivr.net/npm/artalk@<版本号>/dist/Artalk.js`
+  - `https://cdn.jsdelivr.net/npm/artalk@<版本号>/dist/Artalk.css`
+
+- [**UNPKG**](https://unpkg.com/)
+  - `https://unpkg.com/artalk@<版本号>/dist/Artalk.js`
+  - `https://unpkg.com/artalk@<版本号>/dist/Artalk.css`
+
+> 注：将 `<版本号>` 替换为你想使用的固定版本号，例如 `2.2.5`
+>
+> 当然，你也可以采用激进的方式保持最新版本，去掉 `@<版本号>`
+
+另：鉴于国内外复杂的网络环境，案例提供的 CDN 资源国内访问速度可能不佳，可以将其保存到自己的服务器，或根据情况选用一些其他的 CDN。
+
+## Node 环境
+
+你可以在 Node 环境通过包管理工具引入 Artalk，然后将其引入到你的项目当中。
+
+```bash
+# pnpm
+pnpm add artalk
+
+# yarn
+yarn add artalk
+
+# npm
+npm install artalk
+```
+
+## 你需要配置
+
+初始化 Artalk 需要提供配置，例如：
+
+```js
+new Artalk({
+  el:        '#Comments',              // 绑定元素的 Selector
+  pageKey:   '/post/1',                // 固定链接 (留空自动获取)
+  pageTitle: '关于引入 Artalk 这档子事', // 页面标题
+  server:    'http://localhost:8080',  // 后端地址
+  site:      'Artalk 的博客',           // 你的站点名
+  // 你的其他配置...
+})
+```
+
+其他配置项目可参考：[“前端 · 配置”](./config.md)
+
+## 何时引入
+
+你可以在页面的任意位置引入 JS 和 CSS 资源，但请确保在执行 `new Artalk({})` 前引入资源文件。

@@ -18,8 +18,14 @@ export default defineUserConfig<DefaultThemeOptions>({
   themeConfig: {
     sidebar: {
       "/guide/": [
-        "/guide/intro.md",
-        "/guide/deploy.md",
+        '/guide/intro.md',
+        {
+          text: "🛫️ 快速开始",
+          children: [
+            "/guide/frontend/install.md",
+            "/guide/backend/install.md",
+          ]
+        },
         {
           text: "🌅 详细内容",
           children: [
@@ -27,7 +33,7 @@ export default defineUserConfig<DefaultThemeOptions>({
               text: "「前端」ArtalkJS",
               link: '/guide/frontend/',
               children: [
-                "/guide/frontend/install.md",
+
                 "/guide/frontend/config.md",
                 "/guide/frontend/build.md",
                 "/guide/frontend/import-blog.md",
@@ -40,7 +46,6 @@ export default defineUserConfig<DefaultThemeOptions>({
               text: "「后端」ArtalkGo",
               link: '/guide/backend/',
               children: [
-                "/guide/backend/install.md",
                 "/guide/backend/config.md",
                 "/guide/backend/build.md",
                 "/guide/backend/update.md",
