@@ -33,7 +33,7 @@
 
    不论是 Vue、React、Svelte 的前端项目，还是 WordPress、Typecho、Hexo 等博客系统，都可以快速引入 Artalk，结合诸位的聪明才智，我们相信 Artalk 能够自如应对各种业务场景。
 
-更多支持 / 计划的功能，可参考：[“README.md”](https://github.com/ArtalkJS/Artalk#todos)。
+更多支持 / 计划的功能，详见：[“README.md”](https://github.com/ArtalkJS/Artalk#todos)。
 
 ## 用户体验
 
