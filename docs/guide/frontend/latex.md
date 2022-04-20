@@ -1,4 +1,4 @@
-# Latex
+# Latex <Badge type="tip" text="v2.2.6+" />
 
 对于学术性站点，支持 Latex 是一个刚需，可以使用 [Katex](https://katex.org/) 这款被前端广泛使用的 Latex 语法解析器。
 

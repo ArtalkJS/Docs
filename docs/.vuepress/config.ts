@@ -45,6 +45,7 @@ export default defineUserConfig<DefaultThemeOptions>({
                 "/guide/frontend/import-blog.md",
                 "/guide/frontend/import-framework.md",
                 "/guide/frontend/emoticons.md",
+                "/guide/frontend/pv.md",
                 "/guide/frontend/latex.md",
                 "/guide/frontend/lightbox.md",
               ],
