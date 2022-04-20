@@ -24,7 +24,7 @@ features:
     details: Golang 后端，支持多种平台和系统环境
   - title: 🌊 扩展
     details: 完整的评论系统功能，可自由装载扩展
-footer: "Code: GPL-3.0 Licensed | Docs: CC BY-NC-SA 4.0 | Copyright © 2018-2021 Artalk"
+footer: "Code: LGPL-3.0 Licensed | Docs: CC BY-NC-SA 4.0 | Copyright © 2018-2021 Artalk"
 ---
 
 ---
