@@ -1,3 +1,7 @@
+---
+next: '/guide/frontend/config.md'
+---
+
 # 前端部署
 
 ## 举个栗子
@@ -26,11 +30,13 @@
   - `https://unpkg.com/artalk@<版本号>/dist/Artalk.js`
   - `https://unpkg.com/artalk@<版本号>/dist/Artalk.css`
 
-> 注：将 `<版本号>` 替换为你想使用的固定版本号，例如 `2.2.5`
->
-> 当然，你也可以采用激进的方式保持最新版本，去掉 `@<版本号>`
+注：将 `<版本号>` 替换为你想使用的固定版本号，例如 `@2.2.5`。
 
-另：鉴于国内外复杂的网络环境，案例提供的 CDN 资源国内访问速度可能不佳，可以将其保存到自己的服务器，或根据情况选用一些其他的 CDN。
+当然，你也可以采用激进的方式保持最新版本，去掉 `@<版本号>`。
+
+### 下载并自托管
+
+鉴于国内外复杂的网络环境，案例提供的 CDN 资源访问速度可能不佳，可以将其保存到自己的服务器，然后通过 `<script>` 标签引入。
 
 ## Node 环境
 
@@ -55,7 +61,7 @@ npm install artalk
 new Artalk({
   el:        '#Comments',              // 绑定元素的 Selector
   pageKey:   '/post/1',                // 固定链接 (留空自动获取)
-  pageTitle: '关于引入 Artalk 这档子事', // 页面标题
+  pageTitle: '关于引入 Artalk 这档子事', // 页面标题 (留空自动获取)
   server:    'http://localhost:8080',  // 后端地址
   site:      'Artalk 的博客',           // 你的站点名
   // 你的其他配置...

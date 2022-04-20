@@ -49,6 +49,14 @@
 
 我们希望 Artalk 不仅能实现评论系统应有的基础功能，更能成为搭建 **知识传播者和知识学习者交流思想** 桥梁的媒介，让知识不再局限于文本，帮助知识传播者创造其应有的价值。
 
+## 浏览器兼容
+
+| <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" /><br/>Chrome | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" /><br/>Firefox | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" /><br/>Safari | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" /><br/>Opera |
+| --------- | --------- | --------- | --------- |
+| 51+ | 52+ | 10+ | 38+ |
+
+理论上兼容所有支持 ES6 (ES2015) 标准的现代浏览器，参考：[“ECMAScript 6 compatibility table”](https://kangax.github.io/compat-table/es6/)
+
 ## 社区理念
 
 “**化繁为简，简而不凡**”

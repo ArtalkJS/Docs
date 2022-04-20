@@ -1,3 +1,7 @@
+---
+next: '/guide/backend/config.md'
+---
+
 # 后端部署
 
 ## 使用 Docker
@@ -107,11 +111,11 @@ docker-compose exec artalk bash # 进入容器
 4. 编辑配置文件 `vim artalk-go.yml`
    > 参考：[“配置文件说明”](/guide/backend/config.html)
 5. 运行程序 `./artalk-go serve`
-   > 附加操作：
+   > 可选部署流程：
    >
-   > 前往：[“反代设定的端口到 80 并套上 CDN (Nginx, Apache)”](/guide/backend/reverse-proxy.md)
+   > 前往：[“反向代理端口到 80 / 443 (Nginx, Apache)”](/guide/backend/reverse-proxy.md)
    >
-   > 前往：["持久化运作 artalk-go 程序 (tmux, systemd)"](/guide/backend/daemon.md)
+   > 前往：["持久化运作 (tmux, systemd)"](/guide/backend/daemon.md)
 6. 前端配置
 
     ```js

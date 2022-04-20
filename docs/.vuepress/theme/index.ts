@@ -6,4 +6,5 @@ export default ({
   layouts: {
     Layout: path.resolve(__dirname, 'Layout.vue'),
   },
+  clientAppEnhanceFiles: path.resolve(__dirname, 'clientAppEnhance.ts'),
 })

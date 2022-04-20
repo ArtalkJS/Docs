@@ -2,42 +2,84 @@
 
 ## Nginx
 
-假定你想绑定的域名是：`your_domain.xxx`
+假定：
 
-进入 Nginx 配置目录：`cd /usr/local/nginx/conf/vhost/`
+- 你想绑定的域名是：`artalk.your_domain.com`
+- ArtalkGo 本地地址：`http://localhost:23366`
 
-创建新 vhost 配置：`vim your_domain.xxx.conf`
+以 Ubuntu 20.04 为例：
+
+创建站点配置文件：
+
+```bash
+sudo vim /etc/nginx/sites-available/artalk.your_domain.com
+```
+
+编辑反向代理配置文件：
 
 ```nginx
 server
 {
   listen 80;
-  server_name your_domain.xxx;
-  location /api/ {
+  listen [::]:80;
+
+  server_name artalk.your_domain.com;
+
+  location / {
     proxy_redirect off;
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_pass http://localhost:23366/api/;
+    proxy_pass http://localhost:23366/;
   }
 }
 ```
 
-重载 Nginx：`service nginx reload`
+创建软链接启用站点：
 
-前端配置：`new Artalk({ server: "http://your_domain.xxx/api/" })`
+```bash
+sudo ln -s /etc/nginx/sites-available/artalk.your_domain.com /etc/nginx/sites-enabled/
+```
 
-（您还可以套一层 CDN，加上 SSL）
+验证配置文件是否有效：
+
+```bash
+sudo nginx -t
+```
+
+配置没有问题，重启 Nginx：
+
+```bash
+sudo systemctl restart nginx
+```
+
+配置前端：
+
+```js
+new Artalk({ server: "http://artalk.your_domain.com" })
+```
 
 ::: tip
+你还可以再套一层 CDN，然后加上 SSL
+
 注意配置文件权限，以及反代目标 URL 可访问性
 
-尤其是运行在 Docker 里的 artalk-go，注意检查端口和IP是能够被 Nginx 成功访问的
+尤其是运行在 Docker 容器内的 artalk-go，注意检查 IP 和端口是否能够被 Nginx 正常访问
 :::
+
+## Caddy
+
+创建 Caddyfile：
+
+```
+artalk.your_domain.com {
+  reverse_proxy / http://localhost:23366
+}
+```
 
 ## Apache
 
-打开反代模块 `mod_proxy.c`
+需要启用反代模块 `mod_proxy.c`
 
 ```apache
 <VirtualHost *:80>
@@ -51,24 +93,19 @@ server
     <IfModule mod_proxy.c>
         ProxyRequests Off
         SSLProxyEngine on
-        ProxyPass /api/ http://localhost:23366/api/
-        ProxyPassReverse /api/ http://localhost:23366/api/
+        ProxyPass / http://localhost:23366/
+        ProxyPassReverse / http://localhost:23366/
     </IfModule>
 </VirtualHost>
 ```
 
 ## 宝塔面板
 
-宝塔面板拥有傻瓜式反向代理设置功能，可以如下图这样操作：
+首先创建一个站点 (例如 `artalk.your_domain.com`)，然后点击站点的「设置」：
 
-::: details 点击展开
 ![](/images/baota-proxy/1.png)
 
-打开 “反向代理” 选项卡，点击 “添加反向代理”，端口号与 ArtalkGo 端口对应（`http://localhost:端口号`），配置如图：
+打开「反向代理」选项卡，点击「添加反向代理」，「目标 URL」填写 `http://localhost:端口号`（端口号与 ArtalkGo 端口对应），「发送域名」填写 `$host`，如图：
 
 ![](/images/baota-proxy/2.png)
 
-若需指定仅 `/api/` 路径转发到后端程序端口，点击 “配置文件” 按钮，添加如图位置红色标记的 `/api/`
-
-![](/images/baota-proxy/3.png)
-:::

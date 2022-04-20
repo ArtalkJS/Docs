@@ -1,17 +1,25 @@
 import { defineUserConfig } from 'vuepress'
 import type { DefaultThemeOptions } from 'vuepress'
 import { path } from '@vuepress/utils'
+import * as ArtalkCDN from '../code/ArtalkCDN.json'
 
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "zh-CN",
   title: "Artalk",
   description: "Artalk 一款简洁的自托管评论系统",
   head: [
-    // ['link', { rel: 'icon', href: '/images/artalk-logo.png' }],
+    ['link', { rel: 'icon', href: '/images/favicon.png' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi' }],
-    ['link', { href: require('../code/ArtalkCDN.json').CSS, rel: 'stylesheet' }],
+    // artalk
+    ['link', { href: ArtalkCDN.CSS, rel: 'stylesheet' }],
+    ['script', { src: ArtalkCDN.JS }],
+    // light gallery
     ['link', { href: 'https://cdn.jsdelivr.net/npm/lightgallery@2.3.0/css/lightgallery.css', rel: 'stylesheet' }],
     ['script', { src: 'https://cdn.jsdelivr.net/npm/lightgallery@2.3.0/lightgallery.min.js' }],
+    // katex
+    ['link', { href: "https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css", rel: 'stylesheet' }],
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js' }],
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/@artalkjs/plugin-katex/dist/artalk-plugin-katex.js' }],
   ],
   theme: path.resolve(__dirname, './theme'),
 
@@ -33,7 +41,6 @@ export default defineUserConfig<DefaultThemeOptions>({
               text: "「前端」ArtalkJS",
               link: '/guide/frontend/',
               children: [
-
                 "/guide/frontend/config.md",
                 "/guide/frontend/build.md",
                 "/guide/frontend/import-blog.md",
@@ -57,7 +64,7 @@ export default defineUserConfig<DefaultThemeOptions>({
             },
           ],
         },
-        "/guide/describe.md",
+        // "/guide/describe.md",
         "/guide/transfer.md",
         "/guide/extras.md",
         "/guide/cases.md",

@@ -251,6 +251,23 @@ div[class*=language-].ext-html:before {
   color: #00d187;
 }
 
+#main-title {
+  position: relative;
+}
+
+#main-title .release-tag {
+  font-size: 18px;
+  font-weight: 700;
+  display: inline-block;
+  position: absolute;
+  top: -10%;
+  padding: 3px 8px;
+  margin-left: 10px;
+  background: var(--c-brand);
+  color: #fff;
+  border-radius: 4px;
+}
+
 /** 一起摇摆 **/
 .wave {
   display: inline-block;
