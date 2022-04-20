@@ -1,5 +1,9 @@
 # 升级
 
+## 命令行
+
+执行 `./artalk-go upgrade`
+
 ## Docker 升级
 
 前往：[“后端 · Docker · 升级”](./docker.md#升级)

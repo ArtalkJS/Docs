@@ -29,6 +29,8 @@ footer: "Code: GPL-3.0 Licensed | Docs: CC BY-NC-SA 4.0 | Copyright © 2018-2021
 
 ---
 
+<LatestVersion />
+
 <!-- Artalk -->
 <div style="margin: 2.5rem auto;padding: 1rem 0;">
   <Artalk />
