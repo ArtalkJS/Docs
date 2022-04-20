@@ -16,10 +16,10 @@ Docker 镜像版本随 [代码仓库](https://github.com/ArtalkJS/ArtalkGo/relea
 
 ::: tip 备忘说明
 
-- 前端配置地址 `http://your_domain:8080/api`
+- 前端配置地址 `http://your_domain:8080`
 
     ```js
-    new Artalk({ server: "http://your_domain:8080/api" })
+    new Artalk({ server: "http://your_domain:8080" })
     ```
 
 - 配置文件路径 `./conf.yml`
