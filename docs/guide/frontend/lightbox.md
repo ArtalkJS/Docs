@@ -63,6 +63,8 @@ artalk.on('comments-loaded', () => {
 
 **2. 添加事件监听**
 
+**2.1 主动监听**
+
 ```js
 const artalk = new Artalk({ ... })
 
@@ -80,4 +82,19 @@ artalk.on('comments-loaded', () => {
     if ($imgs.length) Fancybox.bind('[data-fancybox]')
   })
 })
+```
+
+**2.2 事件委托**
+
+```js
+Fancybox.bind('.atk-list img:not([atk-emoticon])'', {
+  groupAll: true,
+  Hash: false,
+  Thumbs: {
+    autoStart: false,
+  },
+  caption: function (fancybox, carousel, slide) {
+    return slide.$trigger.alt || null
+  }
+});
 ```
