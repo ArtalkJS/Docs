@@ -8,7 +8,7 @@
 docker update --restart=always artalk-go
 ```
 
-## tmux (半持久化属于是)
+## tmux
 
 tmux 将创建一个持续的命令行会话，在 SSH 或 tty 断开后保持在后台。
 
@@ -47,3 +47,19 @@ WantedBy=multi-user.target
 - 状态：`systemctl status artalk-go.service`
 
 Tip: 设置 `alias` 简化命令输入
+
+## Supervisor
+
+以宝塔面板举例：打开「软件商店」，搜索并安装「Supervisor管理器」：
+
+![](/images/baota-supervisor/0.png)
+
+安装后，打开插件，点击「添加守护程序」：
+
+![](/images/baota-supervisor/1.png)
+
+> - 名称：随意
+> - 启动用户：root 或其他
+> - 运行目录：点击右侧图标，打开到 Artalk 所在目录
+> - 启动命令：`./artalk-go serve`
+
