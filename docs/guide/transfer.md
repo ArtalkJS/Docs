@@ -51,14 +51,20 @@ Artran = Art + Ran (艺术 + 奔跑) ~~即“奔跑的艺术”（艺术性地�
 
 <Artransfer />
 
-转换后，将 Artrans 格式文件导入 Artalk：
+注：如果转换工具没有你的数据类型，下文有其他获得 Artrans 的方法可供参考。
+
+### 如何导入 Artrans
+
+转换为 `.artrans` 格式的评论数据文件可以导入 Artalk：
 
 - **前端导入**：你可在「控制中心」找到「迁移」选项卡，然后根据提示进行导入 Artrans。
 - **命令行导入**：执行 `artalk-go import -h` 查阅帮助文档。
 
-### 获取评论数据
+### 获取源评论数据
 
 ### Typecho
+
+#### 安装插件获取 Artrans
 
 提供 Artrans 导出插件：
 
@@ -66,19 +72,63 @@ Artran = Art + Ran (艺术 + 奔跑) ~~即“奔跑的艺术”（艺术性地�
 2. 前往 Typecho 后台「控制台 - 插件」启用插件「ArtransExporter」。
 3. 前往「控制台 - 导出评论 (Artrans)」即可导出 Typecho 所有评论为 Artrans 格式。
 
-### WordPress
+#### 直连数据库获取 Artrans
 
-![](/images/transfer/wordpress.png)
+如果你的博客已闭站，但数据库还存在，可以使用我们提供的支持直连 Typecho 数据库的命令行工具。
+
+[下载 Artransfer-CLI](https://github.com/ArtalkJS/Artransfer-CLI/releases) 压缩包解压后，执行：
+
+```sh
+./artransfer typecho \
+    --db="mysql" \
+    --host="localhost" \
+    --port="3306" \
+    --user="root" \
+    --password="123456" \
+    --name="typecho_数据库名"
+```
+
+执行后你将得到一份 Artrans 格式的文件：
+
+```sh
+> ls
+typecho-20220424-202246.artrans
+```
+
+注：Artransfer-CLI 支持连接多种数据库，详情参考：[@ArtalkJS/Artransfer-CLI](https://github.com/ArtalkJS/Artransfer-CLI)。
+
+### WordPress
 
 前往 WordPress 后台「工具 - 导出」勾选「所有内容」，导出文件即可使用[转换工具](#转换工具)进行转换。
 
-### Valine / Waline
+![](/images/transfer/wordpress.png)
 
-前往 [LeanCloud 后台](https://console.leancloud.cn/) 导出 JSON 格式的评论数据文件。
+### Valine
+
+前往 [LeanCloud 后台](https://console.leancloud.cn/) 导出 JSON 格式的评论数据文件，然后使用[转换工具](#转换工具)进行转换。
 
 ![](/images/transfer/leancloud.png)
 
-注：[Waline](https://waline.js.org/) 和 [Valine](https://valine.js.org/) 两者都是使用 LeanCloud 储存数据，格式相通。
+### Waline
+
+如果你的 Waline 使用 LeanCloud 数据库，可以参考上面 Valine 的方法，它们格式相通，方法类似。
+
+如果你的 Waline 是独立部署，并且连接的是本地数据库，可以 [下载 Artransfer-CLI](https://github.com/ArtalkJS/Artransfer-CLI/releases)，命令行执行：
+
+```bash
+./artransfer waline \
+    --db="mysql" \
+    --host="localhost" \
+    --port="3306" \
+    --user="root" \
+    --password="123456" \
+    --name="waline_数据库名" \
+    --table-prefix="wl_"
+```
+
+你将得到一份 Artrans 格式的数据文件，然后[导入 Artalk](#如何导入-artrans)。
+
+注：Artransfer-CLI 支持连接多种数据库，详情参考：[@ArtalkJS/Artransfer-CLI](https://github.com/ArtalkJS/Artransfer-CLI)。
 
 ### Disqus
 
@@ -90,9 +140,11 @@ Artran = Art + Ran (艺术 + 奔跑) ~~即“奔跑的艺术”（艺术性地�
 
 你可在 Commento 后台导出 JSON 格式的数据文件，然后使用[转换工具](#转换工具)进行转换。
 
+【图示，待补充...】
+
 ### Twikoo
 
-[Twikoo](https://twikoo.js.org/) 是一款基于腾讯云开发的评论系统，可以前往 [腾讯云后台](https://console.cloud.tencent.com/tcb) 导出 JSON 格式的评论数据。
+[Twikoo](https://twikoo.js.org/) 是一款基于腾讯云开发的评论系统，可以前往 [腾讯云后台](https://console.cloud.tencent.com/tcb) 导出 JSON 格式的评论数据，然后使用[转换工具](#转换工具)进行转换。
 
 <img src="/images/transfer/tencent-tcb.png" style="max-width: 480px;">
 
@@ -102,7 +154,9 @@ Artran = Art + Ran (艺术 + 奔跑) ~~即“奔跑的艺术”（艺术性地�
 
 旧版数据路径：`/data/comments.data.json`
 
-### 命令行导入
+### 命令行导入进阶操作
+
+执行 `artalk-go import -h` 查看帮助文档。
 
 ```bash
 ./artalk-go import 数据类型 [参数...]
