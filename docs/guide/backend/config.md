@@ -1,7 +1,7 @@
 # 后端配置
 
 ::: warning
-目前文档仍在陆续完善中
+目前文档仍在陆续完善中，完整配置请参考「[模板配置文件](https://github.com/ArtalkJS/ArtalkGo/blob/master/artalk-go.example.yml)」。
 :::
 
 ArtalkGo 默认读取当前目录下的 `artalk-go.yml` 作为配置文件，你可以使用参数 `-c` 来指定：
@@ -26,6 +26,14 @@ artalk-go gen artalk-go.example.yml ./artalk-go.yml
 
 ```bash
 curl -L https://raw.githubusercontent.com/ArtalkJS/ArtalkGo/master/artalk-go.example.yml > conf.yml
+```
+
+## 配置加密密钥
+
+在 ArtalkGo 启动之前，你需要配置一个 `app_key` 用于网站内容的安全加密：
+
+```yaml
+app_key: "<任意的字符>"
 ```
 
 ## 连接数据库
@@ -70,6 +78,19 @@ cache:
   server: ""      # 连接缓存服务器 (例如："localhost:6379")
 ```
 
+## HTTP 监听端口
+
+默认端口为 23366，你能在配置文件中指定，如下：
+
+```yaml
+host: "0.0.0.0"
+port: 23366
+```
+
+将 `host` 配置为 `0.0.0.0` 让 ArtalkGo 程序暴露到外网范围内可被访问，
+
+如果你只想让 ArtalkGo 本地能够访问，可以将 `host` 配置为 `127.0.0.1`。
+
 ## 工作目录指定
 
 ArtalkGo 在不指定工作目录的情况下，会使用「启动时的目录」作为工作目录。
@@ -96,6 +117,9 @@ test_file: "./data/artalk-go.log"
 
 将读取 `/root/artalk/data/artalk-go.log`。
 
+## 在后端配置前端
+
+增加 `frontend` 字段内容可以在后端配置前端，详情可参考：[“在后端控制前端”](/guide/backend/fe-control)。
 
 ::: tip
 

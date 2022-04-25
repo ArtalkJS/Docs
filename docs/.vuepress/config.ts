@@ -61,6 +61,7 @@ export default defineUserConfig<DefaultThemeOptions>({
                 "/guide/backend/docker.md",
                 "/guide/backend/daemon.md",
                 "/guide/backend/reverse-proxy.md",
+                "/guide/backend/fe-control.md",
               ],
             },
           ],

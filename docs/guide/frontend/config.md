@@ -25,7 +25,7 @@ new Artalk({ 你的配置... })
 - 类型：`String`
 - 默认值：`window.location.pathname`
 
-可留空自动获取页面的相对路径。<Badge type="tip" text="v2.2.6+" />
+可留空自动获取页面的相对路径。
 
 可以填写由博客系统生成的 `固定链接`，但建议使用相对路径以便日后切换域名。
 
@@ -36,7 +36,7 @@ new Artalk({ 你的配置... })
 - 类型：`String`
 - 默认值：`document.title`
 
-可留空自动获取页面的 `<title>` 标签值。<Badge type="tip" text="v2.2.6+" />
+可留空自动获取页面的 `<title>` 标签值。
 
 ### server
 
@@ -61,6 +61,17 @@ new Artalk({ 你的配置... })
 可留空使用后端配置的 “默认站点”，
 
 Artalk 支持多站点统一管理，此项用于站点隔离。
+
+### useBackendConf
+
+**跟随后端的配置** <Badge type="tip" text="v2.2.8+" />
+
+- 类型：`Boolean`
+- 默认值：`false`（默认关闭）
+
+可以在后端的配置文件中定义前端的配置，让前端配置始终跟随后端。
+
+详情可参考：[“在后端控制前端”](/guide/backend/fe-control)
 
 ## 请求
 
