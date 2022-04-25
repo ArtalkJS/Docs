@@ -1,4 +1,4 @@
-# 置入框架 (Vue, React, Svelte)
+# 置入框架
 
 ## 引入 Artalk
 
