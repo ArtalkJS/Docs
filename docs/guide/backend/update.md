@@ -6,7 +6,7 @@
 
 ## Docker 升级
 
-前往：[“后端 · Docker · 升级”](./docker.md#升级)
+可参考：[“Docker · 升级”](./docker.md#升级)
 
 ## 普通方式
 

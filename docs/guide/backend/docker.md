@@ -2,15 +2,17 @@
 
 Artalk 提供后端程序的 Docker 镜像，以便加速部署流程，提供一个良好的部署体验。
 
-Docker 镜像版本随 [代码仓库](https://github.com/ArtalkJS/ArtalkGo/releases) 发布保持同步。
-
-前往：[Docker Hub](https://hub.docker.com/r/artalk/artalk-go)
+[Docker Hub](https://hub.docker.com/r/artalk/artalk-go) 镜像版本随代码仓库的 [Releases](https://github.com/ArtalkJS/ArtalkGo/releases) 保持同步。
 
 ## 镜像拉取
 
 `docker pull artalk/artalk-go`
 
 ## 容器创建
+
+推荐使用 Docker Compose，前面的 [“后端部署”](/guide/backend/install) 一文中已有较为详细的讲解。
+
+常规的 Docker 容器创建可参考：
 
 @[code](../../code/quick-start/docker.sh)
 
@@ -31,31 +33,69 @@ Docker 镜像版本随 [代码仓库](https://github.com/ArtalkJS/ArtalkGo/relea
 修改配置文件后，需要重启才能生效。
 
 ```bash
+# Docker Compose
+docker-compose restart
+
+# Docker
 docker restart artalk-go
 ```
 
 ## 停止
 
 ```bash
+# Docker Compose
+docker-compose stop
+
+# Docker
 docker stop artalk-go
 ```
 
 ## 升级
 
-@[code](../../code/docker/update.sh)
+删除现有容器，拉取最新镜像，然后重新创建容器即可。
 
-之后，重新执行上面的 [容器创建](#容器创建) 步骤即可。
+<CodeGroup>
+  <CodeGroupItem title="Docker Compose" active>
+
+```bash
+docker-compose down
+docker-compose pull
+docker-compose up -d
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="Docker">
+
+```bash
+docker stop artalk-go
+docker rm artalk-go
+docker pull artalk/artalk-go
+```
+
+  </CodeGroupItem>
+
+</CodeGroup>
 
 ::: tip
-升级可能会有配置文件的变动，请注意查看版本 Changelog，通常是在 [GitHub Release](https://github.com/ArtalkJS/ArtalkGo/releases) 页面
+升级可能会有配置文件等变动，请注意查看版本 Changelog，通常是在 [GitHub Release](https://github.com/ArtalkJS/ArtalkGo/releases) 页面
 :::
-
 
 ## 获取历史版本
 
 镜像会随代码仓库 tags 自动构建发布，您可拉取不同版本号的镜像，例如：
 
 `docker pull artalk/artalk-go@v版本号`
+
+## 进入容器
+
+```bash
+# Docker Compose
+docker-compose exec artalk bash
+
+# Docker
+docker exec -it artalk bash
+```
 
 ## 多平台兼容性
 
