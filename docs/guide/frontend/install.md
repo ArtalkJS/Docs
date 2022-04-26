@@ -1,5 +1,6 @@
 ---
-next: '/guide/frontend/config.md'
+prev: '../backend/install.md'
+next: 'config.md'
 ---
 
 # 前端部署

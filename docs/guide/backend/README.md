@@ -1,3 +1,8 @@
+---
+prev: install.md
+next: config.md
+---
+
 # ArtalkGo
 
 Artalk 拥有一个 Golang 语言编写的后端程序。
