@@ -130,6 +130,29 @@ html.dark {
   --search-item-focus-bg-color: var(--c-bg-light);
 }
 
+.app-top-banner {
+  position: fixed;
+  z-index: 99999;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--c-brand);
+
+  a, u, span {
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}
+
 // 图片
 .theme-default-content img {
   display: block;

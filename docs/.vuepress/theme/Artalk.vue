@@ -1,14 +1,19 @@
 <template>
-  <div id="Comments"></div>
+  <div>
+    <div id="Comments"></div>
+    <ChangeMirrorBanner />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, nextTick } from 'vue'
 import { usePageData } from '@vuepress/client'
+import ChangeMirrorBanner from './ChangeMirrorBanner.vue'
 
 const page = usePageData()
 
 export default defineComponent({
+  components: { ChangeMirrorBanner },
   mounted: () => {
     const conf = {
       el:        '#Comments',
