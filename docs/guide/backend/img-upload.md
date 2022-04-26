@@ -64,3 +64,5 @@ http://<后端地址>/static/images/
 ```html
 <img src="https://cdn.github.com/img/1.png">
 ```
+
+提示：这个配置可以结合负载均衡等场景使用。

@@ -129,6 +129,12 @@ test_file: "./data/artalk-go.log"
 
 详情参考：[“后端 · 多元通知”](/guide/backend/notify.md)
 
+## 评论审核
+
+配置评论审核来自动拦截垃圾评论。
+
+详情参考：[“后端 · 评论审核”](/guide/backend/moderator.md)
+
 ## 在后端配置前端
 
 增加 `frontend` 字段内容可以在后端配置前端，详情可参考：[“在后端控制前端”](/guide/backend/fe-control)。
