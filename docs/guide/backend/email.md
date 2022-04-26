@@ -95,7 +95,7 @@ email:
 {{page_title}}     # 页面标题
 {{page_url}}       # 页面 PageKey (URL)
 {{reply_content}}  # 回复对象的内容
-{{reply_nick}}     # 回复对象的昵称
+{{reply_nick}}     # 回复对象的昵称f
 {{site_name}}      # 站点名
 {{site_url}}       # 站点 URL
 ```

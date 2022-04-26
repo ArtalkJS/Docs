@@ -130,9 +130,15 @@ html.dark {
   --search-item-focus-bg-color: var(--c-bg-light);
 }
 
+// 图片
 .theme-default-content img {
   display: block;
   margin: 1.5em auto;
+}
+
+.home .theme-default-content img {
+  display: initial;
+  margin: initial;
 }
 
 // 移动设备
@@ -175,6 +181,11 @@ ul.sidebar-items {
 // div[class*=language-].line-numbers-mode .line-numbers {
 //   display: none;
 // }
+
+
+code {
+  word-break: break-all;
+}
 
 :root {
   // code blocks vars

@@ -39,8 +39,28 @@ img_upload:
 
 可参考：[“后端 · 验证码”](/guide/backend/captcha.md)
 
+## path
+
+`img_upload.path` 为上传的图片文件「本地存放目录」路径，该目录会被 ArtalkGo 映射到可访问的：
+
+```
+http://<后端地址>/static/images/
+```
+
 ## public_path
 
-`img.public_path` 配置项默认为：`/static/images/`。
+`img.public_path` 为空的默认值为：`/static/images/`
 
-当该项为相对路径时，图片上传后在前端获得的，用于创建 HTML `<img>` 标签的 `src` 将为：`http://<后端地址>/static/images/1.png` (这里的 `<后端地址>` 是前端 `conf.server` 配置)。
+当该项为「相对路径」时，例如：`/static/images/` 前端上传图片得到的 HTML 标签将为：
+
+```html
+<img src="http://<后端地址>/static/images/1.png">
+```
+
+注：这里的 `<后端地址>` 是前端 `conf.server` 配置。
+
+当该项为「完整 URL 路径」时，例如：`https://cdn.github.com/img/` 时，图片标签将为：
+
+```html
+<img src="https://cdn.github.com/img/1.png">
+```

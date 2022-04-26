@@ -13,7 +13,6 @@
 import { defineComponent, nextTick } from 'vue'
 
 import { useRouter } from 'vue-router'
-// @ts-ignore
 import Layout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
 
 export default defineComponent({
