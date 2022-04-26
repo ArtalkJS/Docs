@@ -56,6 +56,8 @@ export default defineUserConfig<DefaultThemeOptions>({
               children: [
                 "/guide/backend/config.md",
                 "/guide/backend/build.md",
+                "/guide/backend/email.md",
+                "/guide/backend/notify.md",
                 "/guide/backend/update.md",
                 "/guide/backend/data.md",
                 "/guide/backend/docker.md",
