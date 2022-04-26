@@ -1,19 +1,18 @@
 # ArtalkJS
 
+Artalk 拥有一个前端，[GitHub 代码仓库](https://github.com/ArtalkJS/Artalk)。
+
 ## 特性
 
-概括前往：[“README.md · 特性”](https://github.com/ArtalkJS/Artalk#%E7%89%B9%E6%80%A7)
-
-详细前往：[“文档 · 深入了解”](../describe.md)
+可见：[“README.md · 特性”](https://github.com/ArtalkJS/Artalk#%E7%89%B9%E6%80%A7)
 
 ## 句话概括
 
-- 轻量
-- 无依赖
-- 界面友好
-- 拓展能力强
+- 轻量级 (~30kB)
+- 易上手 (防秃顶)
+- TypeScript & Vanilla (纯天然无添加 / 无依赖)
 
-## 长篇大论
+<!-- ## 长篇大论
 
 Artalk 的前端是重磅戏，它采用 TypeScript + Vite 编写，原生纯净无添加，不依赖于任何前端框架。
 
@@ -25,6 +24,6 @@ Artalk 的前端是重磅戏，它采用 TypeScript + Vite 编写，原生纯净
 
 它同时编译成几个版本，例如 UMD 版能够兼顾多种前端环境下运行。
 
-<!-- CSS 方面，我们采用 Shadow DOM 特性对样式进行隔离处理，不污染页面样式且不被污染。 -->
+CSS 方面，我们采用 Shadow DOM 特性对样式进行隔离处理，不污染页面样式且不被污染。
 
-Vite 这样的下一代开发工具，为开发者创造了一个良好的编程体验，编译和热加载速度飞起。
+Vite 这样的下一代开发工具，为开发者创造了一个良好的编程体验，编译和热加载速度飞起。 -->
