@@ -130,6 +130,11 @@ html.dark {
   --search-item-focus-bg-color: var(--c-bg-light);
 }
 
+.theme-default-content img {
+  display: block;
+  margin: 1.5em auto;
+}
+
 // 移动设备
 @media (max-width: 719px) {
   .home {
@@ -141,6 +146,10 @@ html.dark {
       max-width: 100%;
       padding: 0 1rem;
     }
+  }
+
+  .theme-default-content img {
+    max-width: 100%;
   }
 }
 
