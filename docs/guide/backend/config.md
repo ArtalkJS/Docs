@@ -117,6 +117,18 @@ test_file: "./data/artalk-go.log"
 
 将读取 `/root/artalk/data/artalk-go.log`。
 
+## 邮件通知
+
+配置邮件通知，让评论消息通过邮件方式发送到目标用户，你可以自定义邮件发送者名词，邮件模版等。
+
+详情参考：[“后端 · 邮件通知”](/guide/backend/email.md)
+
+## 多元通知
+
+你可以配置多种消息发送方式，例如飞书、Telegram 等，当收到新的评论时通知管理员。
+
+详情参考：[“后端 · 多元通知”](/guide/backend/notify.md)
+
 ## 在后端配置前端
 
 增加 `frontend` 字段内容可以在后端配置前端，详情可参考：[“在后端控制前端”](/guide/backend/fe-control)。
