@@ -42,12 +42,13 @@ export default defineUserConfig<DefaultThemeOptions>({
               link: '/guide/frontend/',
               children: [
                 "/guide/frontend/config.md",
-                "/guide/frontend/import-blog.md",
-                "/guide/frontend/import-framework.md",
+                "/guide/frontend/sidebar.md",
                 "/guide/frontend/emoticons.md",
                 "/guide/frontend/pv.md",
                 "/guide/frontend/latex.md",
                 "/guide/frontend/lightbox.md",
+                "/guide/frontend/import-blog.md",
+                "/guide/frontend/import-framework.md",
               ],
             },
             {
