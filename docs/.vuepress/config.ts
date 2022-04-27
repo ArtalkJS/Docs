@@ -62,6 +62,7 @@ export default defineUserConfig<DefaultThemeOptions>({
                 "/guide/backend/moderator.md",
                 "/guide/backend/captcha.md",
                 "/guide/backend/fe-control.md",
+                "/guide/backend/relative-path.md",
                 "/guide/backend/daemon.md",
                 "/guide/backend/reverse-proxy.md",
                 "/guide/backend/build.md",
