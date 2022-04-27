@@ -1,9 +1,9 @@
 ---
 home: true
-description: 一款简洁的自托管评论系统
+description: Artalk 简洁快速的自托管评论系统
 heroImage: /images/artalk-logo.png
 heroText: Artalk
-tagline: 快速简洁的自托管评论系统
+tagline: 简洁快速的自托管评论系统
 actions:
   # - text: 项目介绍
   #   link: /guide/intro.md
