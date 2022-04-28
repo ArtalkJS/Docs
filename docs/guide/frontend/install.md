@@ -3,7 +3,7 @@ prev: '../backend/install.md'
 next: 'config.md'
 ---
 
-# 前端部署
+# 前端引入
 
 ## 举个栗子
 
@@ -56,7 +56,7 @@ npm install artalk
 
 ## 你需要配置
 
-初始化 Artalk 需要提供配置，例如：
+后端程序部署完成后，在前端初始化 Artalk 需要提供配置，例如：
 
 ```js
 new Artalk({
