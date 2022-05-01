@@ -161,7 +161,7 @@ artalkInstance.setDarkMode(true)
 
 设置 `false` 评论以「层级嵌套」形式显示
 
-### maxNesting
+### nestMax
 
 **最大嵌套层数**
 
