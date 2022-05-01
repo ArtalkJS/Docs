@@ -21,11 +21,7 @@ export default defineComponent({
       pageTitle:  page.value.title,
       server:    'https://artalk.qwqaq.com/api',
       site:      'ArtalkDocs',
-      pagination: {
-        readMore: true,
-        autoLoad: true,
-        pageSize: 15,
-      }
+      nestMax:   2,
     }
 
     console.log(conf)
