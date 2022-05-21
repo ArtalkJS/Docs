@@ -92,7 +92,7 @@ Artalk 支持多站点统一管理，此项用于站点隔离。
 
 可传入 Object 类型，按照 [@artalk/src/i18n/zh-CN.ts](https://github.com/ArtalkJS/Artalk/blob/master/packages/artalk/src/i18n/zh-CN.ts) 文件中对象的 Keys 编写自定义 locale 内容。
 
-详情参考：[多语言](http://localhost:8080/guide/frontend/i18n.html)
+详情参考：[多语言](./i18n.html)
 
 ## 请求
 
