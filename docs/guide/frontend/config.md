@@ -13,17 +13,17 @@ new Artalk({ 你的配置... })
 
 **装载元素**（填入需要绑定的元素 Selector）
 
-- 类型：`String`
+- 类型：`String|HTMLElement`
 - 默认值：`undefined`
 
 > 例如：`#Comments` 对应元素 `<div id="Comments"></div>`
 
 ### pageKey
 
-**页面 URL**（相对路径 / 完整 URL）
+**页面地址**（相对路径 / 完整 URL）
 
 - 类型：`String`
-- 默认值：`window.location.pathname`
+- 默认值：`location.pathname`
 
 可留空自动获取页面的相对路径。
 
@@ -51,7 +51,7 @@ new Artalk({ 你的配置... })
 
 > 例如：http://yourdomain.xxx
 
-<span style="color:red">更新注意</span>：v2.2.6+ 的后续版本，请填入不带 `/api/` 的后端 URL。
+<span style="color:red">更新注意</span>：v2.2.6+ 的后续版本，请填入不带 `/api/` 路径的后端 URL。
 
 ### site
 
@@ -75,6 +75,23 @@ Artalk 支持多站点统一管理，此项用于站点隔离。
 
 详情可参考：[“在后端控制前端”](/guide/backend/fe-control)
 
+## 国际化 (i18n)
+
+### locale
+
+**语言**
+
+- 类型：`String|Object`
+- 默认值：`"zh-CN"`
+
+遵循 Unicode BCP 47 规范，该项默认为 "zh-CN" (简体中文)。
+
+目前 Artalk 内置 "zh-CN" (简体中文) 和 "en-US" (English)。
+
+你可以贡献其他语言，欢迎 PR：[@artalk/src/i18n/index.ts](https://github.com/ArtalkJS/Artalk/blob/master/packages/artalk/src/i18n/index.ts)
+
+可传入 Object 类型，按照 [@artalk/src/i18n/zh-CN.ts](https://github.com/ArtalkJS/Artalk/blob/master/packages/artalk/src/i18n/zh-CN.ts) 文件中对象的 Keys 编写自定义 locale 内容。
+
 ## 请求
 
 ### reqTimeout
@@ -92,12 +109,14 @@ Artalk 支持多站点统一管理，此项用于站点隔离。
 
 **表情包**
 
-- 类型：`Object|Array|String`
+- 类型：`Object|Array|String|Boolean`
 - 默认值："[https://cdn.jsdelivr.net/gh/ArtalkJS/Emoticons/grps/default.json](https://cdn.jsdelivr.net/gh/ArtalkJS/Emoticons/grps/default.json)"
 
 详细内容：[“前端 · 表情包”](/guide/frontend/emoticons.md)
 
 更新兼容 [OwO 格式](https://github.com/DIYgod/OwO)，支持 URL 动态加载。<Badge type="tip" text="v2.1.3+" />
+
+设置为 `false` 关闭表情包功能。
 
 ## 界面
 
@@ -135,10 +154,10 @@ Artalk 支持多站点统一管理，此项用于站点隔离。
 
 **暗黑模式**
 
-- 类型：`Boolean`
+- 类型：`Boolean|"auto"`
 - 默认值：`false`
 
-当 Artalk 被实例化时会读取该值，并根据该值选择开启暗黑模式（可与博客主题配合使用）。
+当 Artalk 被 new 时会读取该值，并根据该值选择是否开启暗黑模式（可与博客主题配合使用）。
 
 代码动态修改 darkMode：
 
@@ -148,6 +167,8 @@ artalkInstance.setDarkMode(true)
 
 > 参考代码：“[index.html](https://github.com/ArtalkJS/Artalk/blob/master/packages/artalk/index.html#L97-L150)”
 
+可设置为 `"auto"`，Artalk 将监听 `(prefers-color-scheme: dark)` 根据用户操作系统判断自动切换暗黑模式。
+
 ### flatMode
 
 **平铺模式**
@@ -155,7 +176,7 @@ artalkInstance.setDarkMode(true)
 - 类型：`Boolean|"auto"`
 - 默认值：`"auto"`
 
-默认 `"auto"` 仅小尺寸屏幕设备自动开启「平铺」模式
+默认 `"auto"` 仅小尺寸屏幕设备自动开启「平铺」模式 (屏幕宽度 < 768px 时)
 
 设置 `true` 评论以「平铺模式」形式显示
 
@@ -166,15 +187,24 @@ artalkInstance.setDarkMode(true)
 **最大嵌套层数**
 
 - 类型：`Number`
-- 默认值：`3`
+- 默认值：`2`
 
 评论「层级嵌套」模式的最大嵌套层数。
+
+### nestSort
+
+**嵌套评论的排序规则**
+
+- 类型：`"DATE_ASC"|"DATE_DESC"|"VOTE_UP_DESC"`
+- 默认值：`"DATE_ASC"`
+
+嵌套评论的子评论默认以「日期升序 (新评的论在末尾)」排列。
 
 ## 功能
 
 ### pvEl
 
-**页面浏览量统计 (PV)** <Badge type="tip" text="v2.2.6+" />
+**页面浏览量 (PV) 绑定元素** <Badge type="tip" text="v2.2.6+" />
 
 - 类型：`String`
 - 默认值：`"#ArtalkPV"`
@@ -185,6 +215,21 @@ artalkInstance.setDarkMode(true)
 
 该项填入绑定元素的 Selector，默认为 `#ArtalkPV`。
 
+### countEl
+
+**评论数绑定元素** <Badge type="tip" text="v2.3.0+" />
+
+- 类型：`String`
+- 默认值：`"#ArtalkCount"`
+
+你可以在页面任意位置，放置 HTML 标签：`<span id="ArtalkCount"></span>` 显示当前页面的评论数。
+
+::: tip
+
+pvEl 和 countEl 元素标签都可以设置 `data-page-key` 属性值，来指定显示某个页面的统计数目，例如：`<span id="ArtalkCount" data-page-key="/t/1.html"></span>`
+
+:::
+
 ### vote
 
 **投票按钮**
@@ -192,7 +237,7 @@ artalkInstance.setDarkMode(true)
 - 类型：`Boolean`
 - 默认值：`true`
 
-显示评论投票按钮。
+启用评论投票功能 (赞同 / 反对)。
 
 ### voteDown
 
@@ -205,7 +250,7 @@ artalkInstance.setDarkMode(true)
 
 ### uaBadge
 
-**评论 User-Agent 徽标**
+**显示用户的 UserAgent 信息徽标**
 
 - 类型：`Boolean`
 - 默认值：`true`
@@ -227,6 +272,40 @@ artalkInstance.setDarkMode(true)
 - 默认值：`true`
 
 该配置项自动跟随后端，当后端图片上传功能关闭时，仅管理员会显示图片上传按钮。
+
+### imgUploader
+
+**图片上传器** <Badge type="tip" text="v2.3.0+" />
+
+- 类型：`(file: File) => Promise<string>`
+- 默认值：`undefined`
+
+自定义图片上传器，例如：
+
+```js
+new Artalk({
+  imgUploader: async (file) => {
+    const form = new FormData()
+    form.set('file', file)
+
+    const imgUrl = await fetch("https://api.example.org/upload", {
+      method: 'POST',
+      body: form
+    })
+
+    return imgUrl
+  }
+})
+```
+
+### preview
+
+**编辑器实时预览功能**
+
+- 类型：`Boolean`
+- 默认值：`true`
+
+显示编辑器的「预览」按钮。
 
 ## 头像
 
@@ -296,7 +375,7 @@ pagination: {
 
 ```js
 heightLimit: {
-  content: 200, // 评论内容限高
+  content: 300, // 评论内容限高
   children: 400, // 子评论区域限高
 }
 ```
@@ -306,7 +385,7 @@ heightLimit: {
 **评论内容限高**
 
 - 类型：`Number`
-- 默认值：`200`
+- 默认值：`300`
 
 > 当值为 0 时，关闭限高
 
