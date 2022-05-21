@@ -47,8 +47,11 @@ export default defineUserConfig<DefaultThemeOptions>({
                 "/guide/frontend/pv.md",
                 "/guide/frontend/latex.md",
                 "/guide/frontend/lightbox.md",
+                "/guide/frontend/i18n.md",
                 "/guide/frontend/import-blog.md",
                 "/guide/frontend/import-framework.md",
+                "/guide/frontend/artalk-lite.md",
+                "/guide/frontend/plugs.md",
               ],
             },
             {

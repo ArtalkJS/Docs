@@ -81,7 +81,7 @@ Artalk 支持多站点统一管理，此项用于站点隔离。
 
 **语言**
 
-- 类型：`String|Object`
+- 类型：`String|Object|"auto"`
 - 默认值：`"zh-CN"`
 
 遵循 Unicode BCP 47 规范，该项默认为 "zh-CN" (简体中文)。
@@ -91,6 +91,8 @@ Artalk 支持多站点统一管理，此项用于站点隔离。
 你可以贡献其他语言，欢迎 PR：[@artalk/src/i18n/index.ts](https://github.com/ArtalkJS/Artalk/blob/master/packages/artalk/src/i18n/index.ts)
 
 可传入 Object 类型，按照 [@artalk/src/i18n/zh-CN.ts](https://github.com/ArtalkJS/Artalk/blob/master/packages/artalk/src/i18n/zh-CN.ts) 文件中对象的 Keys 编写自定义 locale 内容。
+
+详情参考：[多语言](http://localhost:8080/guide/frontend/i18n.html)
 
 ## 请求
 
@@ -227,6 +229,8 @@ artalkInstance.setDarkMode(true)
 ::: tip
 
 pvEl 和 countEl 元素标签都可以设置 `data-page-key` 属性值，来指定显示某个页面的统计数目，例如：`<span id="ArtalkCount" data-page-key="/t/1.html"></span>`
+
+详情参考：[浏览量统计](./pv.md#显示多个页面的浏览量)
 
 :::
 

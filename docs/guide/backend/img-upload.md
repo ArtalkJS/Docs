@@ -66,3 +66,25 @@ http://<后端地址>/static/images/
 ```
 
 提示：这个配置可以结合负载均衡等场景使用。
+
+## 在前端自定义上传 API
+
+前端提供了配置项 `imgUploader`，你可以自定义前端图片上传时请求的 API，例如：
+
+```js
+new Artalk({
+  imgUploader: async (file) => {
+    const form = new FormData()
+    form.set('file', file)
+
+    const imgUrl = await fetch("https://api.example.org/upload", {
+      method: 'POST',
+      body: form
+    })
+
+    return imgUrl
+  }
+})
+```
+
+参考：[前端配置文档](../frontend/config.md#imguploader)
