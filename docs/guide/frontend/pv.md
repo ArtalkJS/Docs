@@ -21,3 +21,28 @@ new Artalk({
   pvEl: '.your_element',
 })
 ```
+
+### 显示多个页面的浏览量
+
+你能在除评论页面之外的任何页面，例如「文章列表」页，显示页面浏览量或评论数：
+
+```js
+Artalk.LoadCountWidget({
+  server:  '服务器地址',
+  site:    '站点名',
+  pvEl:    '#ArtalkPV',
+  countEl: '#ArtalkCount',
+});
+```
+
+在非评论页时，就无需再 new Artalk 实例了 (否则页面浏览量 PV 数会无故增加)，仅调用 `LoadCountWidget` 静态方法即可。
+
+然后你可以放置多个 `#ArtalkPV` 元素，通过属性 `data-page-key` 来指定需要查询的页面：
+
+```html
+<span id="ArtalkPV" data-page-key="/test/1.html"></span>
+<span id="ArtalkPV" data-page-key="/test/2.html"></span>
+<span id="ArtalkPV" data-page-key="/test/3.html"></span>
+<span id="ArtalkCount" data-page-key="/test/1.html"></span>
+<!-- ... -->
+```

@@ -143,3 +143,13 @@ new Artalk({
     }
 ]
 ```
+
+### 关闭表情包功能
+
+你可以将 `emoticons` 设置为 `false` 来禁用表情包功能：
+
+```js
+new Artalk({
+    emoticons: false
+})
+```
