@@ -32,7 +32,7 @@ export default defineComponent({
     artalk.setDarkMode(darkMode)
 
     // lightGallery
-    artalk.on('comments-loaded', () => {
+    artalk.on('list-loaded', () => {
       document.querySelectorAll('.atk-comment .atk-content').forEach(($content) => {
         const $imgs = $content.querySelectorAll<HTMLImageElement>('img:not([atk-emoticon]):not([atk-lightbox])');
         $imgs.forEach(($img) => {

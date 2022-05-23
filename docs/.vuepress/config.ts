@@ -61,7 +61,7 @@ export default defineUserConfig<DefaultThemeOptions>({
                 "/guide/backend/config.md",
                 "/guide/backend/docker.md",
                 "/guide/backend/email.md",
-                "/guide/backend/notify.md",
+                "/guide/backend/admin_notify.md",
                 "/guide/backend/multi-site.md",
                 "/guide/backend/img-upload.md",
                 "/guide/backend/moderator.md",

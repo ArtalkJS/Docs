@@ -14,7 +14,6 @@ email:
   send_name: '{{reply_nick}}' # 发信人昵称
   send_addr: "example@qq.com" # 发信人地址
   mail_subject: "[{{site_name}}] 您收到了来自 @{{reply_nick}} 的回复"
-  mail_subject_to_admin: '[{{site_name}}] 您的文章 "{{page_title}}" 有新回复'
   mail_tpl: "default" # 邮件模板文件
   smtp:
     host: "smtp.qq.com"
@@ -304,3 +303,15 @@ email:
 ```
 
 ArtalkGo 内置许多预设的邮件模板，例如 `mail_tpl: "default"` 使用的就是：[/email-tpl/default.html](https://github.com/ArtalkJS/ArtalkGo/blob/master/email-tpl/default.html)
+
+#### 为发送给管理员的邮件设定不同的标题
+
+```yaml
+admin_notify:
+  enabled: true
+  mail_subject: "[{{site_name}}] 您的文章「{{page_title}}」有新回复"
+```
+
+注：旧版 `email.mail_subject_to_admin` 配置项已弃用，请使用以上替代。
+
+详情参考：[多元推送](./admin_notify.md#邮件通知)。

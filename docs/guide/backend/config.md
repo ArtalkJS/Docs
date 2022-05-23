@@ -125,11 +125,11 @@ new Artalk({ site: "Artalk 官网" })
 
 详情参考：[“后端 · 邮件通知”](/guide/backend/email.md)
 
-## `notify` 多元通知
+## `admin_notify` 多元推送
 
 你可以配置多种消息发送方式，例如飞书、Telegram 等，当收到新的评论时通知管理员。
 
-详情参考：[“后端 · 多元通知”](/guide/backend/notify.md)
+详情参考：[“后端 · 多元推送”](/guide/backend/admin_notify.md)
 
 ## `moderator` 评论审核
 

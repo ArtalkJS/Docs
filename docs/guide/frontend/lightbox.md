@@ -22,7 +22,7 @@ Artalk 为保持简洁性要求，并未内置图片灯箱功能。
 ```js
 const artalk = new Artalk({ ... })
 
-artalk.on('comments-loaded', () => {
+artalk.on('list-loaded', () => {
   document.querySelectorAll('.atk-comment .atk-content').forEach(($content) => {
     const $imgs = $content.querySelectorAll('img:not([atk-emoticon]):not([atk-lightbox-loaded])')
     $imgs.forEach(($img) => {
@@ -68,7 +68,7 @@ artalk.on('comments-loaded', () => {
 ```js
 const artalk = new Artalk({ ... })
 
-artalk.on('comments-loaded', () => {
+artalk.on('list-loaded', () => {
   document.querySelectorAll('.atk-comment .atk-content').forEach(($content) => {
     const $imgs = $content.querySelectorAll('img:not([atk-emoticon]):not([atk-lightbox-loaded])')
     $imgs.forEach(($img) => {
