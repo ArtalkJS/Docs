@@ -1,4 +1,4 @@
-# API
+# HTTP API
 
 ::: tip 无特殊说明时 API 调用响应格式
 

@@ -214,7 +214,7 @@ admin_notify:
 {{link_to_reply}}
 ```
 
-可用变量和邮件模板相同，可参考：[邮件模版](./email.md#邮件模板)
+可用变量和邮件模板相同，可参考：[“邮件模版”](./email.md#邮件模板)
 
 ## 嘈杂模式 `noise_mode`
 
@@ -250,7 +250,7 @@ admin_notify:
 | - | - | - | - |
 |`notify_subject`|通知标题     |String| 对应 admin_notify.notify_subject 配置项 |
 |`notify_body`   |通知内容     |String| 根据 admin_notify.notify_tpl 模版渲染 |
-|`comment`       |通知内容     |Object| 新创建的评论数据对象 |
+|`comment`       |评论内容     |Object| 新创建的评论数据对象 |
 |`parent_comment`|评论回复的目标|Object| Root 根节点评论类型改项为 null |
 
 **Body 数据样本**
@@ -286,7 +286,7 @@ admin_notify:
 }
 ```
 
-**Node.js express 处理实例**
+**Node.js express 处理示例**
 
 ```js
 const express = require('express');

@@ -10,6 +10,7 @@
 
  - `API` 部分参考源码
    * [@ArtalkJS/Artalk - src/api/index.ts](https://github.com/ArtalkJS/Artalk/blob/master/packages/artalk/src/api/index.ts)
+   * [@ArtalkJS/ArtalkGo - http/a_router.go](https://github.com/ArtalkJS/ArtalkGo/blob/master/http/a_router.go)
    * [@ArtalkJS/ArtalkGo - http/a_http.go](https://github.com/ArtalkJS/ArtalkGo/blob/master/http/a_http.go)
  - `Event` 部分参考源码
    * [@ArtalkJS/Artalk - types/event.d.ts](https://github.com/ArtalkJS/Artalk/blob/master/packages/artalk/types/event.d.ts)

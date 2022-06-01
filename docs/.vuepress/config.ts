@@ -14,12 +14,12 @@ export default defineUserConfig<DefaultThemeOptions>({
     ['link', { href: ArtalkCDN.CSS, rel: 'stylesheet' }],
     ['script', { src: ArtalkCDN.JS }],
     // light gallery
-    ['link', { href: 'https://cdn.jsdelivr.net/npm/lightgallery@2.3.0/css/lightgallery.css', rel: 'stylesheet' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/lightgallery@2.3.0/lightgallery.min.js' }],
+    ['link', { href: 'https://npm.elemecdn.com/lightgallery@2.3.0/css/lightgallery.css', rel: 'stylesheet' }],
+    ['script', { src: 'https://npm.elemecdn.com/lightgallery@2.3.0/lightgallery.min.js' }],
     // katex
-    ['link', { href: "https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css", rel: 'stylesheet' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/@artalkjs/plugin-katex/dist/artalk-plugin-katex.js' }],
+    ['link', { href: "https://npm.elemecdn.com/katex@0.15.3/dist/katex.min.css", rel: 'stylesheet' }],
+    ['script', { src: 'https://npm.elemecdn.com/katex@0.15.3/dist/katex.min.js' }],
+    ['script', { src: 'https://npm.elemecdn.com/@artalkjs/plugin-katex/dist/artalk-plugin-katex.js' }],
   ],
   theme: path.resolve(__dirname, './theme'),
 
@@ -60,9 +60,9 @@ export default defineUserConfig<DefaultThemeOptions>({
               children: [
                 "/guide/backend/config.md",
                 "/guide/backend/docker.md",
+                "/guide/backend/multi-site.md",
                 "/guide/backend/email.md",
                 "/guide/backend/admin_notify.md",
-                "/guide/backend/multi-site.md",
                 "/guide/backend/img-upload.md",
                 "/guide/backend/moderator.md",
                 "/guide/backend/captcha.md",

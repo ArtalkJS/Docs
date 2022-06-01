@@ -69,6 +69,12 @@ email:
 
 可参考：[阿里云官方文档](https://help.aliyun.com/document_detail/29444.html)
 
+## 评论回复
+
+邮件中会有一个评论回复按钮，该链接指向前端给定的页面 PageKey，若你提供的 `pageKey` 配置项为页面的「相对路径」，你需要在「[控制中心](../frontend/sidebar.md#控制中心)」-「站点」为你的站点设置一个 URL：
+
+<img src="/images/sidebar/site_url.png" width="400px">
+
 ## 邮件模板
 
 ### 模板变量
@@ -304,7 +310,9 @@ email:
 
 ArtalkGo 内置许多预设的邮件模板，例如 `mail_tpl: "default"` 使用的就是：[/email-tpl/default.html](https://github.com/ArtalkJS/ArtalkGo/blob/master/email-tpl/default.html)
 
-#### 为发送给管理员的邮件设定不同的标题
+## 发向管理员的邮件
+
+邮件通知目标为管理员和普通用户，你可通过如下配置，为发向管理员的邮件设定不同的标题：
 
 ```yaml
 admin_notify:
@@ -314,4 +322,4 @@ admin_notify:
 
 注：旧版 `email.mail_subject_to_admin` 配置项已弃用，请使用以上替代。
 
-详情参考：[多元推送](./admin_notify.md#邮件通知)。
+不局限于邮件，ArtalkGo 支持多种方式向管理员发送通知，参考：[“多元推送”](./admin_notify.md#邮件通知)。

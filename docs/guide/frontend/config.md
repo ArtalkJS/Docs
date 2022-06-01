@@ -413,6 +413,6 @@ heightLimit: {
 
 ::: tip
 
-前往：[“后端 · 配置文件”](/guide/backend/config.md)
+前往：[“后端配置”](/guide/backend/config.md)
 
 :::

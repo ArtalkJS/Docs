@@ -81,6 +81,14 @@ comment:
     site: '你的站点名'
     server: 'https://artalk.example.org'
 ```
+
+::: tip
+
+NexT 主题可以安装 [Hexo NexT 主题的 Artalk 插件](https://github.com/leirock/hexo-next-artalk)
+
+:::
+
+
 ## VuePress
 
 以 [VuePress v2](https://github.com/vuepress/vuepress-next) 为例，继承默认主题 `@vuepress/theme-default`

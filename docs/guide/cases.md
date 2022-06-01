@@ -12,15 +12,16 @@
 
 ### 博客
 
-- [QWQAQ](https://qwqaq.com/)
-- [Monstx](https://blog.monsterx.cn/)
-- [青空之蓝](https://blog.ixk.me/)
-- [Thun888](https://blog.thun888.xyz/)
-- [叶开](https://xn--qpru0x.cn/)
+- [频率](https://pinlyu.com/)
 - [子舒](https://imhan.cn/)
+- [叶开](https://xn--qpru0x.cn/)
+- [Thun888](https://blog.thun888.xyz/)
+- [青空之蓝](https://blog.ixk.me/)
+- [Monstx](https://blog.monsterx.cn/)
+- [QWQAQ](https://qwqaq.com/)
 
 ### 主题
 
-- [hexo-theme-cards](https://github.com/ChrAlpha/hexo-theme-cards): Another Simple & Swift theme for Hexo
-- [hexo-theme-volantis](https://github.com/volantis-x/hexo-theme-volantis): A Wonderful Theme for Hexo
 - [FixIt](https://github.com/Lruihao/FixIt): A clean, elegant but advanced blog theme for Hugo
+- [hexo-theme-volantis](https://github.com/volantis-x/hexo-theme-volantis): A Wonderful Theme for Hexo
+- [hexo-theme-cards](https://github.com/ChrAlpha/hexo-theme-cards): Another Simple & Swift theme for Hexo

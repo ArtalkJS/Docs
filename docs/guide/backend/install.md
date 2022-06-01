@@ -122,6 +122,17 @@ docker-compose exec artalk bash # 进入容器
     new Artalk({ server: "http://your_domain:端口号" })
     ```
 
+#### 附表：文件名系统和架构 对照表
+
+|文件名|操作系统|CPU 架构|
+|:-|:-:|:-:|
+|artalk-go_linux_amd64.tar.gz|Linux|x86_64|
+|artalk-go_linux_arm64.tar.gz|Linux|ARM64|
+|artalk-go_linux_arm7.tar.gz|Linux|ARMv7|
+|artalk-go_windows_amd64.zip|Windows|x86_64|
+|artalk-go_darwin_arm64.tar.gz|macOS|Apple Silicon|
+|artalk-go_darwin_amd64.tar.gz|macOS|Intel Chip <sup>~~(什么狗屎)~~</sup>|
+
 ## 编译运行
 
 ```bash

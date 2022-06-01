@@ -1,4 +1,4 @@
-# 评论审核 (反垃圾)
+# 评论审核
 
 完整的 `moderator` 配置如下：
 
@@ -29,6 +29,15 @@ moderator:
       - "./data/词库_1.txt"
     file_sep: "\n" # 词库文件内容分割符
     replac_to: "x" # 替换字符
+```
+
+## 默认待审模式
+
+开启发表新评论默认为 “待审状态”：
+
+```yaml
+moderator:
+  pending_default: true
 ```
 
 ## Akismet
@@ -98,4 +107,6 @@ moderator:
 
 注：`replac_to` 不建议使用 `*` 星号，应为它和 Markdown 的加粗语法冲突。
 
+## 使用验证码
 
+你可以开启 ArtalkGo 的验证码功能，支持图片和滑动验证码，[参考此处](./captcha.md)。

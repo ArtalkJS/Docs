@@ -26,7 +26,7 @@ artalk-go gen artalk-go.example.yml ./artalk-go.yml
 curl -L https://raw.githubusercontent.com/ArtalkJS/ArtalkGo/master/artalk-go.example.yml > conf.yml
 ```
 
-## `app_key` 加密密钥
+## 加密密钥 `app_key`
 
 在 ArtalkGo 启动之前，你需要配置一个 `app_key` 用于对网站内容进行安全加密：
 
@@ -34,7 +34,7 @@ curl -L https://raw.githubusercontent.com/ArtalkJS/ArtalkGo/master/artalk-go.exa
 app_key: "<任意的字符>"
 ```
 
-## `db` 数据库
+## 数据库 `db`
 
 ArtalkGo 支持连接多种数据库，支持 SQLite、MySQL、PostgreSQL、SQL Server 配置如下：
 
@@ -66,15 +66,15 @@ db:
 
 数据表将在 ArtalkGo 启动时自动完成创建，无需额外操作。
 
-## `admin_users` 管理员账户
+## 管理员 `admin_users`
 
-你需要配置管理员账户，这样才能通过「控制中心」对站点内容进行管理。
+你需要配置管理员账户，这样才能通过「[控制中心](../frontend/sidebar.md)」对站点内容进行管理。
 
 ArtalkGo 支持多站点，你可以创建多个管理员账户，为其分配站点，让你的朋友们共用同一个后端程序。
 
 详情参考：[“管理员 × 多站点”](/guide/backend/multi-site.md)
 
-## `trusted_domains` 可信域名
+## 可信域名 `trusted_domains`
 
 ```yaml
 trusted_domains:
@@ -88,7 +88,7 @@ trusted_domains:
 
 你需要将「后端程序地址」和「使用该后端的前端」地址，**两者**同时加入可信域名列表中。
 
-在侧边栏控制中心「站点」选项卡 - 选择站点「修改 URL」，填入站点 URL 也具有相同的效果，注：多个 URL 用 `,` 英文逗号分隔。
+在侧边栏[控制中心](../frontend/sidebar.md#控制中心)「站点」选项卡 - 选择站点「修改 URL」，填入站点 URL 也具有相同的效果，注：多个 URL 用 `,` 英文逗号分隔。
 
 :::
 
@@ -99,7 +99,7 @@ trusted_domains:
   - "*"
 ```
 
-## `site_default` 默认站点
+## 默认站点 `site_default`
 
 如果你觉得大概是不会用到 Artalk 的多站点功能，可以直接将该项配置为你的站点名，例如：
 
@@ -113,31 +113,31 @@ site_default: "Artalk 官网"
 new Artalk({ site: "Artalk 官网" })
 ```
 
-这样，你就无需在侧边栏的控制中心新建站点，系统会帮你自动创建。
+这样，你就无需在侧边栏的[控制中心](../frontend/sidebar.md#控制中心)新建站点，系统会帮你自动创建。
 
-## `frontend` 在后端配置前端
+## 前端配置 `frontend`
 
 增加 `frontend` 字段内容可以在后端配置前端，详情可参考：[“在后端控制前端”](/guide/backend/fe-control)。
 
-## `email` 邮件通知
+## 邮件通知 `email`
 
 配置邮件通知，让评论消息通过邮件方式发送到目标用户，你可以自定义邮件发送者名词，邮件模版等。
 
 详情参考：[“后端 · 邮件通知”](/guide/backend/email.md)
 
-## `admin_notify` 多元推送
+## 多元推送 `admin_notify`
 
 你可以配置多种消息发送方式，例如飞书、Telegram 等，当收到新的评论时通知管理员。
 
 详情参考：[“后端 · 多元推送”](/guide/backend/admin_notify.md)
 
-## `moderator` 评论审核
+## 评论审核 `moderator`
 
 配置评论审核来自动拦截垃圾评论。
 
 详情参考：[“后端 · 评论审核”](/guide/backend/moderator.md)
 
-## `cache` 缓存
+## 缓存配置 `cache`
 
 为了提高评论系统的响应速度和性能，ArtalkGo 内置一套缓存机制，并且默认开启，无需额外配置。但如果有需要，你也可以连接外部缓存服务器，支持 Redis 和 Memcache。
 
@@ -156,7 +156,7 @@ type 默认为 `builtin`，如遇特殊情况可将缓存关闭，将其设置�
 
 注：如果在 ArtalkGo 程序外部修改数据库内容，需要刷新 ArtalkGo 缓存才能更新。
 
-## `host` 监听地址
+## 监听地址 `host`
 
 HTTP 默认监听端口为 23366，你能在配置文件中指定，如下：
 
@@ -175,7 +175,7 @@ port: 23366
 artalk-go server --host 127.0.0.1 --port 8080
 ```
 
-## `ssl` 加密传输
+## 加密传输 `ssl`
 
 ```yaml
 ssl:
@@ -191,7 +191,7 @@ ssl:
 
 你也可以直接反向代理 ArtalkGo 本地服务器，然后在例如 Nginx 启用 SSL 加密。
 
-## `timezone` 时区
+## 时区配置 `timezone`
 
 ```yaml
 timezone: "Asia/Shanghai"
@@ -199,7 +199,7 @@ timezone: "Asia/Shanghai"
 
 该值填写你所在地时区，对应查询 IANA 时区数据库，参考：[“RFC-6557”](https://www.rfc-editor.org/rfc/rfc6557.html)。
 
-## `login_timeout` 登录超时
+## 登录超时 `login_timeout`
 
 该值设定管理员账户登录 JWT 令牌的有效期，单位：秒。例如，三天有效：
 
@@ -207,7 +207,7 @@ timezone: "Asia/Shanghai"
 login_timeout: 259200
 ```
 
-## `log` 日志
+## 日志配置 `log`
 
 打开日志后，系统错误等信息将被记录到设定的文件中。
 
@@ -217,7 +217,7 @@ log:
   filename: "./data/artalk-go.log" # 日志文件路径
 ```
 
-## `debug` 调试模式
+## 调试模式 `debug`
 
 将 `debug` 配置为 `true` 启用调试模式。
 
@@ -225,7 +225,7 @@ log:
 debug: true
 ```
 
-## 参数 `-w` 工作目录
+## 工作目录 `-w` 参数
 
 ArtalkGo 在不指定工作目录的情况下，会使用「启动时的目录」作为工作目录。
 
@@ -255,5 +255,5 @@ test_file: "./data/artalk-go.log"
 
 配置文件相关代码：[/config/config.go](https://github.com/ArtalkJS/ArtalkGo/blob/master/config/config.go)
 
-前往：[“前端 · 配置文件”](/guide/frontend/config.md)
+前往：[“前端配置”](/guide/frontend/config.md)
 :::
