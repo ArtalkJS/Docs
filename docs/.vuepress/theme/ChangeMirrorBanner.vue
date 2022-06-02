@@ -20,7 +20,7 @@ async function check() {
 
   try {
     if (!await isChinaIP()) return
-  } catch { }
+  } catch { return }
 
   const $app = document.querySelector<HTMLElement>('#app')!
   const $navbar = $app.querySelector<HTMLElement>('.navbar')!
