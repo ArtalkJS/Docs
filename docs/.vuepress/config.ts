@@ -159,6 +159,10 @@ export default defineUserConfig<DefaultThemeOptions>({
     docsBranch: 'master',
     docsDir: 'docs',
     editLinkPattern: ':repo/edit/:branch/:path',
+    themePlugins: {
+      // @see https://github.com/vuepress/vuepress-next/blob/ad8b5a804295f806274d9fe776f68d5610b92545/packages/%40vuepress/theme-default/src/node/defaultTheme.ts#L67
+      activeHeaderLinks: false, // disable this to resolve conflicts with Artalk goto
+    }
   },
 
   plugins: [
