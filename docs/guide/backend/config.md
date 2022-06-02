@@ -1,12 +1,12 @@
 # 后端配置
 
-ArtalkGo 默认读取当前目录下的 `artalk-go.yml` 作为配置文件，你可以使用参数 `-c` 来指定：
+ArtalkGo 默认以工作目录下的 `artalk-go.yml` 作为配置文件，可使用参数 `-c` 来指定具体文件：
 
 ```bash
 artalk-go -c ./conf.yml
 ```
 
-官方建议的配置文件格式为 [YAML](https://zh.wikipedia.org/wiki/YAML)，但你也可以 `-c` 指定使用其他格式，例如 `.toml`、`.json` 等。
+官方建议的配置格式为 [YAML](https://zh.wikipedia.org/wiki/YAML)，但你也可以使用 `-c` 参数指定其他格式，例如 `.toml`、`.json` 等。
 
 ## 获取模版配置文件
 
@@ -20,10 +20,14 @@ ArtalkGo 提供 `gen` 命令，你可以快速生成一份新的配置文件：
 artalk-go gen artalk-go.example.yml ./artalk-go.yml
 ```
 
-#### 使用 curl 下载配置文件
+#### 命令行下载配置文件
 
 ```bash
-curl -L https://raw.githubusercontent.com/ArtalkJS/ArtalkGo/master/artalk-go.example.yml > conf.yml
+curl -L https://raw.githubusercontent.com/ArtalkJS/ArtalkGo/master/artalk-go.example.yml > artalk-go.yml
+```
+
+```bash
+wget -O artalk-go.yml https://raw.githubusercontent.com/ArtalkJS/ArtalkGo/master/artalk-go.example.yml
 ```
 
 ## 加密密钥 `app_key`
@@ -78,19 +82,21 @@ ArtalkGo 支持多站点，你可以创建多个管理员账户，为其分配�
 
 ```yaml
 trusted_domains:
-  - "https://artalk.你的域名:23366"
-  - "https://前端使用域名.com"
+  - "https://前端使用域名A.com"
+  - "https://前端使用域名B.com"
 ```
 
 配置该项能限制来自列表外的 Referer 和跨域请求。
 
 :::tip
 
-你需要将「后端程序地址」和「使用该后端的前端」地址，**两者**同时加入可信域名列表中。
+你需要将「使用该后端的前端」URL 地址加入可信域名列表中，
 
-在侧边栏[控制中心](../frontend/sidebar.md#控制中心)「站点」选项卡 - 选择站点「修改 URL」，填入站点 URL 也具有相同的效果，注：多个 URL 用 `,` 英文逗号分隔。
+URL 末尾不带斜杠或路径，若非默认 80/443 端口需附带端口号。
 
 :::
+
+在侧边栏[控制中心](../frontend/sidebar.md#控制中心)「站点」选项卡 - 选择站点「修改 URL」，填入站点 URL 也具有相同的效果；添加多个 URL 可使用 `","` 英文逗号分隔，修改后请重启 ArtalkGo。
 
 如果你觉得比较繁琐，或打算在反代模式下使用 Nginx 控制 Header 头部信息，可以将其关闭，设置为：
 
@@ -98,6 +104,11 @@ trusted_domains:
 trusted_domains:
   - "*"
 ```
+
+细节：`trusted_domains` 配置项实际上是对响应头：
+
+- `Access-Control-Allow-Origin` 的控制 (参考：[W3C Cross-Origin Resource Sharing](https://fetch.spec.whatwg.org/#http-cors-protocol))
+- `Referer` 的限制 (参考：[Referer - HTTP | MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Referer))
 
 ## 默认站点 `site_default`
 
@@ -113,15 +124,15 @@ site_default: "Artalk 官网"
 new Artalk({ site: "Artalk 官网" })
 ```
 
-这样，你就无需在侧边栏的[控制中心](../frontend/sidebar.md#控制中心)新建站点，系统会帮你自动创建。
+这样，你就无需在侧边栏的[控制中心](../frontend/sidebar.md#控制中心)手动创建站点。
 
 ## 前端配置 `frontend`
 
-增加 `frontend` 字段内容可以在后端配置前端，详情可参考：[“在后端控制前端”](/guide/backend/fe-control)。
+增加 `frontend` 字段内容可以在后端控制前端的配置，详情可参考：[“在后端控制前端”](/guide/backend/fe-control)。
 
 ## 邮件通知 `email`
 
-配置邮件通知，让评论消息通过邮件方式发送到目标用户，你可以自定义邮件发送者名词，邮件模版等。
+配置邮件通知，让回复通过邮件的形式通知目标用户，你可以自定义邮件发送者名称、标题、模版等。
 
 详情参考：[“后端 · 邮件通知”](/guide/backend/email.md)
 
@@ -137,6 +148,12 @@ new Artalk({ site: "Artalk 官网" })
 
 详情参考：[“后端 · 评论审核”](/guide/backend/moderator.md)
 
+## 验证码 `captcha`
+
+支持图片、滑动验证码，通过验证码对请求频率进行限制。
+
+详情参考：[“后端 · 验证码”](/guide/backend/captcha.md)
+
 ## 缓存配置 `cache`
 
 为了提高评论系统的响应速度和性能，ArtalkGo 内置一套缓存机制，并且默认开启，无需额外配置。但如果有需要，你也可以连接外部缓存服务器，支持 Redis 和 Memcache。
@@ -149,27 +166,46 @@ cache:
   server: ""      # 连接缓存服务器 (例如："localhost:6379")
 ```
 
-- **warm_up**：缓存预热功能。设置为 `true`，在 ArtalkGo 启动时会立刻对数据库内容进行全面缓存，如果你的评论数据较多，达到上万条，启动时间可能会延长。
+- **warm_up**：缓存预热功能。设置为 `true`，在 ArtalkGo 启动时会立刻对数据库内容进行全面缓存，如果你的评论数据较多，多达上万条，启动时间可能会延长。
 - **type**：缓存类型。可选：`redis`, `memcache`, `builtin`。
 
 type 默认为 `builtin`，如遇特殊情况可将缓存关闭，将其设置为 `disabled`。
 
 注：如果在 ArtalkGo 程序外部修改数据库内容，需要刷新 ArtalkGo 缓存才能更新。
 
+---
+
+Redis 身份认证、数据库配置：
+
+```yaml
+# 缓存
+cache:
+  # 省略其他配置项...
+  redis:
+    network: "tcp" # 连接方式 (tcp 或 unix)
+    username: ""   # 用户名
+    password: ""   # 密码
+    db: 0          # 使用零号数据库
+```
+
+技术细节：[ArtalkGo 缓存机制 时序图.png](/images/artalk-go/artalk-go-cache.png)
+
+![](/images/artalk-go/artalk-go-cache.png)
+
 ## 监听地址 `host`
 
-HTTP 默认监听端口为 23366，你能在配置文件中指定，如下：
+ArtalkGo 的默认 HTTP 端口为 23366，你可以在配置文件中指定：
 
 ```yaml
 host: "0.0.0.0"
 port: 23366
 ```
 
-将 `host` 配置为 `0.0.0.0` 让 ArtalkGo 程序暴露到外网范围内可被访问，
+配置 `host` 监听地址为 `0.0.0.0` 将 ArtalkGo 服务暴露到全网可访问范围，
 
-如果你只想让 ArtalkGo 本地能够访问，可以将 `host` 配置为 `127.0.0.1`。
+如果你只想让 ArtalkGo 仅本地能够访问，可将 `host` 配置为 `127.0.0.1`。
 
-你也可以在 ArtalkGo 服务器启动时，带上 `--host` 和 `--port` 参数分别对地址和端口进行指定，例如：
+命令行下启动 ArtalkGo 时，可以携带 `--host` 和 `--port` 参数分别对地址和端口进行指定，例如：
 
 ```bash
 artalk-go server --host 127.0.0.1 --port 8080
@@ -184,12 +220,12 @@ ssl:
   key_path: ""
 ```
 
-你可以配置该项，让 `http` 升级为 `https`，通过 SSL 协议加密传输。
+你可以配置该项，让 HTTP 升级为 HTTPS，通过 SSL 协议加密传输数据。
 
 - `cert_path`：SSL 证书公钥文件路径。
 - `key_path`：SSL 证书私钥文件路径。
 
-你也可以直接反向代理 ArtalkGo 本地服务器，然后在例如 Nginx 启用 SSL 加密。
+你也可以直接反向代理 ArtalkGo 本地服务器，然后在例如 Nginx 启用 HTTPS。
 
 ## 时区配置 `timezone`
 
@@ -197,11 +233,20 @@ ssl:
 timezone: "Asia/Shanghai"
 ```
 
-该值填写你所在地时区，对应查询 IANA 时区数据库，参考：[“RFC-6557”](https://www.rfc-editor.org/rfc/rfc6557.html)。
+该值填写你所在地时区，对应 IANA 数据库时区名，参考：[Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) / [RFC-6557](https://www.rfc-editor.org/rfc/rfc6557.html)。
+
+```
+UTC+08:00   Asia/Shanghai
+UTC+09:00   Asia/Tokyo
+UTC-07:00   America/Los_Angeles
+UTC-04:00   America/New_York
+```
 
 ## 登录超时 `login_timeout`
 
-该值设定管理员账户登录 JWT 令牌的有效期，单位：秒。例如，三天有效：
+该值设定管理员账户登录 JWT 令牌的有效期，单位：秒。
+
+例如，3 天有效：
 
 ```yaml
 login_timeout: 259200
@@ -227,7 +272,7 @@ debug: true
 
 ## 工作目录 `-w` 参数
 
-ArtalkGo 在不指定工作目录的情况下，会使用「启动时的目录」作为工作目录。
+ArtalkGo 在不指定工作目录的情况下，会使用「程序启动时的目录」作为工作目录。
 
 ```bash
 pwd  # 显示当前目录路径

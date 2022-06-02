@@ -14,7 +14,7 @@
 <script src="https://<artalk_go_server>/dist/Artalk.js"></script>
 ```
 
-> 将 `<artalk_go_server>` 替换为你的 ArtalkGo 服务器地址。
+> 提示：将 `<artalk_go_server>` 替换为你的 ArtalkGo 服务器地址。
 
 这样如果升级后端 ArtalkGo 程序，前端无需更换新版 ArtalkJS 的引入地址，来使之与后端程序兼容。
 
@@ -50,7 +50,7 @@ frontend:
 
 ::: tip
 
-表情包配置项 [emoticons](/guide/frontend/emoticons) 需要传递 Object 而非 URL，可以将其转为 JSON 字符串，例如：
+如果你的表情包配置项 [emoticons](/guide/frontend/emoticons) 需传递 Object 而非 URL，可以将其转为 JSON 字符串，例如：
 
 ```yaml
 frontend:
