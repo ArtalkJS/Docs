@@ -69,7 +69,7 @@ services:
 下载 Artalk 配置文件，并按需配置：
 
 ```bash
-curl -L https://cdn.jsdelivr.net/gh/ArtalkJS/ArtalkGo/artalk-go.example.yml > conf.yml
+curl -L https://raw.githubusercontent.com/ArtalkJS/ArtalkGo/master/artalk-go.example.yml > conf.yml
 vim conf.yml
 ```
 

@@ -19,9 +19,10 @@ export default defineComponent({
       el:        '#Comments',
       pageKey:   `https://artalk.js.org${page.value.path}`,
       pageTitle:  page.value.title,
-      server:    'https://artalk.qwqaq.com/api',
+      server:    'https://artalk.qwqaq.com',
       site:      'ArtalkDocs',
       nestMax:   2,
+      emoticons: '/images/emoticons/default.json',
     }
 
     console.log(conf)

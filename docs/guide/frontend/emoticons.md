@@ -5,7 +5,7 @@
 ```js
 new Artalk({
     // 默认表情包列表，动态引入 ↓↓
-    emoticons: "https://cdn.jsdelivr.net/gh/ArtalkJS/Emoticons/grps/default.json",
+    emoticons: "https://raw.githubusercontent.com/ArtalkJS/Emoticons/master/grps/default.json",
 })
 ```
 
@@ -48,7 +48,7 @@ Artalk 的表情包功能灵感也源于此，Artalk 适配并兼容 OwO 格式�
 
 ```js
 new Artalk({
-    emoticons: "https://cdn.jsdelivr.net/gh/DIYgod/OwO/demo/OwO.json",
+    emoticons: "https://raw.githubusercontent.com/DIYgod/OwO/master/demo/OwO.json",
     // 直接食用 OwO 格式的表情包 ↑↑
 })
 ```
@@ -105,8 +105,8 @@ Artalk 支持 **动态**、**静态** 混合装载，例如：
 new Artalk({
     emoticons: [
         // 动态装载
-        "https://cdn.jsdelivr.net/gh/DIYgod/OwO/demo/OwO.json", // OwO 格式表情包
-        "https://cdn.jsdelivr.net/gh/qwqcode/huaji/huaji.json",
+        "https://raw.githubusercontent.com/DIYgod/OwO/master/demo/OwO.json", // OwO 格式表情包
+        "https://raw.githubusercontent.com/qwqcode/huaji/master/huaji.json",
         // 静态装载
         {
             "name": "表情包名字",

@@ -120,6 +120,12 @@ Artalk 支持多站点统一管理，此项用于站点隔离。
 
 设置为 `false` 关闭表情包功能。
 
+:::warning
+很遗憾，jsdelivr.net 在中国大陆的 ICP 牌照已被吊销，且 DNS 发生大面积污染，请替换 URL 以保证连通性。
+
+https://raw.githubusercontent.com/ArtalkJS/Emoticons/master/grps/default.json
+:::
+
 ## 界面
 
 ### placeholder

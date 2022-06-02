@@ -16,7 +16,7 @@ next: frontend/install.md
 
    前端采用 TypeScript (Vanilla JS)，轻量级，无冗余依赖，仅 ~30KB (gzipped)。
 
-   后端采用 Golang 重制 (Artalk v2)，跨平台，体积小巧，五脏俱全，敏捷部署。
+   后端采用 Golang 重制 (Artalk v2)，跨平台，体积小巧，五脏俱全，快速部署。
 
  - **“麻雀虽小，五脏俱全”**
    

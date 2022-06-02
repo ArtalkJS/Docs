@@ -23,21 +23,25 @@ next: 'config.md'
 
 ## CDN 资源
 
-- [**JS DELIVR**](https://www.jsdelivr.com/)
-  - `https://cdn.jsdelivr.net/npm/artalk@<版本号>/dist/Artalk.js`
-  - `https://cdn.jsdelivr.net/npm/artalk@<版本号>/dist/Artalk.css`
+- ElemeCDN (国内)
+  - `https://npm.elemecdn.com/artalk@<版本号>/dist/Artalk.js`
+  - `https://npm.elemecdn.com/artalk@<版本号>/dist/Artalk.css`
 
 - [**UNPKG**](https://unpkg.com/)
   - `https://unpkg.com/artalk@<版本号>/dist/Artalk.js`
   - `https://unpkg.com/artalk@<版本号>/dist/Artalk.css`
 
-- ElemeCDN (国内)
-  - `https://npm.elemecdn.com/artalk@<版本号>/dist/Artalk.js`
-  - `https://npm.elemecdn.com/artalk@<版本号>/dist/Artalk.css`
+- [**JS DELIVR**](https://www.jsdelivr.com/)
+  - `https://cdn.jsdelivr.net/npm/artalk@<版本号>/dist/Artalk.js`
+  - `https://cdn.jsdelivr.net/npm/artalk@<版本号>/dist/Artalk.css`
 
 注：将 `<版本号>` 替换为你想使用的固定版本号，例如 `@2.3.3`。
 
 当然，你也可以采用激进的方式保持最新版本，去掉 `@<版本号>`。
+
+:::warning
+很遗憾，jsdelivr.net 在中国大陆的 ICP 牌照已被吊销，且 DNS 发生大面积污染，请替换使用其他 CDN 加速资源。
+:::
 
 ### 下载并自托管
 

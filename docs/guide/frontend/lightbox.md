@@ -13,8 +13,8 @@ Artalk 为保持简洁性要求，并未内置图片灯箱功能。
 在 `Artalk.js` 文件之前引入 LightGallery（确保当评论加载完毕后，灯箱插件可被调用）：
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.3.0/css/lightgallery.css">
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.3.0/lightgallery.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/lightgallery@2.3.0/css/lightgallery.css">
+<script src="https://unpkg.com/lightgallery@2.3.0/lightgallery.min.js"></script>
 ```
 
 **2. 添加事件监听**
@@ -57,8 +57,8 @@ artalk.on('list-loaded', () => {
 **1. 引入 FancyBox**
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css" />
 ```
 
 **2. 添加事件监听**
