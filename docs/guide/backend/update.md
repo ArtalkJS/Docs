@@ -8,7 +8,7 @@
 
 :::tip
 
-执行 `./artalk-go upgrade -f` 携带参数 `-f` 来进行补充更新。
+执行 `./artalk-go upgrade -f` 携带参数 `-f` 来进行同版本号的补充更新。
 
 :::
 
