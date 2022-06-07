@@ -6,6 +6,12 @@
 
 此操作会从自动从 GitHub Release 下载并升级程序，执行前需关闭 ArtalkGo。
 
+:::tip
+
+执行 `./artalk-go upgrade -f` 携带参数 `-f` 来进行补充更新。
+
+:::
+
 ## Docker 升级
 
 可参考：[“Docker · 升级”](./docker.md#升级)

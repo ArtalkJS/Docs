@@ -18,7 +18,30 @@ Artalk 提供后端程序的 Docker 镜像，以便加速部署流程，提供�
 
 常规的 Docker 容器创建可参考：
 
-@[code](../../code/quick-start/docker.sh)
+```bash
+# 为 ArtalkGo 创建一个目录
+mkdir ArtalkGo
+cd ArtalkGo
+
+# 拉取 docker 镜像
+docker pull artalk/artalk-go
+
+# 创建 data 目录用于存放数据
+mkdir data
+
+# 生成配置文件
+docker run -it -v $(pwd)/data:/data --rm artalk/artalk-go gen config data/artalk-go.yml
+
+# 编辑配置文件
+vim data/artalk-go.yml
+
+# 运行 docker 容器
+docker run -d \
+  --name artalk-go \
+  -p 0.0.0.0:8080:23366 \
+  -v $(pwd)/data:/data \
+  artalk/artalk-go
+```
 
 ::: tip 备忘说明
 
