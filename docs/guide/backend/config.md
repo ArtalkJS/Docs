@@ -17,7 +17,7 @@ artalk-go -c ./conf.yml
 ArtalkGo 提供 `gen` 命令，你可以快速生成一份新的配置文件：
 
 ```bash
-artalk-go gen artalk-go.example.yml ./artalk-go.yml
+artalk-go gen conf ./artalk-go.yml
 ```
 
 #### 命令行下载配置文件
@@ -92,7 +92,7 @@ trusted_domains:
 
 你需要将「使用该后端的前端」URL 地址加入可信域名列表中，
 
-URL 末尾不带斜杠或路径，若非默认 80/443 端口需附带端口号。
+若非默认 80/443 端口需额外附带端口号，例如：`https://artalk.example.com:23366`
 
 :::
 
