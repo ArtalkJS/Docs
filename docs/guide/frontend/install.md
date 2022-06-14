@@ -7,49 +7,61 @@ next: 'config.md'
 
 ## 举个栗子
 
-<CodeGroup>
-  <CodeGroupItem title="CDN" active>
-
-@[code](../../code/quick-start/cdn.html)
-
-  </CodeGroupItem>
-
-  <CodeGroupItem title="Node">
-  
-@[code](../../code/quick-start/node.ts)
-
-  </CodeGroupItem>
-</CodeGroup>
+<<< @/code/quick-start/cdn.html
 
 ## CDN 资源
 
-- ElemeCDN (国内)
-  - `https://npm.elemecdn.com/artalk@<版本号>/dist/Artalk.js`
-  - `https://npm.elemecdn.com/artalk@<版本号>/dist/Artalk.css`
+Artalk 静态资源通过 CDN 服务提供商 [cdnjs](https://cdnjs.com/) 进行分发，国内有许多以其为上游的镜像可供选择。
 
-- [**UNPKG**](https://unpkg.com/)
-  - `https://unpkg.com/artalk@<版本号>/dist/Artalk.js`
-  - `https://unpkg.com/artalk@<版本号>/dist/Artalk.css`
+**BootCDN (境内)**
 
-- [**JS DELIVR**](https://www.jsdelivr.com/)
-  - `https://cdn.jsdelivr.net/npm/artalk@<版本号>/dist/Artalk.js`
-  - `https://cdn.jsdelivr.net/npm/artalk@<版本号>/dist/Artalk.css`
+> https://cdn.bootcdn.net/ajax/libs/artalk/2.3.3/Artalk.js
+>
+> https://cdn.bootcdn.net/ajax/libs/artalk/2.3.3/Artalk.css
 
-注：将 `<版本号>` 替换为你想使用的固定版本号，例如 `@2.3.3`。
 
-当然，你也可以采用激进的方式保持最新版本，去掉 `@<版本号>`。
+**ElemeCDN (境内)**
 
-:::warning
-很遗憾，jsdelivr.net 在中国大陆的 ICP 牌照已被吊销，且 DNS 发生大面积污染，请替换使用其他 CDN 加速资源。
+> https://npm.elemecdn.com/artalk@2.3.3/dist/Artalk.js
+>
+> https://npm.elemecdn.com/artalk@2.3.3/dist/Artalk.css
+
+**CDNJS**
+
+> https://cdnjs.cloudflare.com/ajax/libs/artalk/2.3.3/Artalk.js
+>
+> https://cdnjs.cloudflare.com/ajax/libs/artalk/2.3.3/Artalk.css
+
+**UNPKG**
+
+> https://unpkg.com/artalk@2.3.3/dist/Artalk.js
+> 
+> https://unpkg.com/artalk@2.3.3/dist/Artalk.css
+
+**JS DELIVR**
+
+> https://cdn.jsdelivr.net/npm/artalk@2.3.3/dist/Artalk.js
+> 
+> https://cdn.jsdelivr.net/npm/artalk@2.3.3/dist/Artalk.css
+
+::: tip Artalk 最新版本
+
+当前 Artalk 最新版本号为： :ArtalkVersion:
+
+若需升级前端，将 URL 中的 `<版本号>` 数字部分替换即可。
+:::
+
+:::warning 关于 JS DELIVR
+很遗憾，JS DELIVR [在中国大陆的 ICP 牌照被吊销](https://github.com/jsdelivr/jsdelivr/issues/18348#issuecomment-997777996)，感谢 JS DELIVR 对社区的贡献 :heart:。
 :::
 
 ### 下载并自托管
 
-鉴于国内外复杂的网络环境，案例提供的 CDN 资源访问速度可能不佳，可以将其保存到自己的服务器，然后通过 `<script>` 标签引入。
+鉴于国内外复杂的网络环境，本页提供的 CDN 资源访问速度可能不佳，可将其保存到自己的服务器，然后通过 `<script>` 标签引入。
 
 ### 从后端内置资源引入
 
-你可以直接引入后端程序内置的 JS 和 CSS 资源文件，详情可参考：[“在后端控制前端”](/guide/backend/fe-control)
+你可以直接引入后端程序内置的 JS 和 CSS 文件，详情可参考：[“在后端控制前端”](/guide/backend/fe-control)
 
 ### ArtalkLite
 
@@ -68,6 +80,15 @@ yarn add artalk
 
 # npm
 npm install artalk
+```
+
+```js
+import 'artalk/dist/Artalk.css'
+import Artalk from 'artalk'
+
+new Artalk({
+  // ...
+})
 ```
 
 ## 你需要配置

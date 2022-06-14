@@ -3,4 +3,4 @@ node_modules
 .cache
 .DS_Store
 .history
-docs/.vuepress/dist/
+docs/.vitepress/dist/

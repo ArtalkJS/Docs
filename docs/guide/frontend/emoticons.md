@@ -13,7 +13,7 @@ new Artalk({
 
 Artalk 社区提供许多表情包预设，你能够挑选几套喜欢的表情包，仅需简单的配置，轻松添加到你的评论系统中，前往仓库：[“@ArtalkJS/Emoticons”](https://github.com/ArtalkJS/Emoticons)。
 
-## 格式支持 <Badge type="tip" text="Artalk v2.1.3+" />
+## 格式支持
 
 ### Artalk 标准格式
 
@@ -55,7 +55,7 @@ new Artalk({
 
 社区也有许多可以直接食用的 OwO 格式表情包资源，例如：[@2X-ercha/Twikoo-Magic](https://github.com/2X-ercha/Twikoo-Magic)。
 
-## 装载方式 <Badge type="tip" text="Artalk v2.1.3+" />
+## 装载方式
 
 ### 动态引入
 

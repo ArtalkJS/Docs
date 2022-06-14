@@ -2,7 +2,7 @@
 
 ## 通用方法
 
-@[code](../../code/quick-start/cdn.html)
+<<< @/code/quick-start/cdn.html
 
 ## Hugo
 
@@ -48,7 +48,7 @@ params:
 
 创建 `/主题目录/layout/comment/artalk.ejs`：
 
-```ejs
+```html
 <link href="/lib/artalk/Artalk.css" rel="stylesheet">
 <script src="/lib/artalk/Artalk.js"></script>
 
@@ -67,7 +67,7 @@ params:
 
 修改文章模板文件，例如 `/主题目录/layout/post.ejs`：
 
-```ejs
+```html
 <div class="article-comments">
   <%- partial('comment/artalk') %>
 </div>

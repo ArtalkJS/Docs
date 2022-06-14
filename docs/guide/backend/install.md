@@ -8,8 +8,7 @@ next: '/guide/backend/config.md'
 
 运行 Artalk 后端服务器推荐使用 Docker，在开始之前，请确保已安装 [Docker 引擎](https://docs.docker.com/engine/install/)。
 
-<CodeGroup>
-  <CodeGroupItem title="Docker" active>
+### Docker
 
 ```bash
 docker run -d \
@@ -18,26 +17,6 @@ docker run -d \
     -v $(pwd)/data:/data \
     artalk/artalk-go
 ```
-
-  </CodeGroupItem>
-
-  <CodeGroupItem title="Docker Compose">
-
-```yaml
-version: "3.5"
-services:
-  artalk:
-    container_name: artalk
-    image: artalk/artalk-go
-    ports:
-      - 端口号:23366
-    volumes:
-      - ./data:/data
-```
-
-  </CodeGroupItem>
-
-</CodeGroup>
 
 ### Docker Compose (推荐)
 
@@ -101,7 +80,7 @@ docker-compose exec artalk bash # 进入容器
 以 Linux 部署为例：
 
 1. 前往 [GitHub Release](https://github.com/ArtalkJS/ArtalkGo/releases) 下载程序压缩包
-   > 可使用 Curl / Wget / Rsync 等工具下载
+   > 可使用 curl / wget / rsync 等工具下载
 2. 解压程序 `tar -zxvf artalk-go_版本号_系统_架构.tar.gz`
    > 修改目录名：
    > 
@@ -109,12 +88,12 @@ docker-compose exec artalk bash # 进入容器
 3. 进入程序目录 `cd Artalk`
 4. 编辑配置文件 `vim artalk-go.yml`
    > 参考：[“配置文件说明”](/guide/backend/config.html)
-5. 运行程序 `./artalk-go serve`
+5. 运行程序 `./artalk-go server`
    > 可选部署流程：
    >
    > 前往：[“反向代理端口到 80 / 443 (Nginx, Apache)”](/guide/backend/reverse-proxy.md)
    >
-   > 前往：["持久化运作 (tmux, systemd)"](/guide/backend/daemon.md)
+   > 前往：["持久化运作 (tmux, systemd, supervisor)"](/guide/backend/daemon.md)
 6. 前端配置
 
     ```js

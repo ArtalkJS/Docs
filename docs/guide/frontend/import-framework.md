@@ -38,6 +38,12 @@ export default defineComponent({
 </script>
 ```
 
+::: tip 提示
+
+VuePress 可参考：[“VuePress 引入”](./import-blog.md#vuepress)
+
+:::
+
 ## React
 
 ```jsx

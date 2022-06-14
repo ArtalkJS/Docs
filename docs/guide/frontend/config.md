@@ -51,7 +51,11 @@ new Artalk({ 你的配置... })
 
 > 例如：http://yourdomain.xxx
 
-<span style="color:red">更新注意</span>：v2.2.6+ 的后续版本，请填入不带 `/api/` 路径的后端 URL。
+::: warning 更新注意
+
+v2.2.6+ 的后续版本，请填入不带 `/api/` 路径的后端 URL。
+
+:::
 
 ### site
 
@@ -66,7 +70,7 @@ Artalk 支持多站点统一管理，此项用于站点隔离。
 
 ### useBackendConf
 
-**跟随后端的配置** <Badge type="tip" text="v2.2.8+" />
+**跟随后端的配置**
 
 - 类型：`Boolean`
 - 默认值：`false`（默认关闭）
@@ -116,14 +120,12 @@ Artalk 支持多站点统一管理，此项用于站点隔离。
 
 详细内容：[“前端 · 表情包”](/guide/frontend/emoticons.md)
 
-更新兼容 [OwO 格式](https://github.com/DIYgod/OwO)，支持 URL 动态加载。<Badge type="tip" text="v2.1.3+" />
+更新兼容 [OwO 格式](https://github.com/DIYgod/OwO)，支持 URL 动态加载。
 
 设置为 `false` 关闭表情包功能。
 
-:::warning
-很遗憾，jsdelivr.net 在中国大陆的 ICP 牌照已被吊销，且 DNS 发生大面积污染，请替换 URL 以保证连通性。
-
-https://raw.githubusercontent.com/ArtalkJS/Emoticons/master/grps/default.json
+:::warning 请替换 CDN 资源
+很遗憾，JS DELIVR [在中国大陆的 ICP 牌照被吊销](https://github.com/jsdelivr/jsdelivr/issues/18348#issuecomment-997777996)，感谢 JS DELIVR 对社区的贡献 :heart:。
 :::
 
 ## 界面
@@ -212,7 +214,7 @@ artalkInstance.setDarkMode(true)
 
 ### pvEl
 
-**页面浏览量 (PV) 绑定元素** <Badge type="tip" text="v2.2.6+" />
+**页面浏览量 (PV) 绑定元素** 
 
 - 类型：`String`
 - 默认值：`"#ArtalkPV"`
@@ -225,7 +227,7 @@ artalkInstance.setDarkMode(true)
 
 ### countEl
 
-**评论数绑定元素** <Badge type="tip" text="v2.3.0+" />
+**评论数绑定元素** 
 
 - 类型：`String`
 - 默认值：`"#ArtalkCount"`
@@ -267,7 +269,7 @@ pvEl 和 countEl 元素标签都可以设置 `data-page-key` 属性值，来指�
 
 ### listSort
 
-**评论排序功能** <Badge type="tip" text="v2.2.6+" />
+**评论排序功能**
 
 - 类型：`Boolean`
 - 默认值：`true`
@@ -276,7 +278,7 @@ pvEl 和 countEl 元素标签都可以设置 `data-page-key` 属性值，来指�
 
 ### imgUpload
 
-**图片上传功能** <Badge type="tip" text="v2.2.6+" />
+**图片上传功能**
 
 - 类型：`Boolean`
 - 默认值：`true`
@@ -285,7 +287,7 @@ pvEl 和 countEl 元素标签都可以设置 `data-page-key` 属性值，来指�
 
 ### imgUploader
 
-**图片上传器** <Badge type="tip" text="v2.3.0+" />
+**图片上传器**
 
 - 类型：`(file: File) => Promise<string>`
 - 默认值：`undefined`
@@ -333,7 +335,17 @@ gravatar: {
 - 类型：`String`
 - 默认值：`"https://sdn.geekzu.org/avatar/"`
 
-如果你觉得 Gravatar 头像加载速度不理想，可以尝试修改该项。
+如果你觉得 Gravatar 头像加载速度不理想，可以尝试替换。
+
+例如：
+
+> Cravatar：https://cravatar.cn/avatar/
+>
+> V2EX：https://cdn.v2ex.com/gravatar/
+>
+> 极客族：https://sdn.geekzu.org/avatar/
+>
+> loli：https://gravatar.loli.net/avatar/
 
 ### gravatar.default
 
@@ -416,9 +428,3 @@ heightLimit: {
 - 默认：`true`
 
 当前端和后端版本不兼容时，显示警告提示框。
-
-::: tip
-
-前往：[“后端配置”](/guide/backend/config.md)
-
-:::

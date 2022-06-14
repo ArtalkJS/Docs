@@ -51,7 +51,11 @@ Artran = Art + Ran (艺术 + 奔跑) ~~即“奔跑的艺术”（艺术性地�
 
 <Artransfer />
 
-注：如果转换工具没有你的数据类型，下文有其他获得 Artrans 的方法可供参考。
+::: tip 提示
+
+下文还有其他获得 Artrans 的方法可供参考；若遇问题，可提交 [issue](https://github.com/ArtalkJS/Artransfer/issues) 进行反馈。
+
+:::
 
 ### 如何导入 Artrans
 
@@ -210,3 +214,5 @@ artalk-go export | gzip -9 | ssh username@remote_ip "cat > ~/backup/artrans.gz"
 ## 写在结尾
 
 目前已支持将 Typecho、WordPress、Valine、Waline、Disqus、Commento、Twikoo 等类型的数据转为 Artrans，但鉴于评论系统的多样性，虽然我们已经对上述类型数据做了适配，但仍然还有许多并未兼容。如果你恰巧正在使用未被适配的评论系统，你除了等待 Artalk 官方支持之外，还可以尝试了解 Artrans 数据格式后自主编写评论数据导入导出工具。如果你觉得自己的工具写得不错，我们十分乐意将其收录在内，让我们共同创造一个能够在不同评论系统之间自由切换的工具。
+
+前往：[“Artransfer 迁移工具代码仓库”](https://github.com/ArtalkJS/Artransfer)

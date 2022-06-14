@@ -2,7 +2,7 @@
 next: frontend/install.md
 ---
 
-# <div class="wave">👋</div> Hello Friend
+# <span class="wave">👋</span> Hello Friend
 
 **Artalk** 是一款简洁的**自托管**评论系统，你可以在服务器上**轻松部署**并置入前端页面中。
 
@@ -58,7 +58,7 @@ next: frontend/install.md
 
 我们希望 Artalk 不仅能实现评论系统应有的基础功能，更能成为搭建 **知识传播者和知识学习者交流思想** 桥梁的媒介，让知识不再局限于文本，帮助知识传播者创造其应有的价值。
 
-## 浏览器兼容
+## 浏览器兼容性
 
 | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" /><br/>Chrome | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" /><br/>Firefox | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" /><br/>Safari | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" /><br/>Opera |
 | --------- | --------- | --------- | --------- |
@@ -84,8 +84,9 @@ Artalk 社区是包容开放的社区，我们欢迎不同水平的人员帮助 
  - 维护 Artalk 前端（仓库地址 [@ArtalkJS/Artalk](https://github.com/ArtalkJS/Artalk)）
  - 维护 Artalk 后端（仓库地址 [@ArtalkJS/ArtalkGo](https://github.com/ArtalkJS/ArtalkGo)）
  - 完善 Artalk 文档（仓库地址 [@ArtalkJS/Docs](https://github.com/ArtalkJS/Docs)）
+ - 改进数据迁移工具（仓库地址 [@ArtalkJS/Artransfer](https://github.com/ArtalkJS/Artransfer)）
  - 分享你的想法创意（下方留言 / [Discussions](https://github.com/ArtalkJS/Artalk/discussions)）
- - 编写相关社区项目（其他评论系统数据迁移插件 / 部署教程等）
+ - 编写相关社区项目（扩展插件 / 部署教程等）
 
 :::
 

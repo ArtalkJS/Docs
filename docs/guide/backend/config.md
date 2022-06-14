@@ -92,7 +92,7 @@ trusted_domains:
 
 你需要将「使用该后端的前端」URL 地址加入可信域名列表中，
 
-若非默认 80/443 端口需额外附带端口号，例如：`https://artalk.example.com:23366`
+若非默认 80/443 端口需额外附带端口号，例如：`https://example.com:8080`
 
 :::
 

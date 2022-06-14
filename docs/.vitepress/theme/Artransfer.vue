@@ -4,9 +4,6 @@
 
 <script lang="ts">
 import { defineComponent, nextTick } from 'vue'
-import { usePageData } from '@vuepress/client'
-
-const page = usePageData()
 
 function setArtransferIframeDarkMode(value: boolean) {
   const iframe = document.querySelector<HTMLIFrameElement>('#artransferIframe')!

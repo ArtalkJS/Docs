@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "types": ["vite/client", "@vuepress/client/types"],
+    "types": ["vite/client"],
     "resolveJsonModule": true
   },
-  "include": ["**/.vuepress/**/*"],
+  "include": ["**/.vitepress/**/*"],
 }

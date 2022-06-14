@@ -218,7 +218,7 @@ admin_notify:
 
 ## 嘈杂模式 `noise_mode`
 
-```yml
+```yaml
 admin_notify:
   noise_mode: false
 ```
@@ -235,7 +235,7 @@ noise_mode 默认为关闭状态，当该项设置为 `false` 时，站内仅向
 
 **ArtalkGo 配置文件**
 
-```yml
+```yaml
 admin_notify:
     webhook:
       enabled: true
