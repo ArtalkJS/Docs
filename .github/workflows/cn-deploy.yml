@@ -37,6 +37,6 @@ jobs:
         secret_key: ${{ secrets.TENCENT_CLOUD_SECRET_KEY }}
         cos_bucket: ${{ secrets.DOCS_CN_COS_BUCKET }}
         cos_region: ${{ secrets.DOCS_CN_COS_REGION }}
-        local_path: docs/.vuepress/dist/
+        local_path: docs/.vitepress/dist/
         remote_path: /
         clean: true

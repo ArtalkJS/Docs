@@ -93,7 +93,7 @@ NexT 主题可以安装 [Hexo NexT 主题的 Artalk 插件](https://github.com/l
 
 以 [VuePress v2](https://github.com/vuepress/vuepress-next) 为例，继承默认主题 `@vuepress/theme-default`
 
-可参考：[“/.vuepress/theme/Artalk.vue”](https://github.com/ArtalkJS/Docs/blob/master/docs/.vuepress/theme/Artalk.vue) 创建 Artalk 评论组件。
+可参考：[“/.vuepress/theme/Artalk.vue”](https://github.com/ArtalkJS/Docs/blob/eef37bca8cc0c9973bf121fdef4014dcd940f104/docs/.vuepress/theme/Artalk.vue) 创建 Artalk 评论组件。
 
 在 `/.vuepress/theme/clientAppEnhance.ts` 文件中全局注册组件：
 
