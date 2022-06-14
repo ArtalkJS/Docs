@@ -9,7 +9,7 @@ export default defineConfig({
   lang: 'zh-CN',
 
   head: [
-    ['link', { rel: 'icon', href: '/images/favicon.png' }],
+    ['link', { rel: 'icon', href: '/favicon.png' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi' }],
     // artalk
     ['link', { href: ArtalkCDN.CSS, rel: 'stylesheet' }],
