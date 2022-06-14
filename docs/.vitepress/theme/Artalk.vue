@@ -34,7 +34,7 @@ function initArtalk(pageData: any) {
     pageTitle:  pageData.title,
     server:    'https://artalk.qwqaq.com',
     site:      'ArtalkDocs',
-    emoticons: '/images/emoticons/default.json',
+    emoticons: '/assets/emoticons/default.json',
     gravatar:   {
       mirror: 'https://cravatar.cn/avatar/'
     }
