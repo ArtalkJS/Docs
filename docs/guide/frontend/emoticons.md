@@ -42,9 +42,9 @@ Artalk 社区提供许多表情包预设，你能够挑选几套喜欢的表情�
 
 ### OwO 格式
 
-[OwO](https://github.com/DIYgod/OwO) 是 [@DIYgod](https://github.com/DIYgod) 开发的 JS 插件，提供输入框插入表情符号的功能。
+[OwO](https://github.com/DIYgod/OwO) 是作者 [@DIYgod](https://github.com/DIYgod) 开发的 JS 插件，能让输入框快速拥有插入表情符号的功能。
 
-Artalk 的表情包功能灵感也源于此，Artalk 适配并兼容 OwO 格式的表情包数据文件，示例如下：
+Artalk 的表情包功能灵感也源于此，并且 Artalk 适配和兼容 OwO 格式的表情包数据文件，示例如下：
 
 ```js
 new Artalk({

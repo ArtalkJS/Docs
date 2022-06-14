@@ -31,7 +31,7 @@ export default defineConfig({
       light: 'github-light',
       dark: 'github-dark',
     },
-    config: (md: markdownit) => {
+    config: (md) => {
       md.use(iterator, 'artalk_version', 'text', function (tokens, idx) {
         tokens[idx].content = tokens[idx].content.replace(/:ArtalkVersion:/g, Versions.Artalk.replace(/^v/, ''));
       });
