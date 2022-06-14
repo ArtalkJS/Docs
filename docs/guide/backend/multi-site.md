@@ -44,7 +44,7 @@ admin_users:
   htpasswd -bnBC 10 "" "your_password" | tr -d ':'
   ```
 
-  然后配置填写：`"(bcrypt)$2y$10$ti4vZYIrxVN8rLcYXVgXCO.GJND0dyI49r7IoF3xqIx8bBRmIBZRm"`
+  然后配置填写：`"(bcrypt)$2y$10$ti4vZYIrxVN8rLcY..."`，以 `(bcrypt)` 开头。
 
   命令解释参考：[“Compute bcrypt hash from command line”](https://unix.stackexchange.com/questions/307994/compute-bcrypt-hash-from-command-line#answer-419855)
 

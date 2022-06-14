@@ -87,7 +87,7 @@ artalk.on('list-loaded', () => {
 **2.2 事件委托**
 
 ```js
-Fancybox.bind('.atk-list img:not([atk-emoticon])'', {
+Fancybox.bind('.atk-list img:not([atk-emoticon])', {
   groupAll: true,
   Hash: false,
   Thumbs: {

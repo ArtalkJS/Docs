@@ -98,17 +98,25 @@ trusted_domains:
 
 在侧边栏[控制中心](../frontend/sidebar.md#控制中心)「站点」选项卡 - 选择站点「修改 URL」，填入站点 URL 也具有相同的效果；添加多个 URL 可使用 `","` 英文逗号分隔，修改后请重启 ArtalkGo。
 
-如果你觉得比较繁琐，或打算在反代模式下使用 Nginx 控制 Header 头部信息，可以将其关闭，设置为：
+可以将其关闭：
 
 ```yaml
 trusted_domains:
   - "*"
 ```
 
-细节：`trusted_domains` 配置项实际上是对响应头：
+::: danger
+
+但并不建议这样做，关闭后将存在潜在安全风险，例如可能遭受 CSRF 跨域攻击。
+
+:::
+
+细节：`trusted_domains` 配置项实际上是对响应标头：
 
 - `Access-Control-Allow-Origin` 的控制 (参考：[W3C Cross-Origin Resource Sharing](https://fetch.spec.whatwg.org/#http-cors-protocol))
 - `Referer` 的限制 (参考：[Referer - HTTP | MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Referer))
+
+CSRF 跨域攻击防范措施参考：[OWASP 安全备忘单](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
 
 ## 默认站点 `site_default`
 

@@ -69,8 +69,7 @@ Tip: 设置 `alias` 简化命令输入；ArtalkGo 参数 `-w` 用于指定工作
 
 ![](/images/baota-supervisor/1.png)
 
-> - 名称：任意
-> - 启动用户：root 或其他
-> - 运行目录：点击右侧图标，打开到 Artalk 所在目录
+> - 启动用户：`root` 或其他
+> - 运行目录：点击右侧图标，选择 Artalk 所在目录
 > - 启动命令：`./artalk-go server`
 
