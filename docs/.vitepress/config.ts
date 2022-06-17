@@ -49,6 +49,7 @@ export default defineConfig({
             { text: '前端引入', link: '/guide/frontend/install.md' },
             { text: '后端部署', link: '/guide/backend/install.md' },
             { text: '数据迁移', link: '/guide/transfer.md' },
+            { text: '安全防范', link: '/guide/security.md' },
           ]
         },
         {
