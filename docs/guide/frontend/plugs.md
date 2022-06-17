@@ -4,10 +4,10 @@
 目前文档仍在陆续完善中...
 :::
 
-你可以通过 `Artalk.Use` 来开发 Artalk 插件。
+你可以通过 `Artalk.use` 来装载 Artalk 插件。
 
 ```js
-Artalk.Use((ctx) => {
+Artalk.use((ctx) => {
   ctx.editor.setContent("Hello World")
 })
 ```

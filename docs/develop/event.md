@@ -15,7 +15,7 @@
 ## 添加事件监听
 
 ```js
-Artalk.Use(ctx => {
+Artalk.use(ctx => {
   ctx.on('list-loaded', () => {
     alert('评论已加载完毕')
   })
@@ -27,7 +27,7 @@ Artalk.Use(ctx => {
 ```js
 let foo = function() { /* do something */ }
 
-Artalk.Use(ctx => {
+Artalk.use(ctx => {
   ctx.on('list-loaded', foo)
   ctx.off('list-loaded', foo)
 })
