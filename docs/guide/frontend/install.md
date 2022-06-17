@@ -15,34 +15,34 @@ Artalk 静态资源通过上游 [cdnjs](https://cdnjs.com/) 进行分发，国�
 
 **BootCDN (境内)**
 
-> https://cdn.bootcdn.net/ajax/libs/artalk/2.3.3/Artalk.js
+> https://cdn.bootcdn.net/ajax/libs/artalk/2.3.4/Artalk.js
 >
-> https://cdn.bootcdn.net/ajax/libs/artalk/2.3.3/Artalk.css
+> https://cdn.bootcdn.net/ajax/libs/artalk/2.3.4/Artalk.css
 
 
 **ElemeCDN (境内)**
 
-> https://npm.elemecdn.com/artalk@2.3.3/dist/Artalk.js
+> https://npm.elemecdn.com/artalk@2.3.4/dist/Artalk.js
 >
-> https://npm.elemecdn.com/artalk@2.3.3/dist/Artalk.css
+> https://npm.elemecdn.com/artalk@2.3.4/dist/Artalk.css
 
 **CDNJS**
 
-> https://cdnjs.cloudflare.com/ajax/libs/artalk/2.3.3/Artalk.js
+> https://cdnjs.cloudflare.com/ajax/libs/artalk/2.3.4/Artalk.js
 >
-> https://cdnjs.cloudflare.com/ajax/libs/artalk/2.3.3/Artalk.css
+> https://cdnjs.cloudflare.com/ajax/libs/artalk/2.3.4/Artalk.css
 
 **UNPKG**
 
-> https://unpkg.com/artalk@2.3.3/dist/Artalk.js
+> https://unpkg.com/artalk@2.3.4/dist/Artalk.js
 > 
-> https://unpkg.com/artalk@2.3.3/dist/Artalk.css
+> https://unpkg.com/artalk@2.3.4/dist/Artalk.css
 
 **JS DELIVR**
 
-> https://cdn.jsdelivr.net/npm/artalk@2.3.3/dist/Artalk.js
+> https://cdn.jsdelivr.net/npm/artalk@2.3.4/dist/Artalk.js
 > 
-> https://cdn.jsdelivr.net/npm/artalk@2.3.3/dist/Artalk.css
+> https://cdn.jsdelivr.net/npm/artalk@2.3.4/dist/Artalk.css
 
 ::: tip Artalk 最新版本
 
