@@ -102,6 +102,10 @@
   margin: 1.5em auto;
 }
 
+img[atk-emoticon] {
+  display: initial;
+}
+
 /* 由于 body 未添加一致的 transition，导致其他地方暗黑模式切换加 transition 比较怪 */
 .vp-doc div[class*='language-'] { transition: none; }
 .vp-doc :not(pre) > code { transition: none; }
