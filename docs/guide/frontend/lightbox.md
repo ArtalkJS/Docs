@@ -1,100 +1,55 @@
 # 图片灯箱
 
-Artalk 为保持简洁性，并未内置图片灯箱功能。
-
-但你可以自己动手，添加 Artalk 事件监听，在合适的时期初始化灯箱插件，实现“图片点击放大”的功能。
-
-## LightGallery
-
-> [LightGallery](https://github.com/sachinchoolur/lightGallery): 一个可定制的、模块化的、响应式的灯箱画廊插件。
-
-**1. 引入 LightGallery**
-
-在 `Artalk.js` 文件之前引入 LightGallery（确保当评论加载完毕后，灯箱插件可被调用）：
+Artalk LightBox 插件能帮助你将网站**现有的图片灯箱**功能自动集成到 Artalk 中。
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/lightgallery@2.3.0/css/lightgallery.css">
-<script src="https://unpkg.com/lightgallery@2.3.0/lightgallery.min.js"></script>
+<!-- 1. 引入图片灯箱依赖，例如 LightGallery (通常博客主题已提供，无需再引入) -->
+<script src="lightgallery.js"></script>
+
+<!-- 2. 引入 Artalk -->
+<link href="/lib/artalk/Artalk.css" rel="stylesheet">
+<script src="/lib/artalk/Artalk.js"></script>
+
+<!-- 3. 引入 Artalk LightBox 插件 -->
+<script src="https://unpkg.com/@artalk/plugin-lightbox/dist/artalk-plugin-lightbox.js"></script>
 ```
 
-**2. 添加事件监听**
+如上所示，额外引入一个 `artalk-plugin-lightbox.js` 文件即可。
 
-```js
-const artalk = new Artalk({ ... })
+目前自动集成支持：[LightGallery](https://github.com/sachinchoolur/lightGallery) [v2.5.0] / [FancyBox](https://github.com/fancyapps/fancybox) [v4.0.27] / [lightbox2](https://github.com/lokesh/lightbox2) [v2.11.3]
 
-artalk.on('list-loaded', () => {
-  document.querySelectorAll('.atk-comment .atk-content').forEach(($content) => {
-    const $imgs = $content.querySelectorAll('img:not([atk-emoticon]):not([atk-lightbox-loaded])')
-    $imgs.forEach(($img) => {
-      $img.setAttribute('atk-lightbox-loaded', '')
-      const $link = document.createElement('a')
-      $link.setAttribute('class', 'atk-img-link')
-      $link.setAttribute('href', $img.src)
-      $link.setAttribute('data-src', $img.src)
-      $link.append($img.cloneNode())
-      $img.replaceWith($link)
-    })
-    if ($imgs.length) lightGallery($content, { selector: '.atk-img-link' })
-  })
-})
-```
+对于还未适配的图片灯箱，欢迎提交 PR -> [查看代码](https://github.com/ArtalkJS/Artalk/blob/master/packages/plugin-lightbox/main.ts)
 
-当评论加载后，获取 `评论内容` 元素中的所有 `<img>` 并初始化 LightGallery
+::: details 附：图片灯箱依赖 CDN 资源
 
+注：通常一个博客主题本来就是有图片灯箱插件的，所以无需重复引入。
 
-::: tip 备注
+#### LightGallery
 
-- 表情图片天生拥有 `atk-emoticon` 属性，以供识别并忽略。
-- 已初始化的图片加上 `atk-lightbox-loaded` 属性，以避免重复初始化。
+  ```html
+  <link rel="stylesheet" href="https://unpkg.com/lightgallery@2.5.0/css/lightgallery.css">
+  <script src="https://unpkg.com/lightgallery@2.5.0/lightgallery.min.js"></script>
+  ```
+
+#### FancyBox
+
+  ```html
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0.27/dist/fancybox.css">
+  <script src="https://unpkg.com/@fancyapps/ui@4.0.27/dist/fancybox.umd.js"></script>
+  ```
 
 :::
 
-## FancyBox
+### 配置灯箱
 
-> [FancyBox](https://fancyapps.com/docs/ui/fancybox/): Fancybox 可以节省您的时间并帮助您轻松创建包含图像、iframe、视频或任何类型的 HTML 内容的漂亮、现代的悬浮窗。
-
-
-**1. 引入 FancyBox**
+在引入 `artalk-plugin-lightbox.js` 之前对全局变量 `ATK_LIGHTBOX_CONF` 进行设置，如下：
 
 ```html
-<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css" />
-```
-
-**2. 添加事件监听**
-
-**2.1 主动监听**
-
-```js
-const artalk = new Artalk({ ... })
-
-artalk.on('list-loaded', () => {
-  document.querySelectorAll('.atk-comment .atk-content').forEach(($content) => {
-    const $imgs = $content.querySelectorAll('img:not([atk-emoticon]):not([atk-lightbox-loaded])')
-    $imgs.forEach(($img) => {
-      $img.setAttribute('atk-lightbox-loaded', '')
-      const $link = document.createElement('a')
-      $link.setAttribute('data-fancybox', '')
-      $link.setAttribute('href', $img.src)
-      $link.append($img.cloneNode())
-      $img.replaceWith($link)
-    })
-    if ($imgs.length) Fancybox.bind('[data-fancybox]')
-  })
-})
-```
-
-**2.2 事件委托**
-
-```js
-Fancybox.bind('.atk-list img:not([atk-emoticon])', {
+<script>
+window.ATK_LIGHTBOX_CONF = {
   groupAll: true,
-  Hash: false,
-  Thumbs: {
-    autoStart: false,
-  },
-  caption: function (fancybox, carousel, slide) {
-    return slide.$trigger.alt || null
-  }
-});
+  // ...其他配置
+}
+</script>
+<script src="artalk-plugin-lightbox.js"></script>
 ```
