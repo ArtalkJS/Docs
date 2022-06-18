@@ -14,7 +14,7 @@ Artalk 为保持简洁性，并未内置 Latex 语法解析功能，但你可以
 <script src="/lib/artalk/Artalk.js"></script>
 
 <!-- 引入 Artalk Katex 插件 -->
-<script src="https://unpkg.com/@artalkjs/plugin-katex/dist/artalk-plugin-katex.js"></script>
+<script src="https://unpkg.com/@artalk/plugin-katex/dist/artalk-plugin-katex.js"></script>
 ```
 
 之后，你可以回复：
