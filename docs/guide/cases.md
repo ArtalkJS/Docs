@@ -2,6 +2,9 @@
 
 ### 博客
 
+- [程序员 Life](https://xuqilong.top)
+- [远方的灯塔](https://terwergreen.com)
+- [Bowenの破站](https://bowenyoung.cn/)
 - [杜老师说](https://dusays.com/)
 - [频率](https://pinlyu.com/)
 - [子舒](https://imhan.cn/)
