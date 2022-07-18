@@ -13,12 +13,14 @@
 - [青空之蓝](https://blog.ixk.me/)
 - [Monstx](https://blog.monsterx.cn/)
 - [QWQAQ](https://qwqaq.com/)
+- [小康博客](https://www.antmoe.com/)
 
 ### 主题
 
 - [FixIt](https://github.com/Lruihao/FixIt): A clean, elegant but advanced blog theme for Hugo
 - [hexo-theme-volantis](https://github.com/volantis-x/hexo-theme-volantis): A Wonderful Theme for Hexo
 - [hexo-theme-cards](https://github.com/ChrAlpha/hexo-theme-cards): Another Simple & Swift theme for Hexo
+- [hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly): A Hexo Theme: Butterfly
 
 ::: tip
 
