@@ -109,7 +109,13 @@ typecho-20220424-202246.artrans
 
 ### Valine
 
-前往 [LeanCloud 后台](https://console.leancloud.cn/) 导出 JSON 格式的评论数据文件，然后使用[转换工具](#转换工具)进行转换。
+前往 [LeanCloud 后台](https://console.leancloud.cn/) 导出 JSON 格式的评论数据文件，导出的数据文件为 `jsonl`，需要手动将其转为 `json`:  
+编辑器/记事本打开 `xx.jsonl`，**去除首行注释后**，使用如下 shell 命令转为 `json`：  
+``` shell
+sed '1s/^/[/; $!s/$/,/; $s/$/]/' xxx.jsonl > xxx.json
+```
+
+然后使用[转换工具](#转换工具)进行转换。
 
 ![](/images/transfer/leancloud.png)
 
