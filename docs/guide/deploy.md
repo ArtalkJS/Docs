@@ -193,4 +193,4 @@ new Artalk({
 
 ## 数据导入
 
-从其他评论系统导入数据：[“数据迁移”](../transfer.md)
+从其他评论系统导入数据：[“数据迁移”](../frontend/transfer.md)
