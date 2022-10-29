@@ -15,44 +15,40 @@ Artalk 静态资源通过上游 [cdnjs](https://cdnjs.com/) 进行分发，国�
 
 **BootCDN (境内)**
 
-> https://cdn.bootcdn.net/ajax/libs/artalk/2.4.2/Artalk.js
+> https://cdn.bootcdn.net/ajax/libs/artalk/2.4.3/Artalk.js
 >
-> https://cdn.bootcdn.net/ajax/libs/artalk/2.4.2/Artalk.css
+> https://cdn.bootcdn.net/ajax/libs/artalk/2.4.3/Artalk.css
 
 
 **ElemeCDN (境内)**
 
-> https://npm.elemecdn.com/artalk@2.4.2/dist/Artalk.js
+> https://npm.elemecdn.com/artalk@2.4.3/dist/Artalk.js
 >
-> https://npm.elemecdn.com/artalk@2.4.2/dist/Artalk.css
+> https://npm.elemecdn.com/artalk@2.4.3/dist/Artalk.css
 
 **CDNJS**
 
-> https://cdnjs.cloudflare.com/ajax/libs/artalk/2.4.2/Artalk.js
+> https://cdnjs.cloudflare.com/ajax/libs/artalk/2.4.3/Artalk.js
 >
-> https://cdnjs.cloudflare.com/ajax/libs/artalk/2.4.2/Artalk.css
+> https://cdnjs.cloudflare.com/ajax/libs/artalk/2.4.3/Artalk.css
 
 **UNPKG**
 
-> https://unpkg.com/artalk@2.4.2/dist/Artalk.js
+> https://unpkg.com/artalk@2.4.3/dist/Artalk.js
 > 
-> https://unpkg.com/artalk@2.4.2/dist/Artalk.css
+> https://unpkg.com/artalk@2.4.3/dist/Artalk.css
 
 **JS DELIVR**
 
-> https://cdn.jsdelivr.net/npm/artalk@2.4.2/dist/Artalk.js
+> https://cdn.jsdelivr.net/npm/artalk@2.4.3/dist/Artalk.js
 > 
-> https://cdn.jsdelivr.net/npm/artalk@2.4.2/dist/Artalk.css
+> https://cdn.jsdelivr.net/npm/artalk@2.4.3/dist/Artalk.css
 
 ::: tip Artalk 最新版本
 
 当前 Artalk 最新版本号为： :ArtalkVersion:
 
-若需升级前端，请将 URL 中的 `<版本号>` 数字部分替换即可。
-:::
-
-:::warning 关于 JS DELIVR
-很遗憾，JS DELIVR [在中国大陆的 ICP 牌照被吊销](https://github.com/jsdelivr/jsdelivr/issues/18348#issuecomment-997777996)，感谢 JS DELIVR 对社区的贡献 :heart:。
+若需升级前端，请将 URL 中的版本号数字部分替换即可。
 :::
 
 ### 下载并自托管

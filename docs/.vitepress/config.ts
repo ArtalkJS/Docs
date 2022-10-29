@@ -46,10 +46,8 @@ export default defineConfig({
           collapsible: true,
           items: [
             { text: '项目介绍', link: '/guide/intro.md' },
-            { text: '前端引入', link: '/guide/frontend/install.md' },
-            { text: '后端部署', link: '/guide/backend/install.md' },
+            { text: '程序部署', link: '/guide/deploy.md' },
             { text: '数据迁移', link: '/guide/transfer.md' },
-            { text: '安全防范', link: '/guide/security.md' },
           ]
         },
         {
@@ -93,6 +91,7 @@ export default defineConfig({
           text: '更多内容',
           collapsible: true,
           items: [
+            { text: '安全防范', link: '/guide/security.md' },
             { text: '扩展阅读', link: '/guide/extras.md' },
             { text: '案例展示', link: '/guide/cases.md' },
             { text: '关于我们', link: '/guide/about.md' },
