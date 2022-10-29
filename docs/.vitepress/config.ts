@@ -118,7 +118,7 @@ export default defineConfig({
       },
       {
         text: '部署',
-        link: '/guide/frontend/install',
+        link: '/guide/deploy',
       },
       {
         text: '配置',
