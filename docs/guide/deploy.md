@@ -6,7 +6,7 @@
 
 ```bash
 docker run -d \
-    --name artalk \
+    --name artalk-go \
     -p 8080:23366 \
     -v $(pwd)/data:/data \
     artalk/artalk-go
@@ -19,7 +19,7 @@ docker run -d \
 执行命令创建管理员账户：
 
 ```bash
-docker exec -it artalk-go-test artalk admin
+docker exec -it artalk-go artalk admin
 ```
 
 在你的网站引入 Artalk 程序内嵌的的前端 CSS、JS 资源并初始化：
@@ -87,7 +87,7 @@ new Artalk({
 version: "3.5"
 services:
   artalk:
-    container_name: artalk
+    container_name: artalk-go
     image: artalk/artalk-go
     ports:
       - 8080:23366
