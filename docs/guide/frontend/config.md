@@ -1,5 +1,9 @@
 # 前端配置
 
+::: tip
+前端配置可以在侧边栏 “[控制中心](/guide/frontend/sidebar.md)” 直接修改，无需手动修改配置
+:::
+
 ```js
 new Artalk({ 你的配置... })
 ```
@@ -73,7 +77,7 @@ Artalk 支持多站点统一管理，此项用于站点隔离。
 **跟随后端的配置**
 
 - 类型：`Boolean`
-- 默认值：`false`（默认关闭）
+- 默认值：`true`（默认启用）
 
 可以在后端的配置文件中定义前端的配置，让前端配置始终跟随后端。
 
@@ -353,6 +357,23 @@ gravatar: {
 
 - 类型：`String`
 - 默认值：`"mp"`
+
+### avatarURLBuilder
+
+**头像链接生成器**
+
+- 类型：`(comment: CommentData) => string`
+- 默认值：`undefined`
+
+自定义用户头像图片链接生成，例如：
+
+```js
+new Artalk({
+  avatarURLBuilder: (comment) => {
+    return `/api/avatar?email=${comment.email_encrypted}`
+  }
+})
+```
 
 ## 评论分页
 

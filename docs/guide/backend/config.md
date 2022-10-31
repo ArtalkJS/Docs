@@ -1,12 +1,14 @@
 # 后端配置
 
+::: tip
+后端配置可以在侧边栏 “[控制中心](/guide/frontend/sidebar.md)” 直接修改，无需手动修改配置
+:::
+
 ArtalkGo 默认以工作目录下的 `artalk-go.yml` 作为配置文件，可使用参数 `-c` 来指定具体文件：
 
 ```bash
 artalk-go -c ./conf.yml
 ```
-
-官方建议的配置格式为 [YAML](https://zh.wikipedia.org/wiki/YAML)，但你也可以使用 `-c` 参数指定其他格式，例如 `.toml`、`.json` 等。
 
 ## 获取模版配置文件
 
