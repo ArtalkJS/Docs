@@ -82,9 +82,11 @@ docker-compose up -d
 
 ### Docker
 
+```bash
 docker stop artalk-go
 docker rm artalk-go
 docker pull artalk/artalk-go
+```
 
 ::: tip
 升级可能会有配置文件等变动，请注意查看版本 Changelog，通常是在 [GitHub Release](https://github.com/ArtalkJS/ArtalkGo/releases) 页面
