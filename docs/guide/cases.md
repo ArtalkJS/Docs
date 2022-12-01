@@ -9,7 +9,7 @@
 - [Bowenの破站](https://bowenyoung.cn/)
 - [杜老师说](https://dusays.com/)
 - [频率](https://pinlyu.com/)
-- [子舒](https://imhan.cn/)
+- [子舒](https://zburu.com/)
 - [叶开](https://xn--qpru0x.cn/)
 - [Thun888](https://blog.thun888.xyz/)
 - [青空之蓝](https://blog.ixk.me/)
