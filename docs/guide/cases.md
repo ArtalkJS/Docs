@@ -2,6 +2,8 @@
 
 ### 博客
 
+- [一蓑烟雨](https://easyf12.top/)
+- [二丫讲梵](https://wiki.eryajf.net)
 - [Alliot’s blog](https://www.iots.vip/)
 - [小康博客](https://www.antmoe.com/)
 - [程序员 Life](https://xuqilong.top)
@@ -18,7 +20,8 @@
 
 ### 主题
 
-- [FixIt](https://github.com/Lruihao/FixIt): A clean, elegant but advanced blog theme for Hugo
+- [hexo-theme-stellar](https://github.com/xaoxuu/hexo-theme-stellar): Elegant and powerful theme for Hexo.
+- [FixIt Theme | Hugo](https://github.com/Lruihao/FixIt): A clean, elegant but advanced blog theme for Hugo
 - [hexo-theme-volantis](https://github.com/volantis-x/hexo-theme-volantis): A Wonderful Theme for Hexo
 - [hexo-theme-cards](https://github.com/ChrAlpha/hexo-theme-cards): Another Simple & Swift theme for Hexo
 - [hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly): A Hexo Theme: Butterfly
