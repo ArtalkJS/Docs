@@ -1,19 +1,5 @@
-## Artalk Documentation
+# 🚨 Moved to [@ArtalkJS/Artalk](https://github.com/ArtalkJS/Artalk/tree/master/docs)/docs 🚨
 
-> the documentation of Artalk
+The [ArtalkJS/Docs](https://github.com/ArtalkJS/Docs) repo has been migrated to `docs` folder of the [ArtalkJS/Artalk](https://github.com/ArtalkJS/Artalk) monorepo where all updates will be made.
 
-## Build
-
-```bash
-pnpm docs:dev
-pnpm docs:build
-```
-
-## Deploy
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6580cce0-4b27-465e-8d73-1e6a832942e9/deploy-status)](https://app.netlify.com/sites/focused-kilby-a3ec8c/deploys)
-
-本站点通过 [Netlify](https://www.netlify.com/) 对 master 分支进行自动部署。
-
-## Licensed
-CC BY-NC-SA 4.0
+We are actively working on migrating open Issues and PRs to the new repo. New Issues and PRs should be filed at [ArtalkJS/Artalk](https://github.com/ArtalkJS/Artalk). Thanks for your support!
